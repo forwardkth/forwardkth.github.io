@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chaoforward.org/"/>
-  <updated>2015-11-05T20:45:52.000Z</updated>
+  <updated>2016-01-25T21:19:51.673Z</updated>
   <id>http://chaoforward.org/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[2016 new year]]></title>
+    <link href="http://chaoforward.org/2016/01/25/2016-new-year/"/>
+    <id>http://chaoforward.org/2016/01/25/2016-new-year/</id>
+    <published>2016-01-25T20:53:28.000Z</published>
+    <updated>2016-01-25T21:19:51.673Z</updated>
+    <content type="html"><![CDATA[<p>��һ��win10����hexo</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>��һ��win10����hexo</p>
+]]>
+    </summary>
+    
+      <category term="new year" scheme="http://chaoforward.org/tags/new-year/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Filco Ninja keyboard]]></title>
