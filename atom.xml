@@ -302,7 +302,7 @@
     <link href="http://chaoforward.org/2015/08/28/wifi-robot-gen-two/"/>
     <id>http://chaoforward.org/2015/08/28/wifi-robot-gen-two/</id>
     <published>2015-08-28T06:59:16.000Z</published>
-    <updated>2016-03-06T18:21:55.487Z</updated>
+    <updated>2016-03-06T19:10:43.794Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
 <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my second generation Tele-operation robot  built during 2015. This robot is based on the open source  platform <a href="http://beagleboard.org/bone" target="_blank" rel="external">Beaglebone white</a> which running Debian Linux.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br>The <strong>Beaglebone</strong> is a credit-card-sized Linux computer that connects to the Internet and runs software such as Android 4.0 and Ubuntu with plenty of I/O and processing power for real-time analysis provided by an AM335x 720MHz ARM® processor. It has 256M DDR2 RAM, 3D graphics accelerator, power management capacity.</p>
 <p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
@@ -312,8 +312,9 @@
 <p>The new DEMO video in Youtube：</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>
 
-<p>DEMO video in Youku:</p>
-<p><a href="http://v.youku.com/v_show/id_XMTMyMjM2MTE5Ng==.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTMyMjM2MTE5Ng==.html</a></p>
+<p>DEMO video in Youku: (For Visitors from China…)</p>
+<embed src="http://player.youku.com/player.php/sid/XMTMyMjM2MTE5Ng==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
 <p>you can see more by clicking <strong>Read more</strong> below :)<br><a id="more"></a><br>Compare to my first Generation robot, thanks to the Beaglebone, the hardware structure of the second Generation is more simple now. The Beaglebone runnning with Linux is responsible for all the tasks: motion control, networking communication, sensor interface and video streaming.<br>I can realize more advanced  features for my robot like the machine vision with it. Now I just only connect a laser lamp and a Ultra sound sensor to it.</p>
 <p>I will not talk about a lot of basic things here like motion control or networking programming. I prefer to say some my feelings and experience from <strong>system point of view</strong> about this project.</p>
 <h3 id="Structure_Overview"><a href="#Structure_Overview" class="headerlink" title="Structure Overview"></a>Structure Overview</h3><p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evho2vc9exj21kw16o4qp.jpg" alt=""><br>This robot uses Beaglebone white as the local smart brain, TPLINK WR702N as the WIFI module, one power supply and motor driver circuit board, ultra sound sensor and Laser lamp. The Beaglebone use TPLINK WR702N mini router as the wireless networking card to receive the control orders and send the data and video streaming through WIFI. But you should notice that this is not the popular <strong>OpenWR+router+arduio or what</strong> soluction. Why not? I will explain later.</p>
@@ -350,8 +351,9 @@
 <p>The new DEMO video in Youtube：</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>
 
-<p>DEMO video in Youku:</p>
-<p><a href="http://v.youku.com/v_show/id_XMTMyMjM2MTE5Ng==.html">http://v.youku.com/v_show/id_XMTMyMjM2MTE5Ng==.html</a></p>
+<p>DEMO video in Youku: (For Visitors from China…)</p>
+<embed src="http://player.youku.com/player.php/sid/XMTMyMjM2MTE5Ng==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
 <p>you can see more by clicking <strong>Read more</strong> below :)<br>]]>
     
     </summary>
