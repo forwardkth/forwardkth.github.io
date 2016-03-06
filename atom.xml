@@ -594,11 +594,33 @@
     <link href="http://chaoforward.org/2015/08/22/stuff-guarder/"/>
     <id>http://chaoforward.org/2015/08/22/stuff-guarder/</id>
     <published>2015-08-22T10:02:36.000Z</published>
-    <updated>2016-03-06T17:53:13.658Z</updated>
-    <content type="html"></content>
+    <updated>2016-03-06T18:26:02.315Z</updated>
+    <content type="html"><![CDATA[<p>ddd</p>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<p>ddd</p>
+]]>
     </summary>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+    
+      <category term="VisualGDB" scheme="http://chaoforward.org/tags/VisualGDB/"/>
+    
+      <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
+    
+      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+    
+      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+    
+      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -607,11 +629,33 @@
     <link href="http://chaoforward.org/2015/08/21/project-upper-limb-robot/"/>
     <id>http://chaoforward.org/2015/08/21/project-upper-limb-robot/</id>
     <published>2015-08-21T10:02:16.000Z</published>
-    <updated>2016-03-06T17:53:15.778Z</updated>
-    <content type="html"></content>
+    <updated>2016-03-06T18:26:02.310Z</updated>
+    <content type="html"><![CDATA[<p>ddd</p>
+]]></content>
     <summary type="html">
-    
+    <![CDATA[<p>ddd</p>
+]]>
     </summary>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+    
+      <category term="VisualGDB" scheme="http://chaoforward.org/tags/VisualGDB/"/>
+    
+      <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
+    
+      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+    
+      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+    
+      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
