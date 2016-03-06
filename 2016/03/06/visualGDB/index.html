@@ -49,7 +49,7 @@ https://github.com/forwardkth/BBRobot_VisualGDB
 https://github.com/forwardkth/BBRobot">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg">
-<meta property="og:updated_time" content="2016-03-06T18:34:49.387Z">
+<meta property="og:updated_time" content="2016-03-06T18:49:15.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cross compling and remote debuging with VisualGDB on Windows">
 <meta name="twitter:description" content="Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.
@@ -255,7 +255,9 @@ https://github.com/forwardkth/BBRobot">
 <p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std=c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std=c++0x</p>
 <h3 id="The_second_one_is_about_Pthread_3A"><a href="#The_second_one_is_about_Pthread_3A" class="headerlink" title="The second one is about Pthread:"></a>The second one is about Pthread:</h3><p>The error info indicate that pthread library is missing. </p>
 <p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
-<p>The real solution is:<br><a id="more"></a><br>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
+<p>The real solution is:</p>
+<a id="more"></a>
+<p>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
 <p>I think that is because this configuration is related to your target environment, not your host machine.<br>You can see the screenshot of the configurations below:</p>
 <p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""></p>
 <p><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
@@ -400,7 +402,7 @@ https://github.com/forwardkth/BBRobot">
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-count">58</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

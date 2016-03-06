@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chaoforward.org/"/>
-  <updated>2016-03-06T18:34:49.387Z</updated>
+  <updated>2016-03-06T18:49:15.686Z</updated>
   <id>http://chaoforward.org/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://chaoforward.org/2016/03/06/visualGDB/"/>
     <id>http://chaoforward.org/2016/03/06/visualGDB/</id>
     <published>2016-03-06T15:08:24.000Z</published>
-    <updated>2016-03-06T18:34:49.387Z</updated>
+    <updated>2016-03-06T18:49:15.686Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
 <p><a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
 <p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
@@ -29,7 +29,9 @@
 <p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std=c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std=c++0x</p>
 <h3 id="The_second_one_is_about_Pthread_3A"><a href="#The_second_one_is_about_Pthread_3A" class="headerlink" title="The second one is about Pthread:"></a>The second one is about Pthread:</h3><p>The error info indicate that pthread library is missing. </p>
 <p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
-<p>The real solution is:<br><a id="more"></a><br>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
+<p>The real solution is:</p>
+<a id="more"></a>
+<p>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
 <p>I think that is because this configuration is related to your target environment, not your host machine.<br>You can see the screenshot of the configurations below:</p>
 <p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""></p>
 <p><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
@@ -45,7 +47,7 @@
 <p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std=c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std=c++0x</p>
 <h3 id="The_second_one_is_about_Pthread_3A"><a href="#The_second_one_is_about_Pthread_3A" class="headerlink" title="The second one is about Pthread:"></a>The second one is about Pthread:</h3><p>The error info indicate that pthread library is missing. </p>
 <p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
-<p>The real solution is:<br>]]>
+<p>The real solution is:</p>]]>
     
     </summary>
     
@@ -590,35 +592,26 @@
   </entry>
   
   <entry>
-    <title><![CDATA[stuff guarder]]></title>
+    <title><![CDATA[Course Project@KTH "Stuff guarder"(2010)]]></title>
     <link href="http://chaoforward.org/2015/08/22/stuff-guarder/"/>
     <id>http://chaoforward.org/2015/08/22/stuff-guarder/</id>
     <published>2015-08-22T10:02:36.000Z</published>
-    <updated>2016-03-06T18:34:49.382Z</updated>
-    <content type="html"><![CDATA[<p>ddd</p>
-]]></content>
+    <updated>2016-03-06T19:06:15.621Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://filer.blogbus.com/1420580/1420580_12868918012.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device that can remind you when your private stuff is moved by others.<br>It also can remind you to get back your bank card after drawing money from a ATM machine.</p>
+<p><img src="http://filer.blogbus.com/1420580/1420580_1286891741d.jpg" alt=""></p>
+<p>It is implemented by a self made TI MSP430 experimental board with light sensor and accelemeter sensor. It is easy and simple.<br>The main purpose of this project is to learn how to use the sensors data in a smart way even very limited number and type of sensors.</p>
+<embed src="http://player.youku.com/player.php/sid/XMTU2OTc4MzIw/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">]]></content>
     <summary type="html">
-    <![CDATA[<p>ddd</p>
-]]>
+    <![CDATA[<p><img src="http://filer.blogbus.com/1420580/1420580_12868918012.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device that can]]>
     </summary>
     
-      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+      <category term="KTH" scheme="http://chaoforward.org/tags/KTH/"/>
     
-      <category term="VisualGDB" scheme="http://chaoforward.org/tags/VisualGDB/"/>
+      <category term="MSP430" scheme="http://chaoforward.org/tags/MSP430/"/>
     
-      <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
+      <category term="alarm" scheme="http://chaoforward.org/tags/alarm/"/>
     
-      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
-    
-      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
-    
-      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
-    
-      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
-    
-      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
-    
-      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="sensor" scheme="http://chaoforward.org/tags/sensor/"/>
     
       <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
