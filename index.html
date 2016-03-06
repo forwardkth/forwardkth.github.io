@@ -242,11 +242,11 @@
 
       
         
-          <span itemprop="articleBody"><p>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
-<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
-<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
+          <p>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
 <p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
-<p><a href="http://visualgdb.com/tutorials/beaglebone/" target="_blank" rel="external">http://visualgdb.com/tutorials/beaglebone/</a></p>
+<p><a href="http://visualgdb.com/tutorials/beaglebone/">http://visualgdb.com/tutorials/beaglebone/</a></p>
 <p>##But I got some problems when I compiled my code.</p>
 <p>###The first one is :</p>
 <p>error directive: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x.<br>This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.    </p>
@@ -254,13 +254,12 @@
 <p>###The second one is about Pthread:</p>
 <p>The error info indicate that pthread library is missing. </p>
 <p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
-<p>The real solution is:</p>
-<p>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
-<p>I think that is because this configuration is related to your target environment, not your host machine.<br>You can see the screenshot of the configurations below:</p>
-<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""></p>
-<p><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
-<p>You can find the new DEMO video of my wifi robot on Youtube��</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe></span>
+<p>you can see more by clicking <strong>Read more</strong> below :)<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/06/BBRobot-VisualGDB/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
