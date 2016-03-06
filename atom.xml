@@ -620,35 +620,37 @@
   </entry>
   
   <entry>
-    <title><![CDATA[project upper-limb robot]]></title>
+    <title><![CDATA[Project@China "The Upper-Limb Tele-Rehabilitation Robot with interaction of vitual environment" (2008)]]></title>
     <link href="http://chaoforward.org/2015/08/21/project-upper-limb-robot/"/>
     <id>http://chaoforward.org/2015/08/21/project-upper-limb-robot/</id>
     <published>2015-08-21T10:02:16.000Z</published>
-    <updated>2016-03-06T18:34:49.378Z</updated>
-    <content type="html"><![CDATA[<p>ddd</p>
+    <updated>2016-03-06T19:46:10.336Z</updated>
+    <content type="html"><![CDATA[<p>This project is my first master degree study in China just before I came to sweden in 2009.</p>
+<p>Aiming at the disadvantages of the traditional rehabilitation training machine, which are boring and lack interactivity to stroke patients and upper limb injuries,<br>a tele-rehabilitation training system based on both interaction of virtual environment and uClinux powered Embedded motor controller is developed.<br>The historical record of training data is stored by the patient information database. The system has positive training mode and resistance training mode together with the forece feedback from the vitual environment.<br>The training with vitual environment interaction can bring the patients to a interesting and exciting training procedure. </p>
+<p>The traditional rehabilitation therapy focuses on patients’ physical function of upper limbs. The training procedure mainly depends on manual operation of rehabilitation training physician.<br>In this condition, one physician only trains one patient at one time, and the training procedure is very boring to the patients. Studies shows that the effect of rehabilitation training will be greatly enhanced, if multiple forms of information feedbacks are introduced to the training procedure.<br>Virtual Reality (VR) is a kind of burgeoning technique. Its characteristic as follow: a virtual world with multiple sensual stimulates which is immersible is created by computer together with sensors;<br>The Patients can interact with the objects in virtual world in natural manners.<br><img src="http://forward-project-research.blogbus.com/files/12445574200.bmp" alt=""><br><img src="http://forward-project-research.blogbus.com/files/12445574202.bmp" alt=""><br><img src="http://forward-project-research.blogbus.com/files/12445574203.bmp" alt=""><br><img src="http://forward-project-research.blogbus.com/files/12445574204.bmp" alt=""></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>ddd</p>
-]]>
+    <![CDATA[<p>This project is my first master degree study in China just before I came to sweden in 2009.</p>
+<p>Aiming at the disadvantages of the tra]]>
     </summary>
     
-      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+      <category term="ARM7" scheme="http://chaoforward.org/tags/ARM7/"/>
     
-      <category term="VisualGDB" scheme="http://chaoforward.org/tags/VisualGDB/"/>
+      <category term="Interaction" scheme="http://chaoforward.org/tags/Interaction/"/>
     
       <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
     
-      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+      <category term="force feedback" scheme="http://chaoforward.org/tags/force-feedback/"/>
+    
+      <category term="linux" scheme="http://chaoforward.org/tags/linux/"/>
     
       <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
     
-      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+      <category term="tele-operation" scheme="http://chaoforward.org/tags/tele-operation/"/>
     
-      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+      <category term="力反馈" scheme="http://chaoforward.org/tags/%E5%8A%9B%E5%8F%8D%E9%A6%88/"/>
     
-      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
-    
-      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="康复训练机器人" scheme="http://chaoforward.org/tags/%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
       <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
