@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chaoforward.org/"/>
-  <updated>2016-03-06T18:10:21.101Z</updated>
+  <updated>2016-03-06T18:15:35.914Z</updated>
   <id>http://chaoforward.org/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://chaoforward.org/2016/03/06/visualGDB/"/>
     <id>http://chaoforward.org/2016/03/06/visualGDB/</id>
     <published>2016-03-06T15:08:24.000Z</published>
-    <updated>2016-03-06T18:10:21.101Z</updated>
-    <content type="html"><![CDATA[<p>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+    <updated>2016-03-06T18:15:35.914Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
 <p><a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
 <p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
 <p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
@@ -35,10 +35,10 @@
 <p>I think that is because this configuration is related to your target environment, not your host machine.<br>You can see the screenshot of the configurations below:</p>
 <p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""></p>
 <p><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
-<p>You can find the new DEMO video of my wifi robot on Youtube��</p>
+<p>You can find the new DEMO video of my wifi robot on Youtube：</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>]]></content>
     <summary type="html">
-    <![CDATA[<p>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+    <![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
 <p><a href="https://github.com/forwardkth/BBRobot_VisualGDB">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
 <p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
 <p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
