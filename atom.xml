@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chaoforward.org/"/>
-  <updated>2016-01-25T22:08:01.757Z</updated>
+  <updated>2016-03-06T17:49:00.840Z</updated>
   <id>http://chaoforward.org/</id>
   
   <author>
@@ -13,6 +13,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Cross compling and remote debuging with VisualGDB on Windows]]></title>
+    <link href="http://chaoforward.org/2016/03/06/BBRobot-VisualGDB/"/>
+    <id>http://chaoforward.org/2016/03/06/BBRobot-VisualGDB/</id>
+    <published>2016-03-06T15:08:24.000Z</published>
+    <updated>2016-03-06T17:49:00.840Z</updated>
+    <content type="html"><![CDATA[<p>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
+<p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
+<p><a href="http://visualgdb.com/tutorials/beaglebone/" target="_blank" rel="external">http://visualgdb.com/tutorials/beaglebone/</a></p>
+<p>##But I got some problems when I compiled my code.</p>
+<p>###The first one is :</p>
+<p>error directive: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x.<br>This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.    </p>
+<p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std=c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std=c++0x</p>
+<p>###The second one is about Pthread:</p>
+<p>The error info indicate that pthread library is missing. </p>
+<p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
+<p>The real solution is:</p>
+<p>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
+<p>I think that is because this configuration is related to your target environment, not your host machine.<br>You can see the screenshot of the configurations below:</p>
+<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""></p>
+<p><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
+<p>You can find the new DEMO video of my wifi robot on Youtube��</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+<p><a href="https:]]>
+    </summary>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+    
+      <category term="VisualGDB" scheme="http://chaoforward.org/tags/VisualGDB/"/>
+    
+      <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
+    
+      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+    
+      <category term="���ܳ�" scheme="http://chaoforward.org/tags/%EF%BF%BD%EF%BF%BD%EF%BF%BD%DC%B3%EF%BF%BD/"/>
+    
+      <category term="������" scheme="http://chaoforward.org/tags/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/"/>
+    
+      <category term="projects-��Ŀ" scheme="http://chaoforward.org/categories/projects-%EF%BF%BD%EF%BF%BDL/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[2016 Happy new year 新年快乐，迎接挑战]]></title>
@@ -129,9 +181,10 @@
     <link href="http://chaoforward.org/2015/10/10/shenzhen/"/>
     <id>http://chaoforward.org/2015/10/10/shenzhen/</id>
     <published>2015-10-10T17:58:44.000Z</published>
-    <updated>2015-10-10T18:09:01.000Z</updated>
+    <updated>2016-03-06T15:19:20.874Z</updated>
     <content type="html"><![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi Ito的一篇回忆文章《一位MIT学者眼中的深圳硬件制造业》中说到，他参观了注塑厂、PCB工厂、在电路板上嵌入芯片的工厂……去了像华强北那样的硬件市场还有去了像大疆这样的公司，彻底被震撼了。</p>
 <p>最后他说，在深圳，他们体验到的是一个完整的生态系统，低成本的劳动力，他们把深圳打造成了一个最先进的世界级制造基地，这个生态系统由大量的工厂和制造技术组成，可以生产各种规模的硬件产品。</p>
+<a id="more"></a>
 <p>实际上，被这种完整的生态链系统吸引过来的，不仅仅是Joi Ito以及Reid Hoffman。一些国外做智能手表、智能帽子和智能音箱的创业者说，去年他们还是深圳硅谷两边来回飞，一年来两次深圳，待上一段时间，而今年，则干脆在 深圳设立办事处，其实除了他们，他们的朋友，也在与深圳有着越来越紧密的联系，找中国这边的工厂枢纽。</p>
 <p>你会发现，无论是普通创客还是学术机构、政府，深圳与硅谷的关系都越来越“暧昧”。从深圳举办的一些官方非官方活动上都能感受到这一点，或许某天你在活动上，遇到的是加州伯克利分校的教授，也有可能是未来研究所的所长，或者全球最大的硬件加速器HAXLR8R合伙人等等。</p>
 <p>在上个月的深圳第二届工业设计大展与Android论坛上，除了全球各地的创客代表，硅谷的学术机构、硬件创业代表人物Chris Andressen，以及MIT Fablab实验室主任Neil等也都出现在了会场，而后面这位，在11月的时候，为了Fab Lab还专程来过深圳，一同到来的还有美国麻省理工学院比特和院子研究中心项目经理Sherry Lassiter，麻省理工学院助理研究员Nadyd Peed及麻省理工大学Fab 12授权专员David Jin。</p>
@@ -152,7 +205,9 @@
 <p>原文地址 <a href="http://www.pingwest.com/shenzhen-silicon-valley/" target="_blank" rel="external">http://www.pingwest.com/shenzhen-silicon-valley/</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi It]]>
+    <![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi Ito的一篇回忆文章《一位MIT学者眼中的深圳硬件制造业》中说到，他参观了注塑厂、PCB工厂、在电路板上嵌入芯片的工厂……去了像华强北那样的硬件市场还有去了像大疆这样的公司，彻底被震撼了。</p>
+<p>最后他说，在深圳，他们体验到的是一个完整的生态系统，低成本的劳动力，他们把深圳打造成了一个最先进的世界级制造基地，这个生态系统由大量的工厂和制造技术组成，可以生产各种规模的硬件产品。</p>]]>
+    
     </summary>
     
       <category term="shenzhen" scheme="http://chaoforward.org/tags/shenzhen/"/>
@@ -240,12 +295,15 @@
     <link href="http://chaoforward.org/2015/08/28/wifi-robot-gen-two/"/>
     <id>http://chaoforward.org/2015/08/28/wifi-robot-gen-two/</id>
     <published>2015-08-28T06:59:16.000Z</published>
-    <updated>2016-03-06T10:36:51.322Z</updated>
+    <updated>2016-03-06T14:55:24.870Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
 <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my second generation Tele-operation robot  built during 2015. This robot is based on the open source  platform <a href="http://beagleboard.org/bone" target="_blank" rel="external">Beaglebone white</a> which running Debian Linux.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br>The <strong>Beaglebone</strong> is a credit-card-sized Linux computer that connects to the Internet and runs software such as Android 4.0 and Ubuntu with plenty of I/O and processing power for real-time analysis provided by an AM335x 720MHz ARM® processor. It has 256M DDR2 RAM, 3D graphics accelerator, power management capacity.</p>
 <p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
 <h2 id="DEMO_videos_3A"><a href="#DEMO_videos_3A" class="headerlink" title="DEMO videos:"></a>DEMO videos:</h2><p>The DEMO video in Youtube: (The performance now is much better than it is shown in the video. I will make a new vedio later)</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/v77tkjFmZqY" frameborder="0" allowfullscreen></iframe>
+
+<p>The new DEMO video in Youtube：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>
 
 <p>DEMO video in Youku:</p>
 <p><a href="http://v.youku.com/v_show/id_XMTMyMjM2MTE5Ng==.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTMyMjM2MTE5Ng==.html</a></p>
@@ -281,6 +339,9 @@
 <p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
 <h2 id="DEMO_videos_3A"><a href="#DEMO_videos_3A" class="headerlink" title="DEMO videos:"></a>DEMO videos:</h2><p>The DEMO video in Youtube: (The performance now is much better than it is shown in the video. I will make a new vedio later)</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/v77tkjFmZqY" frameborder="0" allowfullscreen></iframe>
+
+<p>The new DEMO video in Youtube：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>
 
 <p>DEMO video in Youku:</p>
 <p><a href="http://v.youku.com/v_show/id_XMTMyMjM2MTE5Ng==.html">http://v.youku.com/v_show/id_XMTMyMjM2MTE5Ng==.html</a></p>
@@ -524,11 +585,37 @@
   </entry>
   
   <entry>
+    <title><![CDATA[stuff guarder]]></title>
+    <link href="http://chaoforward.org/2015/08/22/stuff-guarder/"/>
+    <id>http://chaoforward.org/2015/08/22/stuff-guarder/</id>
+    <published>2015-08-22T10:02:36.000Z</published>
+    <updated>2016-03-06T17:53:13.658Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[project upper-limb robot]]></title>
+    <link href="http://chaoforward.org/2015/08/21/project-upper-limb-robot/"/>
+    <id>http://chaoforward.org/2015/08/21/project-upper-limb-robot/</id>
+    <published>2015-08-21T10:02:16.000Z</published>
+    <updated>2016-03-06T17:53:15.778Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Welcome to my new Blog 欢迎来访我的新博客]]></title>
-    <link href="http://chaoforward.org/2015/08/24/hello-world/"/>
-    <id>http://chaoforward.org/2015/08/24/hello-world/</id>
-    <published>2015-08-23T22:00:00.000Z</published>
-    <updated>2015-08-27T13:51:29.000Z</updated>
+    <link href="http://chaoforward.org/2015/08/20/hello-world/"/>
+    <id>http://chaoforward.org/2015/08/20/hello-world/</id>
+    <published>2015-08-19T22:00:00.000Z</published>
+    <updated>2016-03-06T17:54:14.027Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://forwardkth.github.io/" target="_blank" rel="external">Chao_Forward</a> my new blog powered by Hexo! You can find my previous posts and projects in my <a href="http://zorrolc.blogbus.com" target="_blank" rel="external">old blog</a> . I also transfer some of my previous projects posts here.<br>My posts will be both in English and Chinese in the future. </p>
 <p>由于blogbus的所谓敏感词审查，我决定放弃写了5,6年的大巴搬家到Github了。以后也不再更新老博客,大家仍然可以在右侧的侧边栏链接里查看老博客以前的日志和项目。 一些项目日志也被我从大巴转移到了这里。四年前从KTH毕业开始在瑞典ABB公司的工作以后就很少写博客了，并不是没得可写而是人变得所谓成熟以后少了很多无病呻吟。另一方面生活变得繁忙，反而觉得如果不算考试的话学生时代真是幸福多了。直到前两天用Github的时候突发奇想觉得应该存在一种可以在Github上部署博客的方案，搜索了一下真有不少，于是选中Hexo捣鼓了起来，它也燃起了我继续把博客写下去的愿望。能有自己一方安静的角落写写东西挺好的。这个博客我希望做成中英双语的，一方面为了职业发展，展示自己的开发项目，进行技术交流。另一方面也向国内的朋友们分享我的生活点滴。欢迎大家继续来访支持。</p>
 <p>—- forward回来了</p>

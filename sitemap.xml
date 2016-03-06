@@ -2,8 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chaoforward.org/2015/08/20/hello-world/</loc>
+    <lastmod>2016-03-06T17:54:14.027Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chaoforward.org/2015/08/21/project-upper-limb-robot/</loc>
+    <lastmod>2016-03-06T17:53:15.778Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chaoforward.org/2015/08/22/stuff-guarder/</loc>
+    <lastmod>2016-03-06T17:53:13.658Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chaoforward.org/2016/03/06/BBRobot-VisualGDB/</loc>
+    <lastmod>2016-03-06T17:49:00.840Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chaoforward.org/2015/10/10/shenzhen/</loc>
+    <lastmod>2016-03-06T15:19:20.874Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chaoforward.org/2015/08/28/wifi-robot-gen-two/</loc>
-    <lastmod>2016-03-06T10:36:51.322Z</lastmod>
+    <lastmod>2016-03-06T14:55:24.870Z</lastmod>
   </url>
   
   <url>
@@ -34,11 +59,6 @@
   <url>
     <loc>http://chaoforward.org/2015/10/17/dark-before-dawn/</loc>
     <lastmod>2015-10-17T20:16:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chaoforward.org/2015/10/10/shenzhen/</loc>
-    <lastmod>2015-10-10T18:09:01.000Z</lastmod>
   </url>
   
   <url>
@@ -79,11 +99,6 @@
   <url>
     <loc>http://chaoforward.org/2015/08/26/walking-man/</loc>
     <lastmod>2015-08-27T13:52:37.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chaoforward.org/2015/08/24/hello-world/</loc>
-    <lastmod>2015-08-27T13:51:29.000Z</lastmod>
   </url>
   
   <url>
