@@ -298,11 +298,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[My Tele-operation robot, Generation two]]></title>
+    <title><![CDATA[My Tele-operation robot, Generation II]]></title>
     <link href="http://chaoforward.org/2015/08/28/wifi-robot-gen-two/"/>
     <id>http://chaoforward.org/2015/08/28/wifi-robot-gen-two/</id>
     <published>2015-08-28T06:59:16.000Z</published>
-    <updated>2016-03-06T19:10:43.794Z</updated>
+    <updated>2016-03-07T18:56:37.403Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
 <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my second generation Tele-operation robot  built during 2015. This robot is based on the open source  platform <a href="http://beagleboard.org/bone" target="_blank" rel="external">Beaglebone white</a> which running Debian Linux.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br>The <strong>Beaglebone</strong> is a credit-card-sized Linux computer that connects to the Internet and runs software such as Android 4.0 and Ubuntu with plenty of I/O and processing power for real-time analysis provided by an AM335x 720MHz ARM® processor. It has 256M DDR2 RAM, 3D graphics accelerator, power management capacity.</p>
 <p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
@@ -377,11 +377,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[My tele-operation  Robot, Generation one]]></title>
+    <title><![CDATA[My tele-operation  Robot, Generation I]]></title>
     <link href="http://chaoforward.org/2015/08/27/tele-robot-1/"/>
     <id>http://chaoforward.org/2015/08/27/tele-robot-1/</id>
     <published>2015-08-27T08:52:10.000Z</published>
-    <updated>2015-08-29T18:11:15.000Z</updated>
+    <updated>2016-03-07T18:56:21.862Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgreifis4j218g0xcauk.jpg" alt=""></p>
 <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my first generation Tele-operation robot  built during 2014. Now I have  already had my second generation robot with pure Linux OS. But the first one is still a interesting try.</p>
 <p>The old google Nexus android phone is used as the controller as well as wireless communication module.&amp;ensp The <a href="https://github.com/ytai/ioio/wiki" target="_blank" rel="external">IOIO-OTG</a> Open source board is employed to be the interface between android OS and other devices. Another Experimental board <strong>EXP F5438</strong> with  TI MSP430 F5438 mcu is connected with the IOIO board through RX/TX.</p>
