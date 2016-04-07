@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chaoforward.org/"/>
-  <updated>2016-03-06T18:49:15.686Z</updated>
+  <updated>2016-04-07T21:16:38.681Z</updated>
   <id>http://chaoforward.org/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Made a iOS App for my wifirobot]]></title>
+    <link href="http://chaoforward.org/2016/04/07/iOS-app-for-wifirobot/"/>
+    <id>http://chaoforward.org/2016/04/07/iOS-app-for-wifirobot/</id>
+    <published>2016-04-07T21:06:45.000Z</published>
+    <updated>2016-04-07T21:16:38.681Z</updated>
+    <content type="html"><![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot . I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
+<p>There is a demo video below:<br>youtube:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe>
+
+<p>youku:</p>
+<iframe height="498" width="510" src="http://player.youku.com/embed/XMTUyMjU1NDAyMA==" frameborder="0" allowfullscreen></iframe>]]></content>
+    <summary type="html">
+    <![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot . I will try to make it better later.<br>The communication is based on TCP]]>
+    </summary>
+    
+      <category term="App" scheme="http://chaoforward.org/tags/App/"/>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+    
+      <category term="iOS" scheme="http://chaoforward.org/tags/iOS/"/>
+    
+      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+    
+      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Cross compling and remote debuging with VisualGDB on Windows]]></title>
@@ -600,7 +634,7 @@
     <link href="http://chaoforward.org/2015/08/22/stuff-guarder/"/>
     <id>http://chaoforward.org/2015/08/22/stuff-guarder/</id>
     <published>2015-08-22T10:02:36.000Z</published>
-    <updated>2016-03-08T10:34:01.734Z</updated>
+    <updated>2016-03-08T10:34:01.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device that can remind you when your private stuff is moved by others.<br>It also can remind you to get back your bank card after drawing money from a ATM machine.</p>
 <p><img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f1pmuexnvsj20go0ciq54.jpg" alt=""></p>
 <p>It is implemented by a self made TI MSP430 experimental board with light sensor and accelemeter sensor. It is easy and simple.<br>The main purpose of this project is to learn how to use the sensors data in a smart way even very limited number and type of sensors.</p>
