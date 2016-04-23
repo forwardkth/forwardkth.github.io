@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chaoforward.org/about/index.html</loc>
+    <lastmod>2016-04-23T09:57:22.997Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chaoforward.org/2015/08/28/wifi-robot-gen-two/</loc>
     <lastmod>2016-04-16T19:08:57.490Z</lastmod>
   </url>
@@ -39,11 +44,6 @@
   <url>
     <loc>http://chaoforward.org/2015/10/10/shenzhen/</loc>
     <lastmod>2016-03-06T15:19:20.874Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chaoforward.org/about/index.html</loc>
-    <lastmod>2016-03-05T11:11:42.663Z</lastmod>
   </url>
   
   <url>
