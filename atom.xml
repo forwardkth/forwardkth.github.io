@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chaoforward.org/"/>
-  <updated>2016-04-23T10:42:57.046Z</updated>
+  <updated>2016-04-23T11:06:13.383Z</updated>
   <id>http://chaoforward.org/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://chaoforward.org/2016/04/07/iOS-app-for-wifirobot/"/>
     <id>http://chaoforward.org/2016/04/07/iOS-app-for-wifirobot/</id>
     <published>2016-04-07T21:06:45.000Z</published>
-    <updated>2016-04-23T10:42:57.046Z</updated>
+    <updated>2016-04-23T11:06:13.383Z</updated>
     <content type="html"><![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot last week. It is simple and not looks so nice. I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
 <p>There is a demo video below:<br>youtube:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe><br><a id="more"></a><br>youku:<br><a href="http://v.youku.com/v_show/id_XMTUyMjU1NDAyMA==.html?from=y1.7-2" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTUyMjU1NDAyMA==.html?from=y1.7-2</a><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTUyMjU1NDAyMA==" frameborder="0" allowfullscreen></iframe>]]></content>
