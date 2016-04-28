@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chaoforward.org/2015/10/25/BlackLib-Template/</loc>
+    <lastmod>2016-04-28T20:01:11.500Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://chaoforward.org/2015/10/17/dark-before-dawn/</loc>
     <lastmod>2016-04-28T19:56:29.103Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://chaoforward.org/2015/09/05/beaglebone-lib/</loc>
     <lastmod>2016-04-28T19:55:37.366Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://chaoforward.org/2015/10/25/BlackLib-Template/</loc>
-    <lastmod>2016-04-28T19:55:14.044Z</lastmod>
   </url>
   
   <url>
