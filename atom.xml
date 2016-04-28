@@ -3,9 +3,9 @@
   <title><![CDATA[Chao_Forward]]></title>
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://chaoforward.org/"/>
+  <link href="/"/>
   <updated>2016-04-23T11:13:55.958Z</updated>
-  <id>http://chaoforward.org/</id>
+  <id>/</id>
   
   <author>
     <name><![CDATA[Chao Li]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Made an iOS App for my wifi robot]]></title>
-    <link href="http://chaoforward.org/2016/04/07/iOS-app-for-wifirobot/"/>
-    <id>http://chaoforward.org/2016/04/07/iOS-app-for-wifirobot/</id>
+    <link href="/2016/04/07/iOS-app-for-wifirobot/"/>
+    <id>/2016/04/07/iOS-app-for-wifirobot/</id>
     <published>2016-04-07T21:06:45.000Z</published>
     <updated>2016-04-23T11:13:55.958Z</updated>
     <content type="html"><![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot last week. It is simple and not looks so nice. I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
@@ -30,28 +30,28 @@
     
     </summary>
     
-      <category term="App" scheme="http://chaoforward.org/tags/App/"/>
+      <category term="App" scheme="/tags/App/"/>
     
-      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+      <category term="Beaglebone" scheme="/tags/Beaglebone/"/>
     
-      <category term="iOS" scheme="http://chaoforward.org/tags/iOS/"/>
+      <category term="iOS" scheme="/tags/iOS/"/>
     
-      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+      <category term="open source" scheme="/tags/open-source/"/>
     
-      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+      <category term="smart car" scheme="/tags/smart-car/"/>
     
-      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Cross compling and remote debuging with VisualGDB on Windows]]></title>
-    <link href="http://chaoforward.org/2016/03/06/visualGDB/"/>
-    <id>http://chaoforward.org/2016/03/06/visualGDB/</id>
+    <link href="/2016/03/06/visualGDB/"/>
+    <id>/2016/03/06/visualGDB/</id>
     <published>2016-03-06T15:08:24.000Z</published>
     <updated>2016-03-06T18:49:15.686Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
@@ -85,32 +85,32 @@
     
     </summary>
     
-      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+      <category term="Beaglebone" scheme="/tags/Beaglebone/"/>
     
-      <category term="VisualGDB" scheme="http://chaoforward.org/tags/VisualGDB/"/>
+      <category term="VisualGDB" scheme="/tags/VisualGDB/"/>
     
-      <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
+      <category term="cross compiling" scheme="/tags/cross-compiling/"/>
     
-      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+      <category term="open source" scheme="/tags/open-source/"/>
     
-      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+      <category term="robotics" scheme="/tags/robotics/"/>
     
-      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+      <category term="smart car" scheme="/tags/smart-car/"/>
     
-      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+      <category term="智能车" scheme="/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
     
-      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[2016 Happy new year 新年快乐，迎接挑战]]></title>
-    <link href="http://chaoforward.org/2016/01/25/2016-new-year/"/>
-    <id>http://chaoforward.org/2016/01/25/2016-new-year/</id>
+    <link href="/2016/01/25/2016-new-year/"/>
+    <id>/2016/01/25/2016-new-year/</id>
     <published>2016-01-25T20:53:28.000Z</published>
     <updated>2016-04-28T19:50:04.571Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1enscqbfjlzj20qo0k0gr4.jpg" alt=""><br>2016年新年快乐，今年不回家过年了。村儿里大雪，学名 西方狍的小鹿也下山到后院觅食。<br>都说逢羊年年景不好，去年各种坠机，冲突，灾害，难民种种也应了这伪科学的老话。2016年刚开年又是全球经济要步入新一轮危机的节奏。对自己来说也是事业突破或是转折的关键一年。<br>不管这新的一年会发生什么，兵来将挡，水来土掩。寒冬到来，春天就不远了。<br>GP bless me.<br><img src="http://ww4.sinaimg.cn/large/74505a4cgw1f0ces39q51j20qo0k0dlz.jpg" alt=""></p>
@@ -119,24 +119,24 @@
     <![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1enscqbfjlzj20qo0k0gr4.jpg" alt=""><br>2016年新年快乐，今年不回家过年了。村儿里大雪，学名 西方狍的小鹿也下山到后院觅食。<br>都说逢]]>
     </summary>
     
-      <category term="challenge" scheme="http://chaoforward.org/tags/challenge/"/>
+      <category term="challenge" scheme="/tags/challenge/"/>
     
-      <category term="winter" scheme="http://chaoforward.org/tags/winter/"/>
+      <category term="winter" scheme="/tags/winter/"/>
     
-      <category term="冬天" scheme="http://chaoforward.org/tags/%E5%86%AC%E5%A4%A9/"/>
+      <category term="冬天" scheme="/tags/%E5%86%AC%E5%A4%A9/"/>
     
-      <category term="挑战" scheme="http://chaoforward.org/tags/%E6%8C%91%E6%88%98/"/>
+      <category term="挑战" scheme="/tags/%E6%8C%91%E6%88%98/"/>
     
-      <category term="新年" scheme="http://chaoforward.org/tags/%E6%96%B0%E5%B9%B4/"/>
+      <category term="新年" scheme="/tags/%E6%96%B0%E5%B9%B4/"/>
     
-      <category term="Diary-日记" scheme="http://chaoforward.org/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Filco Ninja keyboard]]></title>
-    <link href="http://chaoforward.org/2015/11/05/filco-keyboard/"/>
-    <id>http://chaoforward.org/2015/11/05/filco-keyboard/</id>
+    <link href="/2015/11/05/filco-keyboard/"/>
+    <id>/2015/11/05/filco-keyboard/</id>
     <published>2015-11-05T20:11:57.000Z</published>
     <updated>2016-04-28T19:50:15.392Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""><br>Filco Ninja Majestouch-2 Tenkeyless Tactile Action UK Keyboard</p>
@@ -148,20 +148,20 @@
     <![CDATA[<p><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""><br>Filco Ninja Majestouch-2 Tenkeyless Tactile Action]]>
     </summary>
     
-      <category term="filco" scheme="http://chaoforward.org/tags/filco/"/>
+      <category term="filco" scheme="/tags/filco/"/>
     
-      <category term="机械键盘" scheme="http://chaoforward.org/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
+      <category term="机械键盘" scheme="/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
     
-      <category term="茶轴" scheme="http://chaoforward.org/tags/%E8%8C%B6%E8%BD%B4/"/>
+      <category term="茶轴" scheme="/tags/%E8%8C%B6%E8%BD%B4/"/>
     
-      <category term="Diary-日记" scheme="http://chaoforward.org/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[BlackLib Template]]></title>
-    <link href="http://chaoforward.org/2015/10/25/BlackLib-Template/"/>
-    <id>http://chaoforward.org/2015/10/25/BlackLib-Template/</id>
+    <link href="/2015/10/25/BlackLib-Template/"/>
+    <id>/2015/10/25/BlackLib-Template/</id>
     <published>2015-10-25T17:06:56.000Z</published>
     <updated>2016-04-28T20:01:11.500Z</updated>
     <content type="html"><![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.</p>
@@ -177,24 +177,24 @@
     <![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” boa]]>
     </summary>
     
-      <category term="BlackLib" scheme="http://chaoforward.org/tags/BlackLib/"/>
+      <category term="BlackLib" scheme="/tags/BlackLib/"/>
     
-      <category term="C++" scheme="http://chaoforward.org/tags/C/"/>
+      <category term="C++" scheme="/tags/C/"/>
     
-      <category term="beaglebone" scheme="http://chaoforward.org/tags/beaglebone/"/>
+      <category term="beaglebone" scheme="/tags/beaglebone/"/>
     
-      <category term="library" scheme="http://chaoforward.org/tags/library/"/>
+      <category term="library" scheme="/tags/library/"/>
     
-      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="Notes-随笔" scheme="http://chaoforward.org/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[秋 Autumn]]></title>
-    <link href="http://chaoforward.org/2015/10/17/dark-before-dawn/"/>
-    <id>http://chaoforward.org/2015/10/17/dark-before-dawn/</id>
+    <link href="/2015/10/17/dark-before-dawn/"/>
+    <id>/2015/10/17/dark-before-dawn/</id>
     <published>2015-10-17T20:01:38.000Z</published>
     <updated>2016-04-28T21:36:18.119Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋天色彩斑斓的树叶和纯净的美,Dalarna的景色似乎更胜一筹.举起手机拍下了上面这张很满意的照片.现在的手机照相性能越来越强,即便家里有好相机也很少用了.</p>
@@ -205,22 +205,22 @@
     <![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋]]>
     </summary>
     
-      <category term="life" scheme="http://chaoforward.org/tags/life/"/>
+      <category term="life" scheme="/tags/life/"/>
     
-      <category term="sweden" scheme="http://chaoforward.org/tags/sweden/"/>
+      <category term="sweden" scheme="/tags/sweden/"/>
     
-      <category term="瑞典" scheme="http://chaoforward.org/tags/%E7%91%9E%E5%85%B8/"/>
+      <category term="瑞典" scheme="/tags/%E7%91%9E%E5%85%B8/"/>
     
-      <category term="秋天" scheme="http://chaoforward.org/tags/%E7%A7%8B%E5%A4%A9/"/>
+      <category term="秋天" scheme="/tags/%E7%A7%8B%E5%A4%A9/"/>
     
-      <category term="Diary-日记" scheme="http://chaoforward.org/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[转载-正在与硅谷打得火热的深圳]]></title>
-    <link href="http://chaoforward.org/2015/10/10/shenzhen/"/>
-    <id>http://chaoforward.org/2015/10/10/shenzhen/</id>
+    <link href="/2015/10/10/shenzhen/"/>
+    <id>/2015/10/10/shenzhen/</id>
     <published>2015-10-10T17:58:44.000Z</published>
     <updated>2016-04-28T19:51:01.249Z</updated>
     <content type="html"><![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi Ito的一篇回忆文章《一位MIT学者眼中的深圳硬件制造业》中说到，他参观了注塑厂、PCB工厂、在电路板上嵌入芯片的工厂……去了像华强北那样的硬件市场还有去了像大疆这样的公司，彻底被震撼了。</p>
@@ -251,16 +251,16 @@
     
     </summary>
     
-      <category term="shenzhen" scheme="http://chaoforward.org/tags/shenzhen/"/>
+      <category term="shenzhen" scheme="/tags/shenzhen/"/>
     
-      <category term="Notes-随笔" scheme="http://chaoforward.org/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Mysensors Wireless sensing network at home]]></title>
-    <link href="http://chaoforward.org/2015/09/22/mysensors/"/>
-    <id>http://chaoforward.org/2015/09/22/mysensors/</id>
+    <link href="/2015/09/22/mysensors/"/>
+    <id>/2015/09/22/mysensors/</id>
     <published>2015-09-22T07:07:50.000Z</published>
     <updated>2015-10-06T21:10:26.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://www.mysensors.org/started/network.png" alt=""><br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew98gkmzhnj20k00qogqi.jpg" alt=""><br>you can see more by clicking <strong>Read more</strong> below :)<br>点击下方按钮阅读文章正文 （基于Mysensors开源项目的家庭无线传感网络 ）<br><a id="more"></a></p>
@@ -280,30 +280,30 @@
     
     </summary>
     
-      <category term="Arduino" scheme="http://chaoforward.org/tags/Arduino/"/>
+      <category term="Arduino" scheme="/tags/Arduino/"/>
     
-      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+      <category term="Beaglebone" scheme="/tags/Beaglebone/"/>
     
-      <category term="nRF24L01+" scheme="http://chaoforward.org/tags/nRF24L01/"/>
+      <category term="nRF24L01+" scheme="/tags/nRF24L01/"/>
     
-      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+      <category term="open source" scheme="/tags/open-source/"/>
     
-      <category term="sensor" scheme="http://chaoforward.org/tags/sensor/"/>
+      <category term="sensor" scheme="/tags/sensor/"/>
     
-      <category term="wireless sensing network" scheme="http://chaoforward.org/tags/wireless-sensing-network/"/>
+      <category term="wireless sensing network" scheme="/tags/wireless-sensing-network/"/>
     
-      <category term="传感器" scheme="http://chaoforward.org/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
+      <category term="传感器" scheme="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
-      <category term="家庭无线传感网络" scheme="http://chaoforward.org/tags/%E5%AE%B6%E5%BA%AD%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F%E7%BD%91%E7%BB%9C/"/>
+      <category term="家庭无线传感网络" scheme="/tags/%E5%AE%B6%E5%BA%AD%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Beaglebone libraries]]></title>
-    <link href="http://chaoforward.org/2015/09/05/beaglebone-lib/"/>
-    <id>http://chaoforward.org/2015/09/05/beaglebone-lib/</id>
+    <link href="/2015/09/05/beaglebone-lib/"/>
+    <id>/2015/09/05/beaglebone-lib/</id>
     <published>2015-09-05T19:33:25.000Z</published>
     <updated>2016-04-28T19:55:37.366Z</updated>
     <content type="html"><![CDATA[<p>The following links are the excellent libraries you can use for the beaglebone development. Pybbio is based on Python. Libbulldog is for java. And BlackLib employs the power of C++. Maybe Lua in the future?</p>
@@ -317,24 +317,24 @@
     
     </summary>
     
-      <category term="C++" scheme="http://chaoforward.org/tags/C/"/>
+      <category term="C++" scheme="/tags/C/"/>
     
-      <category term="Python" scheme="http://chaoforward.org/tags/Python/"/>
+      <category term="Python" scheme="/tags/Python/"/>
     
-      <category term="beaglebone" scheme="http://chaoforward.org/tags/beaglebone/"/>
+      <category term="beaglebone" scheme="/tags/beaglebone/"/>
     
-      <category term="library" scheme="http://chaoforward.org/tags/library/"/>
+      <category term="library" scheme="/tags/library/"/>
     
-      <category term="lua" scheme="http://chaoforward.org/tags/lua/"/>
+      <category term="lua" scheme="/tags/lua/"/>
     
-      <category term="Notes-随笔" scheme="http://chaoforward.org/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[My Tele-operation robot, Generation II]]></title>
-    <link href="http://chaoforward.org/2015/08/28/wifi-robot-gen-two/"/>
-    <id>http://chaoforward.org/2015/08/28/wifi-robot-gen-two/</id>
+    <link href="/2015/08/28/wifi-robot-gen-two/"/>
+    <id>/2015/08/28/wifi-robot-gen-two/</id>
     <published>2015-08-28T06:59:16.000Z</published>
     <updated>2016-04-16T19:08:57.490Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
@@ -396,28 +396,28 @@
     
     </summary>
     
-      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+      <category term="Beaglebone" scheme="/tags/Beaglebone/"/>
     
-      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+      <category term="open source" scheme="/tags/open-source/"/>
     
-      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+      <category term="robotics" scheme="/tags/robotics/"/>
     
-      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+      <category term="smart car" scheme="/tags/smart-car/"/>
     
-      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+      <category term="智能车" scheme="/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
     
-      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[My tele-operation  Robot, Generation I]]></title>
-    <link href="http://chaoforward.org/2015/08/27/tele-robot-1/"/>
-    <id>http://chaoforward.org/2015/08/27/tele-robot-1/</id>
+    <link href="/2015/08/27/tele-robot-1/"/>
+    <id>/2015/08/27/tele-robot-1/</id>
     <published>2015-08-27T08:52:10.000Z</published>
     <updated>2016-03-07T18:56:21.862Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgreifis4j218g0xcauk.jpg" alt=""></p>
@@ -445,24 +445,24 @@
     
     </summary>
     
-      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+      <category term="robotics" scheme="/tags/robotics/"/>
     
-      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+      <category term="smart car" scheme="/tags/smart-car/"/>
     
-      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+      <category term="智能车" scheme="/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
     
-      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Project@KTH "Cardio wireless ECG handheld device" (2010)]]></title>
-    <link href="http://chaoforward.org/2015/08/26/cardio-ECG/"/>
-    <id>http://chaoforward.org/2015/08/26/cardio-ECG/</id>
+    <link href="/2015/08/26/cardio-ECG/"/>
+    <id>/2015/08/26/cardio-ECG/</id>
     <published>2015-08-26T19:42:00.000Z</published>
     <updated>2015-08-31T20:29:33.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrf9np3gj20e80ao3zx.jpg" alt=""></p>
@@ -485,28 +485,28 @@
     
     </summary>
     
-      <category term="Bluetooth" scheme="http://chaoforward.org/tags/Bluetooth/"/>
+      <category term="Bluetooth" scheme="/tags/Bluetooth/"/>
     
-      <category term="ECG" scheme="http://chaoforward.org/tags/ECG/"/>
+      <category term="ECG" scheme="/tags/ECG/"/>
     
-      <category term="handheld" scheme="http://chaoforward.org/tags/handheld/"/>
+      <category term="handheld" scheme="/tags/handheld/"/>
     
-      <category term="wireless" scheme="http://chaoforward.org/tags/wireless/"/>
+      <category term="wireless" scheme="/tags/wireless/"/>
     
-      <category term="心率" scheme="http://chaoforward.org/tags/%E5%BF%83%E7%8E%87/"/>
+      <category term="心率" scheme="/tags/%E5%BF%83%E7%8E%87/"/>
     
-      <category term="手持设备" scheme="http://chaoforward.org/tags/%E6%89%8B%E6%8C%81%E8%AE%BE%E5%A4%87/"/>
+      <category term="手持设备" scheme="/tags/%E6%89%8B%E6%8C%81%E8%AE%BE%E5%A4%87/"/>
     
-      <category term="蓝牙" scheme="http://chaoforward.org/tags/%E8%93%9D%E7%89%99/"/>
+      <category term="蓝牙" scheme="/tags/%E8%93%9D%E7%89%99/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Real courage]]></title>
-    <link href="http://chaoforward.org/2015/08/26/Real-courage/"/>
-    <id>http://chaoforward.org/2015/08/26/Real-courage/</id>
+    <link href="/2015/08/26/Real-courage/"/>
+    <id>/2015/08/26/Real-courage/</id>
     <published>2015-08-26T18:20:31.000Z</published>
     <updated>2016-04-28T19:50:42.247Z</updated>
     <content type="html"><![CDATA[<!-- HTML -->
@@ -532,16 +532,16 @@
     
     </summary>
     
-      <category term="House of cards" scheme="http://chaoforward.org/tags/House-of-cards/"/>
+      <category term="House of cards" scheme="/tags/House-of-cards/"/>
     
-      <category term="Notes-随笔" scheme="http://chaoforward.org/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Project@KTH "The wireless RFID sensing device"(2010)]]></title>
-    <link href="http://chaoforward.org/2015/08/26/passive-RFID/"/>
-    <id>http://chaoforward.org/2015/08/26/passive-RFID/</id>
+    <link href="/2015/08/26/passive-RFID/"/>
+    <id>/2015/08/26/passive-RFID/</id>
     <published>2015-08-26T18:11:11.000Z</published>
     <updated>2015-09-01T20:40:37.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
@@ -559,20 +559,20 @@
     
     </summary>
     
-      <category term="RFID" scheme="http://chaoforward.org/tags/RFID/"/>
+      <category term="RFID" scheme="/tags/RFID/"/>
     
-      <category term="wireless sensing" scheme="http://chaoforward.org/tags/wireless-sensing/"/>
+      <category term="wireless sensing" scheme="/tags/wireless-sensing/"/>
     
-      <category term="无线传感" scheme="http://chaoforward.org/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
+      <category term="无线传感" scheme="/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[New media art work - walking man (2007)]]></title>
-    <link href="http://chaoforward.org/2015/08/26/walking-man/"/>
-    <id>http://chaoforward.org/2015/08/26/walking-man/</id>
+    <link href="/2015/08/26/walking-man/"/>
+    <id>/2015/08/26/walking-man/</id>
     <published>2015-08-26T08:52:10.000Z</published>
     <updated>2015-08-27T13:52:37.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evhi2mwge5j20hs0dcgmm.jpg" alt=""></p>
@@ -588,26 +588,26 @@
     
     </summary>
     
-      <category term="Art" scheme="http://chaoforward.org/tags/Art/"/>
+      <category term="Art" scheme="/tags/Art/"/>
     
-      <category term="LED matrix" scheme="http://chaoforward.org/tags/LED-matrix/"/>
+      <category term="LED matrix" scheme="/tags/LED-matrix/"/>
     
-      <category term="Vision" scheme="http://chaoforward.org/tags/Vision/"/>
+      <category term="Vision" scheme="/tags/Vision/"/>
     
-      <category term="new media" scheme="http://chaoforward.org/tags/new-media/"/>
+      <category term="new media" scheme="/tags/new-media/"/>
     
-      <category term="新媒体" scheme="http://chaoforward.org/tags/%E6%96%B0%E5%AA%92%E4%BD%93/"/>
+      <category term="新媒体" scheme="/tags/%E6%96%B0%E5%AA%92%E4%BD%93/"/>
     
-      <category term="视觉艺术" scheme="http://chaoforward.org/tags/%E8%A7%86%E8%A7%89%E8%89%BA%E6%9C%AF/"/>
+      <category term="视觉艺术" scheme="/tags/%E8%A7%86%E8%A7%89%E8%89%BA%E6%9C%AF/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[My computer workspace]]></title>
-    <link href="http://chaoforward.org/2015/08/25/My-computer-work-space/"/>
-    <id>http://chaoforward.org/2015/08/25/My-computer-work-space/</id>
+    <link href="/2015/08/25/My-computer-work-space/"/>
+    <id>/2015/08/25/My-computer-work-space/</id>
     <published>2015-08-25T12:30:06.000Z</published>
     <updated>2016-04-28T19:50:34.592Z</updated>
     <content type="html"><![CDATA[<p>I would like to show my computer workspace here. I have one DELL notebook which connected with two monitors running Linux as well as windows.</p>
@@ -621,20 +621,20 @@
     
     </summary>
     
-      <category term="geek" scheme="http://chaoforward.org/tags/geek/"/>
+      <category term="geek" scheme="/tags/geek/"/>
     
-      <category term="programmer" scheme="http://chaoforward.org/tags/programmer/"/>
+      <category term="programmer" scheme="/tags/programmer/"/>
     
-      <category term="workspace" scheme="http://chaoforward.org/tags/workspace/"/>
+      <category term="workspace" scheme="/tags/workspace/"/>
     
-      <category term="Diary-日记" scheme="http://chaoforward.org/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Course Project@KTH "Stuff guarder"(2010)]]></title>
-    <link href="http://chaoforward.org/2015/08/22/stuff-guarder/"/>
-    <id>http://chaoforward.org/2015/08/22/stuff-guarder/</id>
+    <link href="/2015/08/22/stuff-guarder/"/>
+    <id>/2015/08/22/stuff-guarder/</id>
     <published>2015-08-22T10:02:36.000Z</published>
     <updated>2016-03-08T10:34:01.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device that can remind you when your private stuff is moved by others.<br>It also can remind you to get back your bank card after drawing money from a ATM machine.</p>
@@ -645,22 +645,22 @@
     <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device ]]>
     </summary>
     
-      <category term="KTH" scheme="http://chaoforward.org/tags/KTH/"/>
+      <category term="KTH" scheme="/tags/KTH/"/>
     
-      <category term="MSP430" scheme="http://chaoforward.org/tags/MSP430/"/>
+      <category term="MSP430" scheme="/tags/MSP430/"/>
     
-      <category term="alarm" scheme="http://chaoforward.org/tags/alarm/"/>
+      <category term="alarm" scheme="/tags/alarm/"/>
     
-      <category term="sensor" scheme="http://chaoforward.org/tags/sensor/"/>
+      <category term="sensor" scheme="/tags/sensor/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Project@China "The Upper-Limb Tele-Rehabilitation Robot with interaction of vitual environment" (2008)]]></title>
-    <link href="http://chaoforward.org/2015/08/21/project-upper-limb-robot/"/>
-    <id>http://chaoforward.org/2015/08/21/project-upper-limb-robot/</id>
+    <link href="/2015/08/21/project-upper-limb-robot/"/>
+    <id>/2015/08/21/project-upper-limb-robot/</id>
     <published>2015-08-21T10:02:16.000Z</published>
     <updated>2016-03-06T19:52:59.571Z</updated>
     <content type="html"><![CDATA[<p>This project is my first master degree study in China just before I came to sweden in 2009.</p>
@@ -673,32 +673,32 @@
 <p>Aiming at the disadvantages of the tra]]>
     </summary>
     
-      <category term="ARM7" scheme="http://chaoforward.org/tags/ARM7/"/>
+      <category term="ARM7" scheme="/tags/ARM7/"/>
     
-      <category term="Interaction" scheme="http://chaoforward.org/tags/Interaction/"/>
+      <category term="Interaction" scheme="/tags/Interaction/"/>
     
-      <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
+      <category term="cross compiling" scheme="/tags/cross-compiling/"/>
     
-      <category term="force feedback" scheme="http://chaoforward.org/tags/force-feedback/"/>
+      <category term="force feedback" scheme="/tags/force-feedback/"/>
     
-      <category term="linux" scheme="http://chaoforward.org/tags/linux/"/>
+      <category term="linux" scheme="/tags/linux/"/>
     
-      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="tele-operation" scheme="http://chaoforward.org/tags/tele-operation/"/>
+      <category term="tele-operation" scheme="/tags/tele-operation/"/>
     
-      <category term="力反馈" scheme="http://chaoforward.org/tags/%E5%8A%9B%E5%8F%8D%E9%A6%88/"/>
+      <category term="力反馈" scheme="/tags/%E5%8A%9B%E5%8F%8D%E9%A6%88/"/>
     
-      <category term="康复训练机器人" scheme="http://chaoforward.org/tags/%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="康复训练机器人" scheme="/tags/%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Welcome to my new Blog 欢迎来访我的新博客]]></title>
-    <link href="http://chaoforward.org/2015/08/20/hello-world/"/>
-    <id>http://chaoforward.org/2015/08/20/hello-world/</id>
+    <link href="/2015/08/20/hello-world/"/>
+    <id>/2015/08/20/hello-world/</id>
     <published>2015-08-19T22:00:00.000Z</published>
     <updated>2016-04-28T19:50:26.253Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://forwardkth.github.io/" target="_blank" rel="external">Chao_Forward</a> my new blog powered by Hexo! You can find my previous posts and projects in my <a href="http://zorrolc.blogbus.com" target="_blank" rel="external">old blog</a> . I also transfer some of my previous projects posts here.<br>My posts will be both in English and Chinese in the future. </p>
@@ -714,9 +714,9 @@
     
     </summary>
     
-      <category term="welcome" scheme="http://chaoforward.org/tags/welcome/"/>
+      <category term="welcome" scheme="/tags/welcome/"/>
     
-      <category term="Diary-日记" scheme="http://chaoforward.org/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
