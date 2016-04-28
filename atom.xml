@@ -163,7 +163,7 @@
     <link href="http://chaoforward.org/2015/10/25/BlackLib-Template/"/>
     <id>http://chaoforward.org/2015/10/25/BlackLib-Template/</id>
     <published>2015-10-25T17:06:56.000Z</published>
-    <updated>2015-10-25T17:25:26.000Z</updated>
+    <updated>2016-04-28T19:55:14.044Z</updated>
     <content type="html"><![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.</p>
 <p><a href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/" target="_blank" rel="external">http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</a></p>
 <p>And I have made a C++ application template with modified version of  BlackLib v3.0 in eclipse for the Beaglebone white Development. It works quite well.</p>
@@ -187,7 +187,7 @@
     
       <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
     
-      <category term="Beaglebone" scheme="http://chaoforward.org/categories/Beaglebone/"/>
+      <category term="Note-随笔" scheme="http://chaoforward.org/categories/Note-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -196,7 +196,7 @@
     <link href="http://chaoforward.org/2015/10/17/dark-before-dawn/"/>
     <id>http://chaoforward.org/2015/10/17/dark-before-dawn/</id>
     <published>2015-10-17T20:01:38.000Z</published>
-    <updated>2015-10-17T20:16:48.000Z</updated>
+    <updated>2016-04-28T19:56:29.103Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋天色彩斑斓的树叶和纯净的美,Dalarna的景色似乎更胜一筹.举起手机拍下了上面这张很满意的照片.现在的手机照相性能越来越强,即便家里有好相机也很少用了.</p>
 <p><img src="http://ww1.sinaimg.cn/large/74505a4cjw1ex3iot0647j218g0iv0x3.jpg" alt=""><br>吃完饭早早退场回家,出了饭店的门面对如此孤寂唯美的渐变色彩又忍不住拍了个全景.</p>
 <p>秋天来了,冬天就在未来不远,但是为了迎来蛰伏后充满生机的春天,现在就要一点点的努力. 这么多年了,人纵然老去,可是心还是一样的. 我从来都了解自己是什么样的人,要到哪里去.</p>
@@ -213,7 +213,7 @@
     
       <category term="秋天" scheme="http://chaoforward.org/tags/%E7%A7%8B%E5%A4%A9/"/>
     
-      <category term="life@sweden" scheme="http://chaoforward.org/categories/life-sweden/"/>
+      <category term="Diary-日记" scheme="http://chaoforward.org/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
@@ -305,7 +305,7 @@
     <link href="http://chaoforward.org/2015/09/05/beaglebone-lib/"/>
     <id>http://chaoforward.org/2015/09/05/beaglebone-lib/</id>
     <published>2015-09-05T19:33:25.000Z</published>
-    <updated>2016-04-28T19:50:52.651Z</updated>
+    <updated>2016-04-28T19:55:37.366Z</updated>
     <content type="html"><![CDATA[<p>The following links are the excellent libraries you can use for the beaglebone development. Pybbio is based on Python. Libbulldog is for java. And BlackLib employs the power of C++. Maybe Lua in the future?</p>
 <p>It seems like the script languages are more and more popular for the embedded system. I think it will be more easier as the embedded platform is more and more powerful. I would like to try all the following three libs on my beaglebone robot and compare the performances. My robot is using Pybbio. And i am working with BlackLib now.</p>
 <p><a href="https://github.com/graycatlabs/PyBBIO" target="_blank" rel="external">pybbio</a><br><a href="http://libbulldog.org/bulldog/" target="_blank" rel="external">libbulldog</a><br><a href="http://blacklib.yigityuce.com/" target="_blank" rel="external">BlackLib</a></p>
@@ -327,7 +327,7 @@
     
       <category term="lua" scheme="http://chaoforward.org/tags/lua/"/>
     
-      <category term="Notes-����" scheme="http://chaoforward.org/categories/Notes-%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/"/>
+      <category term="Notes-随笔" scheme="http://chaoforward.org/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
