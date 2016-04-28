@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Chao_Forward]]></title>
+  <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://chaoforward.org/"/>
+  <updated>2016-04-23T11:13:55.958Z</updated>
+  <id>http://chaoforward.org/</id>
+  
+  <author>
+    <name><![CDATA[Chao Li]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Made an iOS App for my wifi robot]]></title>
+    <link href="http://chaoforward.org/2016/04/07/iOS-app-for-wifirobot/"/>
+    <id>http://chaoforward.org/2016/04/07/iOS-app-for-wifirobot/</id>
+    <published>2016-04-07T21:06:45.000Z</published>
+    <updated>2016-04-23T11:13:55.958Z</updated>
+    <content type="html"><![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot last week. It is simple and not looks so nice. I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
+<p>There is a demo video below:<br>youtube:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe><br><a id="more"></a><br>youku:<br><a href="http://v.youku.com/v_show/id_XMTUyMjU1NDAyMA==.html?from=y1.7-2" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTUyMjU1NDAyMA==.html?from=y1.7-2</a><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTUyMjU1NDAyMA==" frameborder="0" allowfullscreen></iframe>]]></content>
+    <summary type="html">
+    <![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot last week. It is simple and not looks so nice. I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
+<p>There is a demo video below:<br>youtube:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe><br>]]>
+    
+    </summary>
+    
+      <category term="App" scheme="http://chaoforward.org/tags/App/"/>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+    
+      <category term="iOS" scheme="http://chaoforward.org/tags/iOS/"/>
+    
+      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+    
+      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Cross compling and remote debuging with VisualGDB on Windows]]></title>
+    <link href="http://chaoforward.org/2016/03/06/visualGDB/"/>
+    <id>http://chaoforward.org/2016/03/06/visualGDB/</id>
+    <published>2016-03-06T15:08:24.000Z</published>
+    <updated>2016-03-06T18:49:15.686Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
+<p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
+<p><a href="http://visualgdb.com/tutorials/beaglebone/" target="_blank" rel="external">http://visualgdb.com/tutorials/beaglebone/</a></p>
+<h2 id="But_I_got_some_problems_when_I_compiled_my_code"><a href="#But_I_got_some_problems_when_I_compiled_my_code" class="headerlink" title="But I got some problems when I compiled my code."></a>But I got some problems when I compiled my code.</h2><h3 id="The_first_one_is__3A"><a href="#The_first_one_is__3A" class="headerlink" title="The first one is :"></a>The first one is :</h3><p>error directive: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x.<br>This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.    </p>
+<p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std=c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std=c++0x</p>
+<h3 id="The_second_one_is_about_Pthread_3A"><a href="#The_second_one_is_about_Pthread_3A" class="headerlink" title="The second one is about Pthread:"></a>The second one is about Pthread:</h3><p>The error info indicate that pthread library is missing. </p>
+<p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
+<p>The real solution is:</p>
+<a id="more"></a>
+<p>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
+<p>I think that is because this configuration is related to your target environment, not your host machine.<br>You can see the screenshot of the configurations below:</p>
+<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""></p>
+<p><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
+<p>You can find the new DEMO video of my wifi robot on Youtube：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
+<p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
+<p><a href="http://visualgdb.com/tutorials/beaglebone/">http://visualgdb.com/tutorials/beaglebone/</a></p>
+<h2 id="But_I_got_some_problems_when_I_compiled_my_code"><a href="#But_I_got_some_problems_when_I_compiled_my_code" class="headerlink" title="But I got some problems when I compiled my code."></a>But I got some problems when I compiled my code.</h2><h3 id="The_first_one_is__3A"><a href="#The_first_one_is__3A" class="headerlink" title="The first one is :"></a>The first one is :</h3><p>error directive: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x.<br>This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.    </p>
+<p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std=c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std=c++0x</p>
+<h3 id="The_second_one_is_about_Pthread_3A"><a href="#The_second_one_is_about_Pthread_3A" class="headerlink" title="The second one is about Pthread:"></a>The second one is about Pthread:</h3><p>The error info indicate that pthread library is missing. </p>
+<p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
+<p>The real solution is:</p>]]>
+    
+    </summary>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+    
+      <category term="VisualGDB" scheme="http://chaoforward.org/tags/VisualGDB/"/>
+    
+      <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
+    
+      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+    
+      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+    
+      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2016 Happy new year 新年快乐，迎接挑战]]></title>
+    <link href="http://chaoforward.org/2016/01/25/2016-new-year/"/>
+    <id>http://chaoforward.org/2016/01/25/2016-new-year/</id>
+    <published>2016-01-25T20:53:28.000Z</published>
+    <updated>2016-01-25T22:08:01.757Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1enscqbfjlzj20qo0k0gr4.jpg" alt=""><br>2016年新年快乐，今年不回家过年了。村儿里大雪，学名 西方狍的小鹿也下山到后院觅食。<br>都说逢羊年年景不好，去年各种坠机，冲突，灾害，难民种种也应了这伪科学的老话。2016年刚开年又是全球经济要步入新一轮危机的节奏。对自己来说也是事业突破或是转折的关键一年。<br>不管这新的一年会发生什么，兵来将挡，水来土掩。寒冬到来，春天就不远了。<br>GP bless me.<br><img src="http://ww4.sinaimg.cn/large/74505a4cgw1f0ces39q51j20qo0k0dlz.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1enscqbfjlzj20qo0k0gr4.jpg" alt=""><br>2016年新年快乐，今年不回家过年了。村儿里大雪，学名 西方狍的小鹿也下山到后院觅食。<br>都说逢]]>
+    </summary>
+    
+      <category term="challenge" scheme="http://chaoforward.org/tags/challenge/"/>
+    
+      <category term="winter" scheme="http://chaoforward.org/tags/winter/"/>
+    
+      <category term="冬天" scheme="http://chaoforward.org/tags/%E5%86%AC%E5%A4%A9/"/>
+    
+      <category term="挑战" scheme="http://chaoforward.org/tags/%E6%8C%91%E6%88%98/"/>
+    
+      <category term="新年" scheme="http://chaoforward.org/tags/%E6%96%B0%E5%B9%B4/"/>
+    
+      <category term="在瑞典" scheme="http://chaoforward.org/categories/%E5%9C%A8%E7%91%9E%E5%85%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Filco Ninja keyboard]]></title>
+    <link href="http://chaoforward.org/2015/11/05/filco-keyboard/"/>
+    <id>http://chaoforward.org/2015/11/05/filco-keyboard/</id>
+    <published>2015-11-05T20:11:57.000Z</published>
+    <updated>2015-11-05T20:45:52.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""><br>Filco Ninja Majestouch-2 Tenkeyless Tactile Action UK Keyboard</p>
+<p>I bought this mechanical keyboard from the UK website ‘thekeyboardcompany’. I received the package today. It is a very nice programmer keyboard with high quality. I am very satisfied with it. </p>
+<p>In the beginning, I don’t know which swtich I should choose, especially the brown switch or the blue switch. Frankly speaking I prefer the blue switch. Because I hear the type sound from youtube. The blue one let you type faster and feel more clear. But considering the noise and other people around you, finally I chose the brown switch one. This is also recommanded by a google engineer. Another good thing I like this keyboard is the front face printing design. I have an old logitec keyboard. All the printing characters are gone or not clear after five years’use. The new keyboard overcomes this problem completely by priting nothing on the top. That is clever. The only thing is that it is a little expensive. It cost me 1700 SEK. But the similer keyboard from the same OEM producer only cost you half. I think between 600 SEK to 800 SEK can be a reasonable price.</p>
+<p>Anyway I like this keyboard and feel happy when typing my code under linux. (by the way, it takes about 5 mins to start to work after I plugged in the usb cable… Before that,I thought this keyboard did not support linux system)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""><br>Filco Ninja Majestouch-2 Tenkeyless Tactile Action]]>
+    </summary>
+    
+      <category term="filco" scheme="http://chaoforward.org/tags/filco/"/>
+    
+      <category term="机械键盘" scheme="http://chaoforward.org/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
+    
+      <category term="茶轴" scheme="http://chaoforward.org/tags/%E8%8C%B6%E8%BD%B4/"/>
+    
+      <category term="geekfun-极客粉" scheme="http://chaoforward.org/categories/geekfun-%E6%9E%81%E5%AE%A2%E7%B2%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[BlackLib Template]]></title>
+    <link href="http://chaoforward.org/2015/10/25/BlackLib-Template/"/>
+    <id>http://chaoforward.org/2015/10/25/BlackLib-Template/</id>
+    <published>2015-10-25T17:06:56.000Z</published>
+    <updated>2015-10-25T17:25:26.000Z</updated>
+    <content type="html"><![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.</p>
+<p><a href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/" target="_blank" rel="external">http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</a></p>
+<p>And I have made a C++ application template with modified version of  BlackLib v3.0 in eclipse for the Beaglebone white Development. It works quite well.</p>
+<p>I also added a “BlackServo” module and a servo control exmaple to the BlackLib V3.0 for easy Servo motor control, just like what they have done in the Python library “PyBBIO”.</p>
+<p>If you are interested to this template, you can download it from Github freely.</p>
+<p><a href="https://github.com/forwardkth/Blacklib_template.git" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template.git</a>  </p>
+<p>enjoy!</p>
+<p>…….Tomorrow will be monday again</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” boa]]>
+    </summary>
+    
+      <category term="BlackLib" scheme="http://chaoforward.org/tags/BlackLib/"/>
+    
+      <category term="C++" scheme="http://chaoforward.org/tags/C/"/>
+    
+      <category term="beaglebone" scheme="http://chaoforward.org/tags/beaglebone/"/>
+    
+      <category term="library" scheme="http://chaoforward.org/tags/library/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/categories/Beaglebone/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[秋 Autumn]]></title>
+    <link href="http://chaoforward.org/2015/10/17/dark-before-dawn/"/>
+    <id>http://chaoforward.org/2015/10/17/dark-before-dawn/</id>
+    <published>2015-10-17T20:01:38.000Z</published>
+    <updated>2015-10-17T20:16:48.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋天色彩斑斓的树叶和纯净的美,Dalarna的景色似乎更胜一筹.举起手机拍下了上面这张很满意的照片.现在的手机照相性能越来越强,即便家里有好相机也很少用了.</p>
+<p><img src="http://ww1.sinaimg.cn/large/74505a4cjw1ex3iot0647j218g0iv0x3.jpg" alt=""><br>吃完饭早早退场回家,出了饭店的门面对如此孤寂唯美的渐变色彩又忍不住拍了个全景.</p>
+<p>秋天来了,冬天就在未来不远,但是为了迎来蛰伏后充满生机的春天,现在就要一点点的努力. 这么多年了,人纵然老去,可是心还是一样的. 我从来都了解自己是什么样的人,要到哪里去.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋]]>
+    </summary>
+    
+      <category term="life" scheme="http://chaoforward.org/tags/life/"/>
+    
+      <category term="sweden" scheme="http://chaoforward.org/tags/sweden/"/>
+    
+      <category term="瑞典" scheme="http://chaoforward.org/tags/%E7%91%9E%E5%85%B8/"/>
+    
+      <category term="秋天" scheme="http://chaoforward.org/tags/%E7%A7%8B%E5%A4%A9/"/>
+    
+      <category term="life@sweden" scheme="http://chaoforward.org/categories/life-sweden/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[转载-正在与硅谷打得火热的深圳]]></title>
+    <link href="http://chaoforward.org/2015/10/10/shenzhen/"/>
+    <id>http://chaoforward.org/2015/10/10/shenzhen/</id>
+    <published>2015-10-10T17:58:44.000Z</published>
+    <updated>2016-03-06T15:19:20.874Z</updated>
+    <content type="html"><![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi Ito的一篇回忆文章《一位MIT学者眼中的深圳硬件制造业》中说到，他参观了注塑厂、PCB工厂、在电路板上嵌入芯片的工厂……去了像华强北那样的硬件市场还有去了像大疆这样的公司，彻底被震撼了。</p>
+<p>最后他说，在深圳，他们体验到的是一个完整的生态系统，低成本的劳动力，他们把深圳打造成了一个最先进的世界级制造基地，这个生态系统由大量的工厂和制造技术组成，可以生产各种规模的硬件产品。</p>
+<a id="more"></a>
+<p>实际上，被这种完整的生态链系统吸引过来的，不仅仅是Joi Ito以及Reid Hoffman。一些国外做智能手表、智能帽子和智能音箱的创业者说，去年他们还是深圳硅谷两边来回飞，一年来两次深圳，待上一段时间，而今年，则干脆在 深圳设立办事处，其实除了他们，他们的朋友，也在与深圳有着越来越紧密的联系，找中国这边的工厂枢纽。</p>
+<p>你会发现，无论是普通创客还是学术机构、政府，深圳与硅谷的关系都越来越“暧昧”。从深圳举办的一些官方非官方活动上都能感受到这一点，或许某天你在活动上，遇到的是加州伯克利分校的教授，也有可能是未来研究所的所长，或者全球最大的硬件加速器HAXLR8R合伙人等等。</p>
+<p>在上个月的深圳第二届工业设计大展与Android论坛上，除了全球各地的创客代表，硅谷的学术机构、硬件创业代表人物Chris Andressen，以及MIT Fablab实验室主任Neil等也都出现在了会场，而后面这位，在11月的时候，为了Fab Lab还专程来过深圳，一同到来的还有美国麻省理工学院比特和院子研究中心项目经理Sherry Lassiter，麻省理工学院助理研究员Nadyd Peed及麻省理工大学Fab 12授权专员David Jin。</p>
+<p>这一群人在出席工业设计协会的小型讨论活动上，见过深圳比较有代表性的硬件创业公司和创客空间之后，便参加了与政府的会谈，最终将 Fab Lab 2.0开放创新实验室设在了深圳，而Neil所说的机器制造机器，也就是Fab Lab2.0升级版最终敲定于2016年在深圳举行。</p>
+<p>而另一边，是深圳向硅谷的反向渗透。2015年1月5号，由于两地都想通过政府层面去推动商业的融合，所以双方政府将在硅谷共同举办一场活动，两地市长都会出席。</p>
+<p>除了政府，民营企业的态度也是如此积极。Seeed的订单有90%以上来自于海外，而90%中又有很多来自于美国，所以干脆把部分产线设在了美国硅谷，以便更好服务于 当地的公司。而被誉为深圳小苹果的大疆，除了在洛杉矶设立了办公室，旧金山的办公室也在建设当中，我们经常在大疆宣传视频中看见的Eric Cheng，就负责旧金山办公室的事务，以及好莱坞、硅谷的商务拓展。</p>
+<p>如果你认为走进硅谷的只是那些全球知名的深圳企业，那你就错了。一些低调的创业公司也在寻求美国市场的合作，首选的，还是硅谷公司。PingWest 1月要在旧金山举办的一场《智能硬件的5个维度》活动，就将帮助深圳与硅谷的硬件公司进行对接。</p>
+<p>可以说，硅谷的公司主要看中的是深圳的供应链，而深圳的公司更多的是看中硅谷的渠道、消费市场、PR以及设计。无论是智能喂奶器、WiFi音箱或者睡眠检测仪、血压仪……他们的创始人都会问我，“这个东西的市场在美国，所以我们想上Indiegogo或 Kickstarter，可不可以帮我们找找当地的媒体或者PR公司呢？”</p>
+<p>但是，在创业中心北京，却反而看不到类似的现象发生。虽然领着几个国际科技大佬们出来走秀的会议越来越多，但是，你却看不到这么深层次、友好的合作。</p>
+<p>正如我的同事骆轶航说的，“如果说北京与硅谷之间，会因为长久以来各自形成的创业文化的差异，导致两地存在某种程度上的隔离甚至冲突，那么硅谷和深圳却能很好地融合。”</p>
+<p>从一方面来看，深圳亲近硅谷，两者打得火热，却没有带上北京，但是从另外一方面来说，北京和深圳之间，关系从未如此紧密、又如此微妙。</p>
+<p>两者之间是彼此需要的：北京需要深圳的供应链，深圳也同样离不开北京的设计与营销。所以深圳与北京之间来往甚密，除去南山A8音乐大厦集中了一大批将从北京来深圳的企业，还有一些位于其他地方的京东、360、点名时间、云知声等等，从数量上说，从北京涌向深圳的公司以及从业人员往返北京与深圳两地的频次之高似乎证明了两者关系还不错。</p>
+<p>但是，可是它们存在一种暗地里的博弈和竞争，都在争抢到底是你代表了中国的科技还是我代表中国的科技，以及到底谁是“中国的硅谷”。北京对深圳的态度是既需要、但似乎又有一种不屑掺杂其中的，态度难免有些傲慢，而深圳的反馈相应也不是那么热情，这从北京与深圳两地从业者之间的交流多少也能感受到这点。</p>
+<p>前者会认为后者只会闷头做事、连故事都不会讲，后者认为前者不做实事只爱谈概念，可是他们也期待自己能有故事，也渴求某种价值观的身份认同，所以“深圳也是有理想的”这种说法会在他们之中形成共鸣并迅速得到传播，一旦给他贴上只会低头做事不会讲故事没有理想没有情怀的标签，其实，他们是不乐意的，尽管理想情怀已被用烂。</p>
+<p>而深圳与硅谷两者的关系，也起于彼此需要。这边政府性媒体经常会把深圳描述为“全球创客之都”，“硬件创业者的天堂”，除了必须要硅谷补给的PR和设计，深圳也需要的是硅谷这个长期以来在科技行业塑造的全球化标签，来帮助摆脱制造工厂的固定偏见。</p>
+<p>但是，这不仅仅是资源价值上的互补，更是两种文化的契合。两者都是由“外来者”建设的城市，存在着非同一般的包容文化；两者更欢迎新鲜的价值观诞生，并且不怎么在乎传统。两边创业者之间也更多的是尊重或者相互认同，从工业设计圆桌论坛上硅谷学者对本土创业者那尊重和真诚的赞美，但激情得到肯定并得到热切回应，两者“爱得炽热”。</p>
+<p>所以你也看见了，在各种有关“硬件天堂”的官方与非官方活动与见面会上，硅谷与深圳永远是主角，两者频频互动——唯独少了北京。</p>
+<p>原文地址 <a href="http://www.pingwest.com/shenzhen-silicon-valley/" target="_blank" rel="external">http://www.pingwest.com/shenzhen-silicon-valley/</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi Ito的一篇回忆文章《一位MIT学者眼中的深圳硬件制造业》中说到，他参观了注塑厂、PCB工厂、在电路板上嵌入芯片的工厂……去了像华强北那样的硬件市场还有去了像大疆这样的公司，彻底被震撼了。</p>
+<p>最后他说，在深圳，他们体验到的是一个完整的生态系统，低成本的劳动力，他们把深圳打造成了一个最先进的世界级制造基地，这个生态系统由大量的工厂和制造技术组成，可以生产各种规模的硬件产品。</p>]]>
+    
+    </summary>
+    
+      <category term="shenzhen" scheme="http://chaoforward.org/tags/shenzhen/"/>
+    
+      <category term="转载" scheme="http://chaoforward.org/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mysensors Wireless sensing network at home]]></title>
+    <link href="http://chaoforward.org/2015/09/22/mysensors/"/>
+    <id>http://chaoforward.org/2015/09/22/mysensors/</id>
+    <published>2015-09-22T07:07:50.000Z</published>
+    <updated>2015-10-06T21:10:26.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://www.mysensors.org/started/network.png" alt=""><br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew98gkmzhnj20k00qogqi.jpg" alt=""><br>you can see more by clicking <strong>Read more</strong> below :)<br>点击下方按钮阅读文章正文 （基于Mysensors开源项目的家庭无线传感网络 ）<br><a id="more"></a></p>
+<h2 id="Wireless_sensing_network_based_on__u201Cmysensors_u201D_opensource_project_3A"><a href="#Wireless_sensing_network_based_on__u201Cmysensors_u201D_opensource_project_3A" class="headerlink" title="Wireless sensing network based on “mysensors” opensource project:"></a>Wireless sensing network based on “mysensors” opensource project:</h2><p>I built a wireless sensing network based on “Mysensors” (www.mysensors.org) with two humidity and temperature sensing nodes and a gateway controller.<br>I use beaglebone black running Openhab solution (<a href="http://www.openhab.org/" target="_blank" rel="external">http://www.openhab.org/</a>)  as the controller (server). you can see the pictures below.<br>It is not necessary to copy and paste the information about “Mysensors”. If you are interested in it, please browse their website. </p>
+<p>The interesting thing is that the introduction of “mysensor” says Arduino nano has unstable 3.3V  output. So it needs to connect a 4.7uF capacitor to stable the voltage.<br>But there is no this problem on all my arduino nano boards. The sensing network works stable without the capacitor. And the radio range and strenth are no problem too.<br>I think this is because I did not perchase the official version Arduino. I bought the modified and compatible version from a chinese dealer. They made their own version of Arduino boards. I think they fix the probelm from the original circuit design. That is good.</p>
+<p>Another thing is I don`t want to call something like this “Smart home”. It is far from smart but remote control only…<br>In my opinion, a real smart home should not use APP, use monitoring chart, use digital numbers, many complex settings and so on. It should run behind your home silently and aware what you need.<br>A simple example is when you go back home, the system will know that you are back and give your home a proper temperature and humidity environment according to your activities like awake or sleep. If you want warmer, you can just speak out “warmer please” instead of open a APP and click buttons or input some temperature numbers.<br>Most products we can see in the market now is someting like a remote control. I think that is why all of these products can not  succeed. A smart home system that always bother peolpe life or make you tired will never succeed.</p>
+<p>Of course, my ideal thinking is limited by our technology. But at least we should stop calling those thing “Smart xxx”. Remote control is not smart…</p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1ew98d2kw6hj20qo0k078e.jpg" alt=""><br>Server(controller) with Arduino nano radio gateway in “Mysensors” wireless sensing network<br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cgw1ew98ge4sztj20qo0k0tf3.jpg" alt=""><br>One of the sensor node in “Mysensors” wireless sensing network<br><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1ew9m56tnspj20xc18gdvm.jpg" alt=""><br>One of the sensor node with humidity and temperature sensor mounted on the wall<br><img src="http://ww1.sinaimg.cn/mw1024/74505a4cgw1ewarapj02cj20hs0qomzc.jpg" alt=""><br>Control and Monitoring UI with “OPenhab” running in Beaglebone Black</p>
+<h2 id="u57FA_u4E8EMysensors_u5F00_u6E90_u9879_u76EE_u7684_u5BB6_u5EAD_u65E0_u7EBF_u4F20_u611F_u7F51_u7EDC__uFF08_u6CE8_u610F_u4E0D_u662F_u667A_u80FD_u5BB6_u5C45_uFF09_3A"><a href="#u57FA_u4E8EMysensors_u5F00_u6E90_u9879_u76EE_u7684_u5BB6_u5EAD_u65E0_u7EBF_u4F20_u611F_u7F51_u7EDC__uFF08_u6CE8_u610F_u4E0D_u662F_u667A_u80FD_u5BB6_u5C45_uFF09_3A" class="headerlink" title="基于Mysensors开源项目的家庭无线传感网络 （注意不是智能家居）:"></a>基于Mysensors开源项目的家庭无线传感网络 （注意不是智能家居）:</h2><p>上周末在家用Mysensors开源项目构建了一个简单的只含有两个节点外加gateway的无线传感网络。关于什么是Mysensors开源项目，如何构建一个自己的Mysensors网络。这里就不复制粘贴了。详细的信息可以访问 www.mysensors.org 了解。<br>简单的说，Mysensors 无线传感网络采用 Arduino外加nRF2401+无线模块做为单个传感节点，配合一个网关控制器可以组成含有成百上千个传感器和执行器的传感和控制网络。这个网络可以自动组织，自动修复，同时单个传感节点有功耗管理能力，在优化程序的基础上可以实现超低功耗，适合电池独立供电。<br>在Beaglebone或者树莓派server控制器中运行Openhab （<a href="http://www.openhab.org/）" target="_blank" rel="external">http://www.openhab.org/）</a> 开源软件，提供UI界面网络监控服务。 </p>
+<p>以上都是可以在官网详细了解的信息。 我自己构建的简单网络如下图所示，楼上卧室和楼下客厅有两个传感节点，直接固定在含有USB接口的插座上，我认为这样的结构是未来的方向，对于室内的常规应用是中合理方便的供电方式。Openhab server （Beagblone）放置于路由器旁边，方便接入家庭局域网和internet。<br>然后就可以从任何设备的浏览器中访问网页来对传感网络进行监控。</p>
+<p>这里我想发表一点儿个人的想法。现在国内对于智能家居或者物联网的概念炒作乌烟瘴气的，看看现在面世的各种产品，好像所谓的智能家居就是可以用远程摄像头看看家里情况，然后可以随时随地用手机控制家中设备，小到开关灯，大到监视温湿度，烟雾报警什么的。<br>直接的体现就是要各种设置，各种在屏幕上点点戳戳。不知道各位觉得怎样，我觉得很累。生活中加入了这样的系统，我不会觉得方便，反而觉得麻烦。这也就是为什么现在所谓的智能家居，并没有普及和很大的市场了吧。<br>因为它们这些根本就不是真的智能家居，叫做传感网络或者是遥控更适合。 </p>
+<p>未来所谓的智能家居是应该在尽量不麻烦人，不干扰人正常生活的情况下，默默的在后台运行，可以体察到人的需求而自动进行动作。举个最简单的例子，我并不关心温度湿度的数字和曲线变化，我只关心是否体感舒适，如果系统发现环境不合适了直接动作调整就好了，数字曲线关我鸟事。<br>即便是需要人的命令，自然手势，语音控制这些都比一个APP上好多个页面各种数据和按钮调节条要来得正宗也是需要重点突破的技术。 而且系统和节点的部署需要方便快捷，对用户屏蔽专业的设置，这些都是需要解决的问题。<br>再扯远点儿，上升到理论，那就是我坚信，好的科技是顺应人的自然状态，而不是改变，所谓的 “科技以人为本”。突然好怀念诺基亚。。。。</p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1ew98d2kw6hj20qo0k078e.jpg" alt=""><br>Beaglebone black做为交互界面互联网server和传感网络网关（Arduino nano with nRF24L01+）的控制器<br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew98gkmzhnj20k00qogqi.jpg" alt=""><br>“Mysensors” 无线传感网络单个节点<br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew9m7qszxmj20xc18g4f7.jpg" alt=""><br>含有温度湿度传感器的单个网络节点固定在墙上，由含有USB接口的插座供电，功耗非常小<br><img src="http://ww1.sinaimg.cn/mw1024/74505a4cgw1ewarapj02cj20hs0qomzc.jpg" alt=""><br>在Beaglebone Black中运行的UI界面服务器（Openhab）显示两个房间温湿度监控和历史记录曲线</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://www.mysensors.org/started/network.png" alt=""><br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew98gkmzhnj20k00qogqi.jpg" alt=""><br>you can see more by clicking <strong>Read more</strong> below :)<br>点击下方按钮阅读文章正文 （基于Mysensors开源项目的家庭无线传感网络 ）<br>]]>
+    
+    </summary>
+    
+      <category term="Arduino" scheme="http://chaoforward.org/tags/Arduino/"/>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+    
+      <category term="nRF24L01+" scheme="http://chaoforward.org/tags/nRF24L01/"/>
+    
+      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+    
+      <category term="sensor" scheme="http://chaoforward.org/tags/sensor/"/>
+    
+      <category term="wireless sensing network" scheme="http://chaoforward.org/tags/wireless-sensing-network/"/>
+    
+      <category term="传感器" scheme="http://chaoforward.org/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
+    
+      <category term="家庭无线传感网络" scheme="http://chaoforward.org/tags/%E5%AE%B6%E5%BA%AD%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Beaglebone libraries]]></title>
+    <link href="http://chaoforward.org/2015/09/05/beaglebone-lib/"/>
+    <id>http://chaoforward.org/2015/09/05/beaglebone-lib/</id>
+    <published>2015-09-05T19:33:25.000Z</published>
+    <updated>2015-09-06T16:05:19.000Z</updated>
+    <content type="html"><![CDATA[<p>The following links are the excellent libraries you can use for the beaglebone development. Pybbio is based on Python. Libbulldog is for java. And BlackLib employs the power of C++. Maybe Lua in the future?</p>
+<p>It seems like the script languages are more and more popular for the embedded system. I think it will be more easier as the embedded platform is more and more powerful. I would like to try all the following three libs on my beaglebone robot and compare the performances. My robot is using Pybbio. And i am working with BlackLib now.</p>
+<p><a href="https://github.com/graycatlabs/PyBBIO" target="_blank" rel="external">pybbio</a><br><a href="http://libbulldog.org/bulldog/" target="_blank" rel="external">libbulldog</a><br><a href="http://blacklib.yigityuce.com/" target="_blank" rel="external">BlackLib</a></p>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p>The following links are the excellent libraries you can use for the beaglebone development. Pybbio is based on Python. Libbulldog is for java. And BlackLib employs the power of C++. Maybe Lua in the future?</p>
+<p>It seems like the script languages are more and more popular for the embedded system. I think it will be more easier as the embedded platform is more and more powerful. I would like to try all the following three libs on my beaglebone robot and compare the performances. My robot is using Pybbio. And i am working with BlackLib now.</p>
+<p><a href="https://github.com/graycatlabs/PyBBIO">pybbio</a><br><a href="http://libbulldog.org/bulldog/">libbulldog</a><br><a href="http://blacklib.yigityuce.com/">BlackLib</a></p>]]>
+    
+    </summary>
+    
+      <category term="C++" scheme="http://chaoforward.org/tags/C/"/>
+    
+      <category term="Python" scheme="http://chaoforward.org/tags/Python/"/>
+    
+      <category term="beaglebone" scheme="http://chaoforward.org/tags/beaglebone/"/>
+    
+      <category term="library" scheme="http://chaoforward.org/tags/library/"/>
+    
+      <category term="lua" scheme="http://chaoforward.org/tags/lua/"/>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/categories/Beaglebone/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[My Tele-operation robot, Generation II]]></title>
+    <link href="http://chaoforward.org/2015/08/28/wifi-robot-gen-two/"/>
+    <id>http://chaoforward.org/2015/08/28/wifi-robot-gen-two/</id>
+    <published>2015-08-28T06:59:16.000Z</published>
+    <updated>2016-04-16T19:08:57.490Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my second generation Tele-operation robot  built during 2015. This robot is based on the open source  platform <a href="http://beagleboard.org/bone" target="_blank" rel="external">Beaglebone white</a> which running Debian Linux.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br>The <strong>Beaglebone</strong> is a credit-card-sized Linux computer that connects to the Internet and runs software such as Android 4.0 and Ubuntu with plenty of I/O and processing power for real-time analysis provided by an AM335x 720MHz ARM® processor. It has 256M DDR2 RAM, 3D graphics accelerator, power management capacity.</p>
+<p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
+<h2 id="DEMO_videos_3A"><a href="#DEMO_videos_3A" class="headerlink" title="DEMO videos:"></a>DEMO videos:</h2><p>The Old DEMO video in 2015 summer on Youtube: (The performance now is much better than it is shown in the video. There are new demo videos in 2016 below.)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v77tkjFmZqY" frameborder="0" allowfullscreen></iframe>
+
+<p>The new DEMO video in 2016 on Youtube：</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/8c8KAbVZPCA" frameborder="0" allowfullscreen></iframe><br>DEMO video in Youku: (For Visitors from China…)</p>
+<embed src="http://player.youku.com/player.php/sid/XMTMyMjM2MTE5Ng==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
+<p>The code under Linux compiled with Eclipse: <a href="https://github.com/forwardkth/Blacklib_template" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template</a> </p>
+<p>The code under Windows and compiled with Visual Studio 2015 and VisualGDB: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p>you can see more by clicking <strong>Read more</strong> below :)<br><a id="more"></a><br>Compare to my first Generation robot, thanks to the Beaglebone, the hardware structure of the second Generation is more simple now. The Beaglebone runnning with Linux is responsible for all the tasks: motion control, networking communication, sensor interface and video streaming.<br>I can realize more advanced  features for my robot like the machine vision with it. Now I just only connect a laser lamp and a Ultra sound sensor to it.</p>
+<p>I will not talk about a lot of basic things here like motion control or networking programming. I prefer to say some my feelings and experience from <strong>system point of view</strong> about this project.</p>
+<h3 id="Structure_Overview"><a href="#Structure_Overview" class="headerlink" title="Structure Overview"></a>Structure Overview</h3><p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evho2vc9exj21kw16o4qp.jpg" alt=""><br>This robot uses Beaglebone white as the local smart brain, TPLINK WR702N as the WIFI module, one power supply and motor driver circuit board, ultra sound sensor and Laser lamp. The Beaglebone use TPLINK WR702N mini router as the wireless networking card to receive the control orders and send the data and video streaming through WIFI. But you should notice that this is not the popular <strong>OpenWR+router+arduio or what</strong> soluction. Why not? I will explain later.</p>
+<h3 id="Mounting"><a href="#Mounting" class="headerlink" title="Mounting"></a>Mounting</h3><p>The first thing I thought about is not the programming…it is how to mount the beaglebone on to the Robot Body. I bought the body from Chinese website TAOBAO.COM (Chinese version ebay) which cost about 500 RMB (650SEK).  Its metal material makes it strong and the two powerful DC motors with encoders mounted on it came from Japan.<br>There are a lot of holes on the body. But most of them is designed to fit the Arduino… (I always think that Arduino is more like a Toy for Kids…). My beaglebone is put inside a nice looking iron box with transparent cover which bought from Canada. And I do not like sticking it on the surface of the body. There is no confidence with this solution when imaging the robot running offroad.<br>So what I have done is to use the cable holders (usually you can find them when you open the box of your new Digi devices) to mount the whole beaglebone box tightly. I am glad to see their silver color mathching each other. (You can see it the second picture above)</p>
+<h3 id="Wireless_communication"><a href="#Wireless_communication" class="headerlink" title="Wireless communication"></a>Wireless communication</h3><p>The second is the WIFI module. If you search for “OpenWRT robot” in Google, you can find plenty of examples shows how easy it is to own your own wifi robot. I think it is a quick and cheap solution. Then you do not need a expensive beaglebone but a cheap 8 bits sigle chip processor like 8051.<br>But I don’t like this solution. I prefer a strong and powerful local brain to let the robot own the potential to be smart (self control capacity). If you have a look at all the Mars rover or Moon rover nowadays, you can easily understand why the cheap solution is not always good. The Mars rover should be smart enough to control and recover itself since receiving the control signal from the earth takes even 20 mins.<br>In my opinion, Robot means <strong>“the machine like human” but not “the machine waiting orders”</strong>. </p>
+<p>So the Beaglebone is like a computer that you can just use the Ethernet port to connect to the WR702N router then configure the router to the bridge work mode. In this mode, the router works like beaglebone’s wifi module. That’s good. Everything is original, very stable.</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgrdr0lsdj21kw16o4qp.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgrdnssl3j21kw16o4qp.jpg" alt=""></p>
+<h3 id="Embedded_software_and_UI_on_the_PC"><a href="#Embedded_software_and_UI_on_the_PC" class="headerlink" title="Embedded software and UI on the PC"></a>Embedded software and UI on the PC</h3><p>I have implemented two sets of the embedded control software with the PyBBIO lib (python) and BlackLib (C++) of self-modified version separatly. A java SWT programmed UI controller with real-time video streaming is also available. The UI sends commands, receives data by TCP protocol with WIFI. </p>
+<p>Both of the python version and C++ version control software are uploaded to Github. You can follow the link (BlackLib template) below to see the detail.</p>
+<p>You can find the JAVA UI client here: <a href="https://github.com/forwardkth/JAVAUI_WifiRobot" target="_blank" rel="external">https://github.com/forwardkth/JAVAUI_WifiRobot</a></p>
+<p>And a new UI client based on Qt and OpenCV is under development now: <a href="https://github.com/forwardkth/robot_qt_opencv" target="_blank" rel="external">https://github.com/forwardkth/robot_qt_opencv</a></p>
+<h3 id="My_own_BlackLib_template"><a href="#My_own_BlackLib_template" class="headerlink" title="My own BlackLib template"></a>My own BlackLib template</h3><p>The code under Linux compiled with Eclipse: <a href="https://github.com/forwardkth/Blacklib_template" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template</a> </p>
+<p>The code under Windows compiled with Visual Studio 2015 and VisualGDB: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p>This is the beaglebone (both Black and White) C++ application template based on eclipse(beaglebone white compiler configuration) and BlackLib.</p>
+<p>BlackLib is a beaglebone C++ library that developed firstly by yigityuce <a href="http://blacklib.yigityuce.com/" target="_blank" rel="external">http://blacklib.yigityuce.com/</a></p>
+<p>You can use Blacklib_template as a standard template for your own beaglebone project with a complete eclipse configuration.</p>
+<p>Note: the BlackLib used in this template is not the original BlackLib V3.0 version.</p>
+<p>some bugs in original BlackLib are fixed and more lib modules (eg. BlackServo)are added for simplifying the function implementation.</p>
+<p>You can find the C++ control software in”src/Blacklib/example/example_wifirobot.h”</p>
+<h3 id="Issues_and_Some_opinions"><a href="#Issues_and_Some_opinions" class="headerlink" title="Issues and Some opinions"></a>Issues and Some opinions</h3><p>C++ and C are much better than java or python to do the embedded system development. When I use the pybbio library for the robot APP, the power consuming is 0.01A or 0.02A much more than using BlackLib(C++)which is 0.7A. And you can feel that the C++ application runs more smooth than the python APP. This is only a small robot application. If you consider a huge complex system, the power you can save is considerable. Besides I feel powerful and environmental friendly when I use C++. That means I can control all the details and do optimization rather than being a top layer API caller.</p>
+<p>Here is the video on Youtube: Bjarne Stroustrup-Why I Created C++</p>
+<p><a href="https://www.youtube.com/watch?v=JBjjnqG0BP8" target="_blank" rel="external">https://www.youtube.com/watch?v=JBjjnqG0BP8</a></p>
+<h3 id="My_future_work"><a href="#My_future_work" class="headerlink" title="My future work"></a>My future work</h3><p>My future work will focus on making it a real smart and self-control robot. This will reply on the integration of the sensors and Computer vision (Opencv).<br>You can find this ongoing project below:<br><a href="https://github.com/forwardkth/robot_qt_opencv" target="_blank" rel="external">https://github.com/forwardkth/robot_qt_opencv</a></p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
+<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1evho2kpw0gj21kw16o4qp.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evho2aaw0fj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1evho3dathuj21kw16o1kx.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho3h7p5jj21kw16otx2.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evho3kkf90j21kw16o4qp.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my second generation Tele-operation robot  built during 2015. This robot is based on the open source  platform <a href="http://beagleboard.org/bone">Beaglebone white</a> which running Debian Linux.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br>The <strong>Beaglebone</strong> is a credit-card-sized Linux computer that connects to the Internet and runs software such as Android 4.0 and Ubuntu with plenty of I/O and processing power for real-time analysis provided by an AM335x 720MHz ARM® processor. It has 256M DDR2 RAM, 3D graphics accelerator, power management capacity.</p>
+<p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
+<h2 id="DEMO_videos_3A"><a href="#DEMO_videos_3A" class="headerlink" title="DEMO videos:"></a>DEMO videos:</h2><p>The Old DEMO video in 2015 summer on Youtube: (The performance now is much better than it is shown in the video. There are new demo videos in 2016 below.)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v77tkjFmZqY" frameborder="0" allowfullscreen></iframe>
+
+<p>The new DEMO video in 2016 on Youtube：</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/8c8KAbVZPCA" frameborder="0" allowfullscreen></iframe><br>DEMO video in Youku: (For Visitors from China…)</p>
+<embed src="http://player.youku.com/player.php/sid/XMTMyMjM2MTE5Ng==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
+<p>The code under Linux compiled with Eclipse: <a href="https://github.com/forwardkth/Blacklib_template">https://github.com/forwardkth/Blacklib_template</a> </p>
+<p>The code under Windows and compiled with Visual Studio 2015 and VisualGDB: <a href="https://github.com/forwardkth/BBRobot_VisualGDB">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p>you can see more by clicking <strong>Read more</strong> below :)<br>]]>
+    
+    </summary>
+    
+      <category term="Beaglebone" scheme="http://chaoforward.org/tags/Beaglebone/"/>
+    
+      <category term="open source" scheme="http://chaoforward.org/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+    
+      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+    
+      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[My tele-operation  Robot, Generation I]]></title>
+    <link href="http://chaoforward.org/2015/08/27/tele-robot-1/"/>
+    <id>http://chaoforward.org/2015/08/27/tele-robot-1/</id>
+    <published>2015-08-27T08:52:10.000Z</published>
+    <updated>2016-03-07T18:56:21.862Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgreifis4j218g0xcauk.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my first generation Tele-operation robot  built during 2014. Now I have  already had my second generation robot with pure Linux OS. But the first one is still a interesting try.</p>
+<p>The old google Nexus android phone is used as the controller as well as wireless communication module.&amp;ensp The <a href="https://github.com/ytai/ioio/wiki" target="_blank" rel="external">IOIO-OTG</a> Open source board is employed to be the interface between android OS and other devices. Another Experimental board <strong>EXP F5438</strong> with  TI MSP430 F5438 mcu is connected with the IOIO board through RX/TX.</p>
+<p>Maybe you have question like “this MSP430 board is not needed or not necessary”. Yes, you are right. The IOIO board is enough for basic GPIOs, PWM control and so on. But this robot is my  experimental platform.<br>It means that I would like to construct it as complex as this in order to do more experiments and explore more possibilities. </p>
+<p>The EXP F5438 board running uCOS II real-time operation system does all the real-time control job e.g motor control, sensor data capture, control other executer.<br>And the Android phone can focus its work on video, audio streaming, data communication, receiving orders from my laptop. On my laptop I write a GUI with JAVA as control terminal which communicate through WIFI with my Anroid controller APP.</p>
+<p>The whole structure is not difficult to understand. But as we known, more complex  the system is, the more problem will happen. you will never know them until you actually debug it.</p>
+<p>you can see more <strong>pictures and DEMO videos</strong> by clicking <strong>read more</strong> below :)<br><a id="more"></a></p>
+<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww3.sinaimg.cn/bmiddle/74505a4cgw1eddsn5e4qpj216n68t4qr.jpg" alt=""></p>
+<h2 id="DEMO_videos_3A"><a href="#DEMO_videos_3A" class="headerlink" title="DEMO videos:"></a>DEMO videos:</h2><p>DEMO video in Youtube:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vaqixZOrqzM" frameborder="0" allowfullscreen></iframe>
+
+
+<p>DEMO video in Youku:<br><a href="http://v.youku.com/v_show/id_XNjcxNDYzNzUy.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XNjcxNDYzNzUy.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgreifis4j218g0xcauk.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my first generation Tele-operation robot  built during 2014. Now I have  already had my second generation robot with pure Linux OS. But the first one is still a interesting try.</p>
+<p>The old google Nexus android phone is used as the controller as well as wireless communication module.&amp;ensp The <a href="https://github.com/ytai/ioio/wiki">IOIO-OTG</a> Open source board is employed to be the interface between android OS and other devices. Another Experimental board <strong>EXP F5438</strong> with  TI MSP430 F5438 mcu is connected with the IOIO board through RX/TX.</p>
+<p>Maybe you have question like “this MSP430 board is not needed or not necessary”. Yes, you are right. The IOIO board is enough for basic GPIOs, PWM control and so on. But this robot is my  experimental platform.<br>It means that I would like to construct it as complex as this in order to do more experiments and explore more possibilities. </p>
+<p>The EXP F5438 board running uCOS II real-time operation system does all the real-time control job e.g motor control, sensor data capture, control other executer.<br>And the Android phone can focus its work on video, audio streaming, data communication, receiving orders from my laptop. On my laptop I write a GUI with JAVA as control terminal which communicate through WIFI with my Anroid controller APP.</p>
+<p>The whole structure is not difficult to understand. But as we known, more complex  the system is, the more problem will happen. you will never know them until you actually debug it.</p>
+<p>you can see more <strong>pictures and DEMO videos</strong> by clicking <strong>read more</strong> below :)<br>]]>
+    
+    </summary>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://chaoforward.org/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://chaoforward.org/tags/smart-car/"/>
+    
+      <category term="智能车" scheme="http://chaoforward.org/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+    
+      <category term="机器人" scheme="http://chaoforward.org/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project@KTH "Cardio wireless ECG handheld device" (2010)]]></title>
+    <link href="http://chaoforward.org/2015/08/26/cardio-ECG/"/>
+    <id>http://chaoforward.org/2015/08/26/cardio-ECG/</id>
+    <published>2015-08-26T19:42:00.000Z</published>
+    <updated>2015-08-31T20:29:33.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrf9np3gj20e80ao3zx.jpg" alt=""></p>
+<h2 id="Overview_3A"><a href="#Overview_3A" class="headerlink" title="Overview:"></a>Overview:</h2><p>The basic idea of this project is to develop a kind of ECG monitoring and analysis system. It includes a handheld ECG recording device, a data gateway, mobile phone application, web application (GUI) and a stationary which used to do the interaction between the patients and the doctors. The patients can monitor their ECG condition any time and upload the data via bluetooth and internet to the remote database for the analysis by the doctors later. The doctors can give the feedback to the patients via the web application or Phone application.</p>
+<p>I together with my team were responsible for the development of the Cardio Device which is based on MSP430experimental board “WASA” and a bluetooth module from “Bluegiga”. </p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1eviq4d5w48j20f30bbabf.jpg" alt=""><br>The data transmiting among Cardio device, PC and mobilephone.</p>
+<a id="more"></a>
+<h2 id="Gateway_3A"><a href="#Gateway_3A" class="headerlink" title="Gateway:"></a>Gateway:</h2><p>The gateway is a piece of hardware, which is connected to a TV screen (optional when there is a mobile phone with internet connection). It serves to the patient as a means of displaying the cardio data and sending it to the server. It is capable of receiving Bluetooth signals and can send HTTPS request via an existing Internet connection.</p>
+<h2 id="cardio_Device_3A"><a href="#cardio_Device_3A" class="headerlink" title="cardio Device:"></a>cardio Device:</h2><p>The cardio handheld  device which measures the pulse/ECG of the patient can send the ECG data to other devices via  bluetooth.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdjt1ouj21kw0zpdld.jpg" alt=""><br>Cardio Device architecture</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/74505a4cgw1evhi2qoiicj20go0cidh0.jpg" alt=""><br>the cardio device prototype</p>
+<h2 id="Mobile_phone_3A"><a href="#Mobile_phone_3A" class="headerlink" title="Mobile phone:"></a>Mobile phone:</h2><p>The patients mobile phone (optional when there is a gateway) can receive cardio data from the device and output the EKG image. If there is an internet connection, it can send the data via an HTTPS request to the server. If there is no internet connection, the data can be sent to the gateway via Bluetooth.</p>
+<h2 id="Web_application_3A"><a href="#Web_application_3A" class="headerlink" title="Web application:"></a>Web application:</h2><p>This encompasses the web interface for phones and stationary computers of patients and doctors, the main database, the authentication/security mechanisms, and the update commands interface for the gateway and mobile phones.</p>
+<h2 id="Stationary_3A"><a href="#Stationary_3A" class="headerlink" title="Stationary:"></a>Stationary:</h2><p>A computer located at a patients home or a doctors office/hospital, etc. It can be used to access the website.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrf9np3gj20e80ao3zx.jpg" alt=""></p>
+<h2 id="Overview_3A"><a href="#Overview_3A" class="headerlink" title="Overview:"></a>Overview:</h2><p>The basic idea of this project is to develop a kind of ECG monitoring and analysis system. It includes a handheld ECG recording device, a data gateway, mobile phone application, web application (GUI) and a stationary which used to do the interaction between the patients and the doctors. The patients can monitor their ECG condition any time and upload the data via bluetooth and internet to the remote database for the analysis by the doctors later. The doctors can give the feedback to the patients via the web application or Phone application.</p>
+<p>I together with my team were responsible for the development of the Cardio Device which is based on MSP430experimental board “WASA” and a bluetooth module from “Bluegiga”. </p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1eviq4d5w48j20f30bbabf.jpg" alt=""><br>The data transmiting among Cardio device, PC and mobilephone.</p>]]>
+    
+    </summary>
+    
+      <category term="Bluetooth" scheme="http://chaoforward.org/tags/Bluetooth/"/>
+    
+      <category term="ECG" scheme="http://chaoforward.org/tags/ECG/"/>
+    
+      <category term="handheld" scheme="http://chaoforward.org/tags/handheld/"/>
+    
+      <category term="wireless" scheme="http://chaoforward.org/tags/wireless/"/>
+    
+      <category term="心率" scheme="http://chaoforward.org/tags/%E5%BF%83%E7%8E%87/"/>
+    
+      <category term="手持设备" scheme="http://chaoforward.org/tags/%E6%89%8B%E6%8C%81%E8%AE%BE%E5%A4%87/"/>
+    
+      <category term="蓝牙" scheme="http://chaoforward.org/tags/%E8%93%9D%E7%89%99/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Real courage]]></title>
+    <link href="http://chaoforward.org/2015/08/26/Real-courage/"/>
+    <id>http://chaoforward.org/2015/08/26/Real-courage/</id>
+    <published>2015-08-26T18:20:31.000Z</published>
+    <updated>2015-08-27T13:54:42.000Z</updated>
+    <content type="html"><![CDATA[<!-- HTML -->
+<!-- Built-in tag (Require NexT 0.4.5 or above) -->
+<blockquote class="blockquote-center"><p>But you wana know what takes real courage?<br> keeping your mouth shut, no matter what you might be feeling.<br> Holding it all together when the stakes are this high.</p>
+<p><strong>Francis Underwood</strong> from HOUSE of CARDS</p>
+</blockquote>
+<!-- Built-in tag (Require NexT 0.4.5 or above) -->
+<blockquote class="blockquote-center"><p>但你知道什么才是真的勇敢吗？<br>无论有何感受都能隐忍不发。泰山压顶依然不乱阵脚。</p>
+<p><strong>Francis Underwood</strong> from HOUSE of CARDS</p>
+</blockquote>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<!-- HTML -->
+<!-- Built-in tag (Require NexT 0.4.5 or above) -->
+<blockquote class="blockquote-center"><p>But you wana know what takes real courage?<br> keeping your mouth shut, no matter what you might be feeling.<br> Holding it all together when the stakes are this high.</p>
+<p><strong>Francis Underwood</strong> from HOUSE of CARDS</p>
+</blockquote>
+<!-- Built-in tag (Require NexT 0.4.5 or above) -->
+<blockquote class="blockquote-center"><p>但你知道什么才是真的勇敢吗？<br>无论有何感受都能隐忍不发。泰山压顶依然不乱阵脚。</p>
+<p><strong>Francis Underwood</strong> from HOUSE of CARDS</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="House of cards" scheme="http://chaoforward.org/tags/House-of-cards/"/>
+    
+      <category term="Episodes-剧集" scheme="http://chaoforward.org/categories/Episodes-%E5%89%A7%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project@KTH "The wireless RFID sensing device"(2010)]]></title>
+    <link href="http://chaoforward.org/2015/08/26/passive-RFID/"/>
+    <id>http://chaoforward.org/2015/08/26/passive-RFID/</id>
+    <published>2015-08-26T18:11:11.000Z</published>
+    <updated>2015-09-01T20:40:37.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
+<p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
+<p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
+<h2 id="DEMO_VIDEO_3A"><a href="#DEMO_VIDEO_3A" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
+<p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
+<p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
+<h2 id="DEMO_VIDEO_3A"><a href="#DEMO_VIDEO_3A" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>]]>
+    
+    </summary>
+    
+      <category term="RFID" scheme="http://chaoforward.org/tags/RFID/"/>
+    
+      <category term="wireless sensing" scheme="http://chaoforward.org/tags/wireless-sensing/"/>
+    
+      <category term="无线传感" scheme="http://chaoforward.org/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[New media art work - walking man (2007)]]></title>
+    <link href="http://chaoforward.org/2015/08/26/walking-man/"/>
+    <id>http://chaoforward.org/2015/08/26/walking-man/</id>
+    <published>2015-08-26T08:52:10.000Z</published>
+    <updated>2015-08-27T13:52:37.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evhi2mwge5j20hs0dcgmm.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is the first project in my life when I was still a young undergraduate student in China.<br>In the winter holiday of 2007, I cooperated with my friend, Hou, who is from China Academy of Art to create this visual art work of new media. It is a 3D LED lamp matrix controlled by a very cheap 89C52 MCU. They compose the dynamic image of a walking people in 3D space.</p>
+<a id="more"></a>
+<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evhi66giljj20hs0dcaaa.jpg" alt=""><br>How it is looks like when shutting down the light</p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2q175oj20hs0dc0uf.jpg" alt=""><br>The 89C52 MCU based LED Matrix controller</p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/74505a4cgw1evhi2m44kuj20hs0dct9n.jpg" alt=""><br>The <strong>walking man</strong> was under assembling.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evhi2mwge5j20hs0dcgmm.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is the first project in my life when I was still a young undergraduate student in China.<br>In the winter holiday of 2007, I cooperated with my friend, Hou, who is from China Academy of Art to create this visual art work of new media. It is a 3D LED lamp matrix controlled by a very cheap 89C52 MCU. They compose the dynamic image of a walking people in 3D space.</p>]]>
+    
+    </summary>
+    
+      <category term="Art" scheme="http://chaoforward.org/tags/Art/"/>
+    
+      <category term="LED matrix" scheme="http://chaoforward.org/tags/LED-matrix/"/>
+    
+      <category term="Vision" scheme="http://chaoforward.org/tags/Vision/"/>
+    
+      <category term="new media" scheme="http://chaoforward.org/tags/new-media/"/>
+    
+      <category term="新媒体" scheme="http://chaoforward.org/tags/%E6%96%B0%E5%AA%92%E4%BD%93/"/>
+    
+      <category term="视觉艺术" scheme="http://chaoforward.org/tags/%E8%A7%86%E8%A7%89%E8%89%BA%E6%9C%AF/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[My computer workspace]]></title>
+    <link href="http://chaoforward.org/2015/08/25/My-computer-work-space/"/>
+    <id>http://chaoforward.org/2015/08/25/My-computer-work-space/</id>
+    <published>2015-08-25T12:30:06.000Z</published>
+    <updated>2015-08-27T13:54:13.000Z</updated>
+    <content type="html"><![CDATA[<p>I would like to show my computer workspace here. I have one DELL notebook which connected with two monitors running Linux as well as windows.</p>
+<p>The small Thinkpad ultrabook is from my company. You can see my second generation tele-operation robot on the left desk. The desk on the left is not shown completely  in the photo. It is 2.5 meters long.<br>I use it as my hardware  workbench and build it like a home Lab. I bought most of my electronic  elements, hardwares, tools and equipments from China. You know how about the price of those things in EU.</p>
+<p>I spent a lot of my spare time  here working with my intereting personal projects including robots, sensor based  systems and  sensor networks. This is a good way to go through the 6 months long dark winter of Sweden.<br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1evevon4w1oj20hs0dcjta.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/mw1024/74505a4cjw1evevov0n1aj20hs0dcgo6.jpg" alt=""><br><a id="more"></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I would like to show my computer workspace here. I have one DELL notebook which connected with two monitors running Linux as well as windows.</p>
+<p>The small Thinkpad ultrabook is from my company. You can see my second generation tele-operation robot on the left desk. The desk on the left is not shown completely  in the photo. It is 2.5 meters long.<br>I use it as my hardware  workbench and build it like a home Lab. I bought most of my electronic  elements, hardwares, tools and equipments from China. You know how about the price of those things in EU.</p>
+<p>I spent a lot of my spare time  here working with my intereting personal projects including robots, sensor based  systems and  sensor networks. This is a good way to go through the 6 months long dark winter of Sweden.<br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1evevon4w1oj20hs0dcjta.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/mw1024/74505a4cjw1evevov0n1aj20hs0dcgo6.jpg" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="geek" scheme="http://chaoforward.org/tags/geek/"/>
+    
+      <category term="programmer" scheme="http://chaoforward.org/tags/programmer/"/>
+    
+      <category term="workspace" scheme="http://chaoforward.org/tags/workspace/"/>
+    
+      <category term="geekfun-极客粉" scheme="http://chaoforward.org/categories/geekfun-%E6%9E%81%E5%AE%A2%E7%B2%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Course Project@KTH "Stuff guarder"(2010)]]></title>
+    <link href="http://chaoforward.org/2015/08/22/stuff-guarder/"/>
+    <id>http://chaoforward.org/2015/08/22/stuff-guarder/</id>
+    <published>2015-08-22T10:02:36.000Z</published>
+    <updated>2016-03-08T10:34:01.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device that can remind you when your private stuff is moved by others.<br>It also can remind you to get back your bank card after drawing money from a ATM machine.</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f1pmuexnvsj20go0ciq54.jpg" alt=""></p>
+<p>It is implemented by a self made TI MSP430 experimental board with light sensor and accelemeter sensor. It is easy and simple.<br>The main purpose of this project is to learn how to use the sensors data in a smart way even very limited number and type of sensors.</p>
+<embed src="http://player.youku.com/player.php/sid/XMTU2OTc4MzIw/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device ]]>
+    </summary>
+    
+      <category term="KTH" scheme="http://chaoforward.org/tags/KTH/"/>
+    
+      <category term="MSP430" scheme="http://chaoforward.org/tags/MSP430/"/>
+    
+      <category term="alarm" scheme="http://chaoforward.org/tags/alarm/"/>
+    
+      <category term="sensor" scheme="http://chaoforward.org/tags/sensor/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project@China "The Upper-Limb Tele-Rehabilitation Robot with interaction of vitual environment" (2008)]]></title>
+    <link href="http://chaoforward.org/2015/08/21/project-upper-limb-robot/"/>
+    <id>http://chaoforward.org/2015/08/21/project-upper-limb-robot/</id>
+    <published>2015-08-21T10:02:16.000Z</published>
+    <updated>2016-03-06T19:52:59.571Z</updated>
+    <content type="html"><![CDATA[<p>This project is my first master degree study in China just before I came to sweden in 2009.</p>
+<p>Aiming at the disadvantages of the traditional rehabilitation training machine, which are boring and lack interactivity to stroke patients and upper limb injuries, a tele-rehabilitation training system based on both interaction of virtual environment and uClinux powered Embedded motor controller is developed.<br>The historical record of training data is stored by the patient information database. The system has positive training mode and resistance training mode together with the forece feedback from the vitual environment.<br>The training with vitual environment interaction can bring the patients to a interesting and exciting training procedure. </p>
+<p>The traditional rehabilitation therapy focuses on patients’ physical function of upper limbs. The training procedure mainly depends on manual operation of rehabilitation training physician.<br>In this condition, one physician only trains one patient at one time, and the training procedure is very boring to the patients. Studies shows that the effect of rehabilitation training will be greatly enhanced, if multiple forms of information feedbacks are introduced to the training procedure.<br>Virtual Reality (VR) is a kind of burgeoning technique. Its characteristic as follow: a virtual world with multiple sensual stimulates which is immersible is created by computer together with sensors;<br>The Patients can interact with the objects in virtual world in natural manners.</p>
+<p><img src="http://forward-project-research.blogbus.com/files/12445574200.bmp" alt=""><br><img src="http://forward-project-research.blogbus.com/files/12445574202.bmp" alt=""><br>picture 1.2 The training modes tests with vitual environment interaction<br><img src="http://forward-project-research.blogbus.com/files/12445574204.bmp" alt=""><br>picture 1.3 The small training game with force feedback<br><img src="http://forward-project-research.blogbus.com/files/12445574203.bmp" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This project is my first master degree study in China just before I came to sweden in 2009.</p>
+<p>Aiming at the disadvantages of the tra]]>
+    </summary>
+    
+      <category term="ARM7" scheme="http://chaoforward.org/tags/ARM7/"/>
+    
+      <category term="Interaction" scheme="http://chaoforward.org/tags/Interaction/"/>
+    
+      <category term="cross compiling" scheme="http://chaoforward.org/tags/cross-compiling/"/>
+    
+      <category term="force feedback" scheme="http://chaoforward.org/tags/force-feedback/"/>
+    
+      <category term="linux" scheme="http://chaoforward.org/tags/linux/"/>
+    
+      <category term="robot" scheme="http://chaoforward.org/tags/robot/"/>
+    
+      <category term="tele-operation" scheme="http://chaoforward.org/tags/tele-operation/"/>
+    
+      <category term="力反馈" scheme="http://chaoforward.org/tags/%E5%8A%9B%E5%8F%8D%E9%A6%88/"/>
+    
+      <category term="康复训练机器人" scheme="http://chaoforward.org/tags/%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://chaoforward.org/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Welcome to my new Blog 欢迎来访我的新博客]]></title>
+    <link href="http://chaoforward.org/2015/08/20/hello-world/"/>
+    <id>http://chaoforward.org/2015/08/20/hello-world/</id>
+    <published>2015-08-19T22:00:00.000Z</published>
+    <updated>2016-03-06T17:54:14.027Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://forwardkth.github.io/" target="_blank" rel="external">Chao_Forward</a> my new blog powered by Hexo! You can find my previous posts and projects in my <a href="http://zorrolc.blogbus.com" target="_blank" rel="external">old blog</a> . I also transfer some of my previous projects posts here.<br>My posts will be both in English and Chinese in the future. </p>
+<p>由于blogbus的所谓敏感词审查，我决定放弃写了5,6年的大巴搬家到Github了。以后也不再更新老博客,大家仍然可以在右侧的侧边栏链接里查看老博客以前的日志和项目。 一些项目日志也被我从大巴转移到了这里。四年前从KTH毕业开始在瑞典ABB公司的工作以后就很少写博客了，并不是没得可写而是人变得所谓成熟以后少了很多无病呻吟。另一方面生活变得繁忙，反而觉得如果不算考试的话学生时代真是幸福多了。直到前两天用Github的时候突发奇想觉得应该存在一种可以在Github上部署博客的方案，搜索了一下真有不少，于是选中Hexo捣鼓了起来，它也燃起了我继续把博客写下去的愿望。能有自己一方安静的角落写写东西挺好的。这个博客我希望做成中英双语的，一方面为了职业发展，展示自己的开发项目，进行技术交流。另一方面也向国内的朋友们分享我的生活点滴。欢迎大家继续来访支持。</p>
+<p>—- forward回来了</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cjw1euvpvhbrryj20xc18gqii.jpg" alt=""><br><a id="more"></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://forwardkth.github.io/">Chao_Forward</a> my new blog powered by Hexo! You can find my previous posts and projects in my <a href="http://zorrolc.blogbus.com">old blog</a> . I also transfer some of my previous projects posts here.<br>My posts will be both in English and Chinese in the future. </p>
+<p>由于blogbus的所谓敏感词审查，我决定放弃写了5,6年的大巴搬家到Github了。以后也不再更新老博客,大家仍然可以在右侧的侧边栏链接里查看老博客以前的日志和项目。 一些项目日志也被我从大巴转移到了这里。四年前从KTH毕业开始在瑞典ABB公司的工作以后就很少写博客了，并不是没得可写而是人变得所谓成熟以后少了很多无病呻吟。另一方面生活变得繁忙，反而觉得如果不算考试的话学生时代真是幸福多了。直到前两天用Github的时候突发奇想觉得应该存在一种可以在Github上部署博客的方案，搜索了一下真有不少，于是选中Hexo捣鼓了起来，它也燃起了我继续把博客写下去的愿望。能有自己一方安静的角落写写东西挺好的。这个博客我希望做成中英双语的，一方面为了职业发展，展示自己的开发项目，进行技术交流。另一方面也向国内的朋友们分享我的生活点滴。欢迎大家继续来访支持。</p>
+<p>—- forward回来了</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cjw1euvpvhbrryj20xc18gqii.jpg" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="welcome" scheme="http://chaoforward.org/tags/welcome/"/>
+    
+      <category term="notes-随笔" scheme="http://chaoforward.org/categories/notes-%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>
