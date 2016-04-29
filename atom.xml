@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2016-04-23T11:13:55.958Z</updated>
+  <updated>2016-04-23T11:13:55.000Z</updated>
   <id>/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="/2016/04/07/iOS-app-for-wifirobot/"/>
     <id>/2016/04/07/iOS-app-for-wifirobot/</id>
     <published>2016-04-07T21:06:45.000Z</published>
-    <updated>2016-04-23T11:13:55.958Z</updated>
+    <updated>2016-04-23T11:13:55.000Z</updated>
     <content type="html"><![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot last week. It is simple and not looks so nice. I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
 <p>There is a demo video below:<br>youtube:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe><br><a id="more"></a><br>youku:<br><a href="http://v.youku.com/v_show/id_XMTUyMjU1NDAyMA==.html?from=y1.7-2" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTUyMjU1NDAyMA==.html?from=y1.7-2</a><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTUyMjU1NDAyMA==" frameborder="0" allowfullscreen></iframe>]]></content>
@@ -53,7 +53,7 @@
     <link href="/2016/03/06/visualGDB/"/>
     <id>/2016/03/06/visualGDB/</id>
     <published>2016-03-06T15:08:24.000Z</published>
-    <updated>2016-03-06T18:49:15.686Z</updated>
+    <updated>2016-03-06T18:49:15.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
 <p><a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
 <p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
@@ -163,7 +163,7 @@
     <link href="/2015/10/25/BlackLib-Template/"/>
     <id>/2015/10/25/BlackLib-Template/</id>
     <published>2015-10-25T17:06:56.000Z</published>
-    <updated>2016-04-28T20:01:11.500Z</updated>
+    <updated>2016-04-28T20:01:11.000Z</updated>
     <content type="html"><![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.</p>
 <p><a href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/" target="_blank" rel="external">http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</a></p>
 <p>And I have made a C++ application template with modified version of  BlackLib v3.0 in eclipse for the Beaglebone white Development. It works quite well.</p>
@@ -305,7 +305,7 @@
     <link href="/2015/09/05/beaglebone-lib/"/>
     <id>/2015/09/05/beaglebone-lib/</id>
     <published>2015-09-05T19:33:25.000Z</published>
-    <updated>2016-04-28T19:55:37.366Z</updated>
+    <updated>2016-04-28T19:55:37.000Z</updated>
     <content type="html"><![CDATA[<p>The following links are the excellent libraries you can use for the beaglebone development. Pybbio is based on Python. Libbulldog is for java. And BlackLib employs the power of C++. Maybe Lua in the future?</p>
 <p>It seems like the script languages are more and more popular for the embedded system. I think it will be more easier as the embedded platform is more and more powerful. I would like to try all the following three libs on my beaglebone robot and compare the performances. My robot is using Pybbio. And i am working with BlackLib now.</p>
 <p><a href="https://github.com/graycatlabs/PyBBIO" target="_blank" rel="external">pybbio</a><br><a href="http://libbulldog.org/bulldog/" target="_blank" rel="external">libbulldog</a><br><a href="http://blacklib.yigityuce.com/" target="_blank" rel="external">BlackLib</a></p>
@@ -336,7 +336,7 @@
     <link href="/2015/08/28/wifi-robot-gen-two/"/>
     <id>/2015/08/28/wifi-robot-gen-two/</id>
     <published>2015-08-28T06:59:16.000Z</published>
-    <updated>2016-04-16T19:08:57.490Z</updated>
+    <updated>2016-04-16T19:08:57.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
 <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my second generation Tele-operation robot  built during 2015. This robot is based on the open source  platform <a href="http://beagleboard.org/bone" target="_blank" rel="external">Beaglebone white</a> which running Debian Linux.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br>The <strong>Beaglebone</strong> is a credit-card-sized Linux computer that connects to the Internet and runs software such as Android 4.0 and Ubuntu with plenty of I/O and processing power for real-time analysis provided by an AM335x 720MHz ARM® processor. It has 256M DDR2 RAM, 3D graphics accelerator, power management capacity.</p>
 <p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
@@ -419,7 +419,7 @@
     <link href="/2015/08/27/tele-robot-1/"/>
     <id>/2015/08/27/tele-robot-1/</id>
     <published>2015-08-27T08:52:10.000Z</published>
-    <updated>2016-03-07T18:56:21.862Z</updated>
+    <updated>2016-03-07T18:56:21.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgreifis4j218g0xcauk.jpg" alt=""></p>
 <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my first generation Tele-operation robot  built during 2014. Now I have  already had my second generation robot with pure Linux OS. But the first one is still a interesting try.</p>
 <p>The old google Nexus android phone is used as the controller as well as wireless communication module.&amp;ensp The <a href="https://github.com/ytai/ioio/wiki" target="_blank" rel="external">IOIO-OTG</a> Open source board is employed to be the interface between android OS and other devices. Another Experimental board <strong>EXP F5438</strong> with  TI MSP430 F5438 mcu is connected with the IOIO board through RX/TX.</p>
@@ -574,7 +574,7 @@
     <link href="/2015/08/26/walking-man/"/>
     <id>/2015/08/26/walking-man/</id>
     <published>2015-08-26T08:52:10.000Z</published>
-    <updated>2015-08-27T13:52:37.000Z</updated>
+    <updated>2015-08-27T13:52:37.343Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evhi2mwge5j20hs0dcgmm.jpg" alt=""></p>
 <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is the first project in my life when I was still a young undergraduate student in China.<br>In the winter holiday of 2007, I cooperated with my friend, Hou, who is from China Academy of Art to create this visual art work of new media. It is a 3D LED lamp matrix controlled by a very cheap 89C52 MCU. They compose the dynamic image of a walking people in 3D space.</p>
 <a id="more"></a>
@@ -636,7 +636,7 @@
     <link href="/2015/08/22/stuff-guarder/"/>
     <id>/2015/08/22/stuff-guarder/</id>
     <published>2015-08-22T10:02:36.000Z</published>
-    <updated>2016-03-08T10:34:01.000Z</updated>
+    <updated>2016-03-08T10:34:01.734Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device that can remind you when your private stuff is moved by others.<br>It also can remind you to get back your bank card after drawing money from a ATM machine.</p>
 <p><img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f1pmuexnvsj20go0ciq54.jpg" alt=""></p>
 <p>It is implemented by a self made TI MSP430 experimental board with light sensor and accelemeter sensor. It is easy and simple.<br>The main purpose of this project is to learn how to use the sensors data in a smart way even very limited number and type of sensors.</p>
@@ -662,7 +662,7 @@
     <link href="/2015/08/21/project-upper-limb-robot/"/>
     <id>/2015/08/21/project-upper-limb-robot/</id>
     <published>2015-08-21T10:02:16.000Z</published>
-    <updated>2016-03-06T19:52:59.571Z</updated>
+    <updated>2016-03-06T19:52:59.000Z</updated>
     <content type="html"><![CDATA[<p>This project is my first master degree study in China just before I came to sweden in 2009.</p>
 <p>Aiming at the disadvantages of the traditional rehabilitation training machine, which are boring and lack interactivity to stroke patients and upper limb injuries, a tele-rehabilitation training system based on both interaction of virtual environment and uClinux powered Embedded motor controller is developed.<br>The historical record of training data is stored by the patient information database. The system has positive training mode and resistance training mode together with the forece feedback from the vitual environment.<br>The training with vitual environment interaction can bring the patients to a interesting and exciting training procedure. </p>
 <p>The traditional rehabilitation therapy focuses on patients’ physical function of upper limbs. The training procedure mainly depends on manual operation of rehabilitation training physician.<br>In this condition, one physician only trains one patient at one time, and the training procedure is very boring to the patients. Studies shows that the effect of rehabilitation training will be greatly enhanced, if multiple forms of information feedbacks are introduced to the training procedure.<br>Virtual Reality (VR) is a kind of burgeoning technique. Its characteristic as follow: a virtual world with multiple sensual stimulates which is immersible is created by computer together with sensors;<br>The Patients can interact with the objects in virtual world in natural manners.</p>
