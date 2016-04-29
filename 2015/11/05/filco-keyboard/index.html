@@ -46,7 +46,7 @@ I bought this mechanical keyboard from the UK website ‘thekeyboardcompany’. 
 <meta property="og:description" content="Filco Ninja Majestouch-2 Tenkeyless Tactile Action UK Keyboard
 I bought this mechanical keyboard from the UK website ‘thekeyboardcompany’. I received the package today. It is a very nice programmer ke">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg">
-<meta property="og:updated_time" content="2016-04-28T19:50:15.392Z">
+<meta property="og:updated_time" content="2016-04-29T11:56:57.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filco Ninja keyboard">
 <meta name="twitter:description" content="Filco Ninja Majestouch-2 Tenkeyless Tactile Action UK Keyboard
@@ -227,8 +227,8 @@ I bought this mechanical keyboard from the UK website ‘thekeyboardcompany’. 
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Diary-日记/" itemprop="url" rel="index">
-                  <span itemprop="name">Diary-日记</span>
+                <a href="/categories/Notes-随笔/" itemprop="url" rel="index">
+                  <span itemprop="name">Notes-随笔</span>
                 </a>
               </span>
 
@@ -248,6 +248,12 @@ I bought this mechanical keyboard from the UK website ‘thekeyboardcompany’. 
             </a>
           </span>
           
+        
+		
+		
+		  	 <span id="/2015/11/05/filco-keyboard/"class="leancloud_visitors"  data-flag-title="Filco Ninja keyboard">
+            &nbsp; | &nbsp; Visitors
+            </span>
         
       </div>
     </header>
@@ -751,5 +757,85 @@ I bought this mechanical keyboard from the UK website ‘thekeyboardcompany’. 
       });
     });
   </script>
+  
+  	  by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("S570eHURmRq1zdgUNdRwrqDC-gzGzoHsz", "gpASECC3iWeWDDwdFG6Rh3az");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+  
 </body>
 </html>

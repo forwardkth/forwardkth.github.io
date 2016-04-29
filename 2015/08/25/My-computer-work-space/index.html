@@ -47,7 +47,7 @@ The small Thinkpad ultrabook is from my company. You can s">
 The small Thinkpad ultrabook is from my company. You can s">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/74505a4cjw1evevon4w1oj20hs0dcjta.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/74505a4cjw1evevov0n1aj20hs0dcgo6.jpg">
-<meta property="og:updated_time" content="2016-04-28T19:50:34.592Z">
+<meta property="og:updated_time" content="2016-04-29T11:57:23.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="My computer workspace">
 <meta name="twitter:description" content="I would like to show my computer workspace here. I have one DELL notebook which connected with two monitors running Linux as well as windows.
@@ -228,8 +228,8 @@ The small Thinkpad ultrabook is from my company. You can s">
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Diary-日记/" itemprop="url" rel="index">
-                  <span itemprop="name">Diary-日记</span>
+                <a href="/categories/Notes-随笔/" itemprop="url" rel="index">
+                  <span itemprop="name">Notes-随笔</span>
                 </a>
               </span>
 
@@ -249,6 +249,12 @@ The small Thinkpad ultrabook is from my company. You can s">
             </a>
           </span>
           
+        
+		
+		
+		  	 <span id="/2015/08/25/My-computer-work-space/"class="leancloud_visitors"  data-flag-title="My computer workspace">
+            &nbsp; | &nbsp; Visitors
+            </span>
         
       </div>
     </header>
@@ -751,5 +757,85 @@ The small Thinkpad ultrabook is from my company. You can s">
       });
     });
   </script>
+  
+  	  by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("S570eHURmRq1zdgUNdRwrqDC-gzGzoHsz", "gpASECC3iWeWDDwdFG6Rh3az");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+  
 </body>
 </html>
