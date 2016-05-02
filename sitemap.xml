@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/about/index.html</loc>
+    <lastmod>2016-05-02T14:41:13.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/links/index.html</loc>
+    <lastmod>2016-05-01T20:03:22.330Z</lastmod>
+  </url>
+  
+  <url>
     <loc>/2015/08/25/My-computer-work-space/</loc>
     <lastmod>2016-04-29T11:57:23.000Z</lastmod>
   </url>
@@ -29,11 +39,6 @@
   <url>
     <loc>/2016/01/25/2016-new-year/</loc>
     <lastmod>2016-04-29T11:49:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/index.html</loc>
-    <lastmod>2016-04-29T11:47:18.000Z</lastmod>
   </url>
   
   <url>
@@ -79,11 +84,6 @@
   <url>
     <loc>/2016/03/06/visualGDB/</loc>
     <lastmod>2016-03-06T18:49:15.686Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>/links/index.html</loc>
-    <lastmod>2015-11-06T22:28:03.000Z</lastmod>
   </url>
   
   <url>
