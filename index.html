@@ -360,18 +360,12 @@
       
         
           
-            <p>  之前我有一个想法关于是否可以在next主题的主页只显示特定category下的文章。这样就可以控制在home 首页下控制想要突出展示的文章。<br>  比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章可以到category里面点击查看。<br>  这样就不用像以前的老博客那样开两个博客再链接了。<br>  <a href="https://github.com/iissnan/hexo-theme-next/issues/843" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next/issues/843</a><br>  具体做法如下：</p>
+            <p>  之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。<br>  比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。<br>  这样就不用像以前的老博客那样开两个博客再链接了。<br>  <a href="https://github.com/iissnan/hexo-theme-next/issues/843" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next/issues/843</a><br>  具体做法如下：</p>
 <h3 id="u4FEE_u6539next_u4E3B_u9898_u6587_u4EF6_u5939_u4E0B_u7684layout_u4E2D_u7684index-swig_u6587_u4EF6"><a href="#u4FEE_u6539next_u4E3B_u9898_u6587_u4EF6_u5939_u4E0B_u7684layout_u4E2D_u7684index-swig_u6587_u4EF6" class="headerlink" title="修改next主题文件夹下的layout中的index.swig文件"></a>修改next主题文件夹下的layout中的index.swig文件</h3><p> 定位修改 post_template.render(post, true) </p>
 <p><img src="http://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg" alt=""></p>
 <p>其中修改的是为文章的首页显示添加判断条件</p>
-<h3 id="u5728_u65B0_u7684post_u4E2D_u6DFB_u52A0visible_u5B57_u6BB5_u6765_u63A7_u5236_u662F_u5426_u9996_u9875_u663E_u793A"><a href="#u5728_u65B0_u7684post_u4E2D_u6DFB_u52A0visible_u5B57_u6BB5_u6765_u63A7_u5236_u662F_u5426_u9996_u9875_u663E_u793A" class="headerlink" title="在新的post中添加visible字段来控制是否首页显示"></a>在新的post中添加visible字段来控制是否首页显示</h3><p>  例如：</p>
-<p>  title: 关于Hexo next主题如何在首页隐藏指定的文章<br>date: 2016-05-08 22:21:29<br>tags: </p>
-<ul>
-<li>hexo</li>
-<li>next<br>categories: Notes-随笔<br>visible: hide   这里如果加上hide则该文章就不会在文章首页显示，如果留空则表示默认显示</li>
-</ul>
-<hr>
-<p>  …..</p>
+<h3 id="u5728_u65B0_u7684post_u4E2D_u6DFB_u52A0visible_u5B57_u6BB5_u6765_u63A7_u5236_u662F_u5426_u9996_u9875_u663E_u793A"><a href="#u5728_u65B0_u7684post_u4E2D_u6DFB_u52A0visible_u5B57_u6BB5_u6765_u63A7_u5236_u662F_u5426_u9996_u9875_u663E_u793A" class="headerlink" title="在新的post中添加visible字段来控制是否首页显示"></a>在新的post中添加visible字段来控制是否首页显示</h3><p>  例如我的当前这篇文章：</p>
+<p>  title: 关于Hexo next主题如何在首页隐藏指定的文章<br>date: 2016-05-08 22:21:29<br>tags:<br>…<br>…<br>categories: Notes-随笔<br>visible: hide   这里如果加上hide则该文章就不会在文章首页显示，如果留空则表示默认显示<br>…..</p>
 
           
         
