@@ -3,9 +3,9 @@
   <title><![CDATA[Chao_Forward]]></title>
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://forwardkth.github.io/"/>
+  <link href="/"/>
   <updated>2016-05-10T11:36:55.775Z</updated>
-  <id>http://forwardkth.github.io/</id>
+  <id>/</id>
   
   <author>
     <name><![CDATA[Chao Li]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[我的庭院]]></title>
-    <link href="http://forwardkth.github.io/2016/05/10/my-garden/"/>
-    <id>http://forwardkth.github.io/2016/05/10/my-garden/</id>
+    <link href="/2016/05/10/my-garden/"/>
+    <id>/2016/05/10/my-garden/</id>
     <published>2016-05-10T09:31:17.000Z</published>
     <updated>2016-05-10T11:36:55.775Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/mw690/74505a4cjw9f3qf2o4y78j21kw16ob2a.jpg" alt=""><br>这是我在瑞典住处的后院。两年前从一对70多岁老夫妇手中接收这个房子的时候后院是一片破败的景象，荒草丛生，苔藓遍地。各种高高低低的植物混乱的生长着，墙根一颗瘦弱的玫瑰勉强从草缝间挤出来，点缀出了杂草中的一抹鲜红。遮阳篷还有几处是漏雨的。木台的跳板也需要重新刷桐油了。总之看到眼前的院子我长长的叹了一口气。。。未来工程浩大，无奈当时秋天将近，冬天不远，只能简单补了补顶棚，给木台清洗刷了一遍桐油，算是做出了改变。等到寒冬过去，去年的春天四月我启动了后院的整修计划。虽然这个房子我也并不打算长期居住，但是作为一个园艺爱好者无论如何是无法忍受自己的院子是那么一种状态。</p>
@@ -35,22 +35,22 @@
     
     </summary>
     
-      <category term="garden" scheme="http://forwardkth.github.io/tags/garden/"/>
+      <category term="garden" scheme="/tags/garden/"/>
     
-      <category term="园艺" scheme="http://forwardkth.github.io/tags/%E5%9B%AD%E8%89%BA/"/>
+      <category term="园艺" scheme="/tags/%E5%9B%AD%E8%89%BA/"/>
     
-      <category term="夏天" scheme="http://forwardkth.github.io/tags/%E5%A4%8F%E5%A4%A9/"/>
+      <category term="夏天" scheme="/tags/%E5%A4%8F%E5%A4%A9/"/>
     
-      <category term="庭院" scheme="http://forwardkth.github.io/tags/%E5%BA%AD%E9%99%A2/"/>
+      <category term="庭院" scheme="/tags/%E5%BA%AD%E9%99%A2/"/>
     
-      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[关于Hexo next主题如何在首页隐藏指定的文章]]></title>
-    <link href="http://forwardkth.github.io/2016/05/08/next-theme-post-visibility/"/>
-    <id>http://forwardkth.github.io/2016/05/08/next-theme-post-visibility/</id>
+    <link href="/2016/05/08/next-theme-post-visibility/"/>
+    <id>/2016/05/08/next-theme-post-visibility/</id>
     <published>2016-05-08T20:21:29.000Z</published>
     <updated>2016-05-08T22:46:21.000Z</updated>
     <content type="html"><![CDATA[<p>之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。<br>比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。<br>这样就不用像以前的老博客那样开两个博客再链接了。<br><a href="https://github.com/iissnan/hexo-theme-next/issues/843" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next/issues/843</a><br>具体做法如下：<br><a id="more"></a></p>
@@ -65,18 +65,18 @@
     
     </summary>
     
-      <category term="hexo" scheme="http://forwardkth.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="/tags/hexo/"/>
     
-      <category term="next" scheme="http://forwardkth.github.io/tags/next/"/>
+      <category term="next" scheme="/tags/next/"/>
     
-      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Made an iOS App for my wifi robot]]></title>
-    <link href="http://forwardkth.github.io/2016/04/07/iOS-app-for-wifirobot/"/>
-    <id>http://forwardkth.github.io/2016/04/07/iOS-app-for-wifirobot/</id>
+    <link href="/2016/04/07/iOS-app-for-wifirobot/"/>
+    <id>/2016/04/07/iOS-app-for-wifirobot/</id>
     <published>2016-04-07T21:06:45.000Z</published>
     <updated>2016-04-23T11:13:55.000Z</updated>
     <content type="html"><![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot last week. It is simple and not looks so nice. I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
@@ -89,28 +89,28 @@
     
     </summary>
     
-      <category term="App" scheme="http://forwardkth.github.io/tags/App/"/>
+      <category term="App" scheme="/tags/App/"/>
     
-      <category term="Beaglebone" scheme="http://forwardkth.github.io/tags/Beaglebone/"/>
+      <category term="Beaglebone" scheme="/tags/Beaglebone/"/>
     
-      <category term="iOS" scheme="http://forwardkth.github.io/tags/iOS/"/>
+      <category term="iOS" scheme="/tags/iOS/"/>
     
-      <category term="open source" scheme="http://forwardkth.github.io/tags/open-source/"/>
+      <category term="open source" scheme="/tags/open-source/"/>
     
-      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="smart car" scheme="http://forwardkth.github.io/tags/smart-car/"/>
+      <category term="smart car" scheme="/tags/smart-car/"/>
     
-      <category term="机器人" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Cross compling and remote debuging with VisualGDB on Windows]]></title>
-    <link href="http://forwardkth.github.io/2016/03/06/visualGDB/"/>
-    <id>http://forwardkth.github.io/2016/03/06/visualGDB/</id>
+    <link href="/2016/03/06/visualGDB/"/>
+    <id>/2016/03/06/visualGDB/</id>
     <published>2016-03-06T15:08:24.000Z</published>
     <updated>2016-03-06T18:49:15.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
@@ -144,32 +144,32 @@
     
     </summary>
     
-      <category term="Beaglebone" scheme="http://forwardkth.github.io/tags/Beaglebone/"/>
+      <category term="Beaglebone" scheme="/tags/Beaglebone/"/>
     
-      <category term="VisualGDB" scheme="http://forwardkth.github.io/tags/VisualGDB/"/>
+      <category term="VisualGDB" scheme="/tags/VisualGDB/"/>
     
-      <category term="cross compiling" scheme="http://forwardkth.github.io/tags/cross-compiling/"/>
+      <category term="cross compiling" scheme="/tags/cross-compiling/"/>
     
-      <category term="open source" scheme="http://forwardkth.github.io/tags/open-source/"/>
+      <category term="open source" scheme="/tags/open-source/"/>
     
-      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="robotics" scheme="http://forwardkth.github.io/tags/robotics/"/>
+      <category term="robotics" scheme="/tags/robotics/"/>
     
-      <category term="smart car" scheme="http://forwardkth.github.io/tags/smart-car/"/>
+      <category term="smart car" scheme="/tags/smart-car/"/>
     
-      <category term="智能车" scheme="http://forwardkth.github.io/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+      <category term="智能车" scheme="/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
     
-      <category term="机器人" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[2016 Happy new year 新年快乐，迎接挑战]]></title>
-    <link href="http://forwardkth.github.io/2016/01/25/2016-new-year/"/>
-    <id>http://forwardkth.github.io/2016/01/25/2016-new-year/</id>
+    <link href="/2016/01/25/2016-new-year/"/>
+    <id>/2016/01/25/2016-new-year/</id>
     <published>2016-01-25T20:53:28.000Z</published>
     <updated>2016-04-29T11:49:48.565Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1enscqbfjlzj20qo0k0gr4.jpg" alt=""><br>2016年新年快乐，今年不回家过年了。村儿里大雪，学名 西方狍的小鹿也下山到后院觅食。<br>都说逢羊年年景不好，去年各种坠机，冲突，灾害，难民种种也应了这伪科学的老话。2016年刚开年又是全球经济要步入新一轮危机的节奏。对自己来说也是事业突破或是转折的关键一年。<br>不管这新的一年会发生什么，兵来将挡，水来土掩。寒冬到来，春天就不远了。<br>GP bless me.<br><img src="http://ww4.sinaimg.cn/large/74505a4cgw1f0ces39q51j20qo0k0dlz.jpg" alt=""></p>
@@ -178,24 +178,24 @@
     <![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1enscqbfjlzj20qo0k0gr4.jpg" alt=""><br>2016年新年快乐，今年不回家过年了。村儿里大雪，学名 西方狍的小鹿也下山到后院觅食。<br>都说逢]]>
     </summary>
     
-      <category term="challenge" scheme="http://forwardkth.github.io/tags/challenge/"/>
+      <category term="challenge" scheme="/tags/challenge/"/>
     
-      <category term="winter" scheme="http://forwardkth.github.io/tags/winter/"/>
+      <category term="winter" scheme="/tags/winter/"/>
     
-      <category term="冬天" scheme="http://forwardkth.github.io/tags/%E5%86%AC%E5%A4%A9/"/>
+      <category term="冬天" scheme="/tags/%E5%86%AC%E5%A4%A9/"/>
     
-      <category term="挑战" scheme="http://forwardkth.github.io/tags/%E6%8C%91%E6%88%98/"/>
+      <category term="挑战" scheme="/tags/%E6%8C%91%E6%88%98/"/>
     
-      <category term="新年" scheme="http://forwardkth.github.io/tags/%E6%96%B0%E5%B9%B4/"/>
+      <category term="新年" scheme="/tags/%E6%96%B0%E5%B9%B4/"/>
     
-      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Filco Ninja keyboard]]></title>
-    <link href="http://forwardkth.github.io/2015/11/05/filco-keyboard/"/>
-    <id>http://forwardkth.github.io/2015/11/05/filco-keyboard/</id>
+    <link href="/2015/11/05/filco-keyboard/"/>
+    <id>/2015/11/05/filco-keyboard/</id>
     <published>2015-11-05T20:11:57.000Z</published>
     <updated>2016-04-29T11:56:57.744Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""><br>Filco Ninja Majestouch-2 Tenkeyless Tactile Action UK Keyboard</p>
@@ -207,24 +207,24 @@
     <![CDATA[<p><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""><br>Filco Ninja Majestouch-2 Tenkeyless Tactile Action]]>
     </summary>
     
-      <category term="filco" scheme="http://forwardkth.github.io/tags/filco/"/>
+      <category term="filco" scheme="/tags/filco/"/>
     
-      <category term="机械键盘" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
+      <category term="机械键盘" scheme="/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
     
-      <category term="茶轴" scheme="http://forwardkth.github.io/tags/%E8%8C%B6%E8%BD%B4/"/>
+      <category term="茶轴" scheme="/tags/%E8%8C%B6%E8%BD%B4/"/>
     
-      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[BlackLib Template]]></title>
-    <link href="http://forwardkth.github.io/2015/10/25/BlackLib-Template/"/>
-    <id>http://forwardkth.github.io/2015/10/25/BlackLib-Template/</id>
+    <link href="/2015/10/25/BlackLib-Template/"/>
+    <id>/2015/10/25/BlackLib-Template/</id>
     <published>2015-10-25T17:06:56.000Z</published>
     <updated>2016-04-28T20:01:11.000Z</updated>
     <content type="html"><![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.</p>
-<p><a href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/">http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</a></p>
+<p><a href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/" target="_blank" rel="external">http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</a></p>
 <p>And I have made a C++ application template with modified version of  BlackLib v3.0 in eclipse for the Beaglebone white Development. It works quite well.</p>
 <p>I also added a “BlackServo” module and a servo control exmaple to the BlackLib V3.0 for easy Servo motor control, just like what they have done in the Python library “PyBBIO”.</p>
 <p>If you are interested to this template, you can download it from Github freely.</p>
@@ -236,24 +236,24 @@
     <![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” boa]]>
     </summary>
     
-      <category term="BlackLib" scheme="http://forwardkth.github.io/tags/BlackLib/"/>
+      <category term="BlackLib" scheme="/tags/BlackLib/"/>
     
-      <category term="C++" scheme="http://forwardkth.github.io/tags/C/"/>
+      <category term="C++" scheme="/tags/C/"/>
     
-      <category term="beaglebone" scheme="http://forwardkth.github.io/tags/beaglebone/"/>
+      <category term="beaglebone" scheme="/tags/beaglebone/"/>
     
-      <category term="library" scheme="http://forwardkth.github.io/tags/library/"/>
+      <category term="library" scheme="/tags/library/"/>
     
-      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[秋 Autumn]]></title>
-    <link href="http://forwardkth.github.io/2015/10/17/dark-before-dawn/"/>
-    <id>http://forwardkth.github.io/2015/10/17/dark-before-dawn/</id>
+    <link href="/2015/10/17/dark-before-dawn/"/>
+    <id>/2015/10/17/dark-before-dawn/</id>
     <published>2015-10-17T20:01:38.000Z</published>
     <updated>2016-04-29T11:50:11.261Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋天色彩斑斓的树叶和纯净的美,Dalarna的景色似乎更胜一筹.举起手机拍下了上面这张很满意的照片.现在的手机照相性能越来越强,即便家里有好相机也很少用了.</p>
@@ -264,22 +264,22 @@
     <![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋]]>
     </summary>
     
-      <category term="life" scheme="http://forwardkth.github.io/tags/life/"/>
+      <category term="life" scheme="/tags/life/"/>
     
-      <category term="sweden" scheme="http://forwardkth.github.io/tags/sweden/"/>
+      <category term="sweden" scheme="/tags/sweden/"/>
     
-      <category term="瑞典" scheme="http://forwardkth.github.io/tags/%E7%91%9E%E5%85%B8/"/>
+      <category term="瑞典" scheme="/tags/%E7%91%9E%E5%85%B8/"/>
     
-      <category term="秋天" scheme="http://forwardkth.github.io/tags/%E7%A7%8B%E5%A4%A9/"/>
+      <category term="秋天" scheme="/tags/%E7%A7%8B%E5%A4%A9/"/>
     
-      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[转载-正在与硅谷打得火热的深圳]]></title>
-    <link href="http://forwardkth.github.io/2015/10/10/shenzhen/"/>
-    <id>http://forwardkth.github.io/2015/10/10/shenzhen/</id>
+    <link href="/2015/10/10/shenzhen/"/>
+    <id>/2015/10/10/shenzhen/</id>
     <published>2015-10-10T17:58:44.000Z</published>
     <updated>2016-04-29T11:51:06.366Z</updated>
     <content type="html"><![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi Ito的一篇回忆文章《一位MIT学者眼中的深圳硬件制造业》中说到，他参观了注塑厂、PCB工厂、在电路板上嵌入芯片的工厂……去了像华强北那样的硬件市场还有去了像大疆这样的公司，彻底被震撼了。</p>
@@ -310,16 +310,16 @@
     
     </summary>
     
-      <category term="shenzhen" scheme="http://forwardkth.github.io/tags/shenzhen/"/>
+      <category term="shenzhen" scheme="/tags/shenzhen/"/>
     
-      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Mysensors Wireless sensing network at home]]></title>
-    <link href="http://forwardkth.github.io/2015/09/22/mysensors/"/>
-    <id>http://forwardkth.github.io/2015/09/22/mysensors/</id>
+    <link href="/2015/09/22/mysensors/"/>
+    <id>/2015/09/22/mysensors/</id>
     <published>2015-09-22T07:07:50.000Z</published>
     <updated>2015-10-06T21:10:26.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://www.mysensors.org/started/network.png" alt=""><br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew98gkmzhnj20k00qogqi.jpg" alt=""><br>you can see more by clicking <strong>Read more</strong> below :)<br>点击下方按钮阅读文章正文 （基于Mysensors开源项目的家庭无线传感网络 ）<br><a id="more"></a></p>
@@ -339,30 +339,30 @@
     
     </summary>
     
-      <category term="Arduino" scheme="http://forwardkth.github.io/tags/Arduino/"/>
+      <category term="Arduino" scheme="/tags/Arduino/"/>
     
-      <category term="Beaglebone" scheme="http://forwardkth.github.io/tags/Beaglebone/"/>
+      <category term="Beaglebone" scheme="/tags/Beaglebone/"/>
     
-      <category term="nRF24L01+" scheme="http://forwardkth.github.io/tags/nRF24L01/"/>
+      <category term="nRF24L01+" scheme="/tags/nRF24L01/"/>
     
-      <category term="open source" scheme="http://forwardkth.github.io/tags/open-source/"/>
+      <category term="open source" scheme="/tags/open-source/"/>
     
-      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
+      <category term="sensor" scheme="/tags/sensor/"/>
     
-      <category term="wireless sensing network" scheme="http://forwardkth.github.io/tags/wireless-sensing-network/"/>
+      <category term="wireless sensing network" scheme="/tags/wireless-sensing-network/"/>
     
-      <category term="传感器" scheme="http://forwardkth.github.io/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
+      <category term="传感器" scheme="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
-      <category term="家庭无线传感网络" scheme="http://forwardkth.github.io/tags/%E5%AE%B6%E5%BA%AD%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F%E7%BD%91%E7%BB%9C/"/>
+      <category term="家庭无线传感网络" scheme="/tags/%E5%AE%B6%E5%BA%AD%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Beaglebone libraries]]></title>
-    <link href="http://forwardkth.github.io/2015/09/05/beaglebone-lib/"/>
-    <id>http://forwardkth.github.io/2015/09/05/beaglebone-lib/</id>
+    <link href="/2015/09/05/beaglebone-lib/"/>
+    <id>/2015/09/05/beaglebone-lib/</id>
     <published>2015-09-05T19:33:25.000Z</published>
     <updated>2016-04-28T19:55:37.000Z</updated>
     <content type="html"><![CDATA[<p>The following links are the excellent libraries you can use for the beaglebone development. Pybbio is based on Python. Libbulldog is for java. And BlackLib employs the power of C++. Maybe Lua in the future?</p>
@@ -376,24 +376,24 @@
     
     </summary>
     
-      <category term="C++" scheme="http://forwardkth.github.io/tags/C/"/>
+      <category term="C++" scheme="/tags/C/"/>
     
-      <category term="Python" scheme="http://forwardkth.github.io/tags/Python/"/>
+      <category term="Python" scheme="/tags/Python/"/>
     
-      <category term="beaglebone" scheme="http://forwardkth.github.io/tags/beaglebone/"/>
+      <category term="beaglebone" scheme="/tags/beaglebone/"/>
     
-      <category term="library" scheme="http://forwardkth.github.io/tags/library/"/>
+      <category term="library" scheme="/tags/library/"/>
     
-      <category term="lua" scheme="http://forwardkth.github.io/tags/lua/"/>
+      <category term="lua" scheme="/tags/lua/"/>
     
-      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[My Tele-operation robot, Generation II]]></title>
-    <link href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/"/>
-    <id>http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</id>
+    <link href="/2015/08/28/wifi-robot-gen-two/"/>
+    <id>/2015/08/28/wifi-robot-gen-two/</id>
     <published>2015-08-28T06:59:16.000Z</published>
     <updated>2016-04-16T19:08:57.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""></p>
@@ -455,28 +455,28 @@
     
     </summary>
     
-      <category term="Beaglebone" scheme="http://forwardkth.github.io/tags/Beaglebone/"/>
+      <category term="Beaglebone" scheme="/tags/Beaglebone/"/>
     
-      <category term="open source" scheme="http://forwardkth.github.io/tags/open-source/"/>
+      <category term="open source" scheme="/tags/open-source/"/>
     
-      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="robotics" scheme="http://forwardkth.github.io/tags/robotics/"/>
+      <category term="robotics" scheme="/tags/robotics/"/>
     
-      <category term="smart car" scheme="http://forwardkth.github.io/tags/smart-car/"/>
+      <category term="smart car" scheme="/tags/smart-car/"/>
     
-      <category term="智能车" scheme="http://forwardkth.github.io/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+      <category term="智能车" scheme="/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
     
-      <category term="机器人" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[My tele-operation  Robot, Generation I]]></title>
-    <link href="http://forwardkth.github.io/2015/08/27/tele-robot-1/"/>
-    <id>http://forwardkth.github.io/2015/08/27/tele-robot-1/</id>
+    <link href="/2015/08/27/tele-robot-1/"/>
+    <id>/2015/08/27/tele-robot-1/</id>
     <published>2015-08-27T08:52:10.000Z</published>
     <updated>2016-03-07T18:56:21.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgreifis4j218g0xcauk.jpg" alt=""></p>
@@ -504,24 +504,24 @@
     
     </summary>
     
-      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="robotics" scheme="http://forwardkth.github.io/tags/robotics/"/>
+      <category term="robotics" scheme="/tags/robotics/"/>
     
-      <category term="smart car" scheme="http://forwardkth.github.io/tags/smart-car/"/>
+      <category term="smart car" scheme="/tags/smart-car/"/>
     
-      <category term="智能车" scheme="http://forwardkth.github.io/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+      <category term="智能车" scheme="/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
     
-      <category term="机器人" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="机器人" scheme="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Project@KTH "Cardio wireless ECG handheld device" (2010)]]></title>
-    <link href="http://forwardkth.github.io/2015/08/26/cardio-ECG/"/>
-    <id>http://forwardkth.github.io/2015/08/26/cardio-ECG/</id>
+    <link href="/2015/08/26/cardio-ECG/"/>
+    <id>/2015/08/26/cardio-ECG/</id>
     <published>2015-08-26T19:42:00.000Z</published>
     <updated>2015-08-31T20:29:33.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrf9np3gj20e80ao3zx.jpg" alt=""></p>
@@ -544,28 +544,28 @@
     
     </summary>
     
-      <category term="Bluetooth" scheme="http://forwardkth.github.io/tags/Bluetooth/"/>
+      <category term="Bluetooth" scheme="/tags/Bluetooth/"/>
     
-      <category term="ECG" scheme="http://forwardkth.github.io/tags/ECG/"/>
+      <category term="ECG" scheme="/tags/ECG/"/>
     
-      <category term="handheld" scheme="http://forwardkth.github.io/tags/handheld/"/>
+      <category term="handheld" scheme="/tags/handheld/"/>
     
-      <category term="wireless" scheme="http://forwardkth.github.io/tags/wireless/"/>
+      <category term="wireless" scheme="/tags/wireless/"/>
     
-      <category term="心率" scheme="http://forwardkth.github.io/tags/%E5%BF%83%E7%8E%87/"/>
+      <category term="心率" scheme="/tags/%E5%BF%83%E7%8E%87/"/>
     
-      <category term="手持设备" scheme="http://forwardkth.github.io/tags/%E6%89%8B%E6%8C%81%E8%AE%BE%E5%A4%87/"/>
+      <category term="手持设备" scheme="/tags/%E6%89%8B%E6%8C%81%E8%AE%BE%E5%A4%87/"/>
     
-      <category term="蓝牙" scheme="http://forwardkth.github.io/tags/%E8%93%9D%E7%89%99/"/>
+      <category term="蓝牙" scheme="/tags/%E8%93%9D%E7%89%99/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Real courage]]></title>
-    <link href="http://forwardkth.github.io/2015/08/26/Real-courage/"/>
-    <id>http://forwardkth.github.io/2015/08/26/Real-courage/</id>
+    <link href="/2015/08/26/Real-courage/"/>
+    <id>/2015/08/26/Real-courage/</id>
     <published>2015-08-26T18:20:31.000Z</published>
     <updated>2016-04-29T11:33:49.383Z</updated>
     <content type="html"><![CDATA[<!-- HTML -->
@@ -591,16 +591,16 @@
     
     </summary>
     
-      <category term="House of cards" scheme="http://forwardkth.github.io/tags/House-of-cards/"/>
+      <category term="House of cards" scheme="/tags/House-of-cards/"/>
     
-      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+      <category term="Diary-日记" scheme="/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Project@KTH "The wireless RFID sensing device"(2010)]]></title>
-    <link href="http://forwardkth.github.io/2015/08/26/passive-RFID/"/>
-    <id>http://forwardkth.github.io/2015/08/26/passive-RFID/</id>
+    <link href="/2015/08/26/passive-RFID/"/>
+    <id>/2015/08/26/passive-RFID/</id>
     <published>2015-08-26T18:11:11.000Z</published>
     <updated>2015-09-01T20:40:37.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
@@ -618,20 +618,20 @@
     
     </summary>
     
-      <category term="RFID" scheme="http://forwardkth.github.io/tags/RFID/"/>
+      <category term="RFID" scheme="/tags/RFID/"/>
     
-      <category term="wireless sensing" scheme="http://forwardkth.github.io/tags/wireless-sensing/"/>
+      <category term="wireless sensing" scheme="/tags/wireless-sensing/"/>
     
-      <category term="无线传感" scheme="http://forwardkth.github.io/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
+      <category term="无线传感" scheme="/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[New media art work - walking man (2007)]]></title>
-    <link href="http://forwardkth.github.io/2015/08/26/walking-man/"/>
-    <id>http://forwardkth.github.io/2015/08/26/walking-man/</id>
+    <link href="/2015/08/26/walking-man/"/>
+    <id>/2015/08/26/walking-man/</id>
     <published>2015-08-26T08:52:10.000Z</published>
     <updated>2015-08-27T13:52:37.343Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evhi2mwge5j20hs0dcgmm.jpg" alt=""></p>
@@ -647,26 +647,26 @@
     
     </summary>
     
-      <category term="Art" scheme="http://forwardkth.github.io/tags/Art/"/>
+      <category term="Art" scheme="/tags/Art/"/>
     
-      <category term="LED matrix" scheme="http://forwardkth.github.io/tags/LED-matrix/"/>
+      <category term="LED matrix" scheme="/tags/LED-matrix/"/>
     
-      <category term="Vision" scheme="http://forwardkth.github.io/tags/Vision/"/>
+      <category term="Vision" scheme="/tags/Vision/"/>
     
-      <category term="new media" scheme="http://forwardkth.github.io/tags/new-media/"/>
+      <category term="new media" scheme="/tags/new-media/"/>
     
-      <category term="新媒体" scheme="http://forwardkth.github.io/tags/%E6%96%B0%E5%AA%92%E4%BD%93/"/>
+      <category term="新媒体" scheme="/tags/%E6%96%B0%E5%AA%92%E4%BD%93/"/>
     
-      <category term="视觉艺术" scheme="http://forwardkth.github.io/tags/%E8%A7%86%E8%A7%89%E8%89%BA%E6%9C%AF/"/>
+      <category term="视觉艺术" scheme="/tags/%E8%A7%86%E8%A7%89%E8%89%BA%E6%9C%AF/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[My computer workspace]]></title>
-    <link href="http://forwardkth.github.io/2015/08/25/My-computer-work-space/"/>
-    <id>http://forwardkth.github.io/2015/08/25/My-computer-work-space/</id>
+    <link href="/2015/08/25/My-computer-work-space/"/>
+    <id>/2015/08/25/My-computer-work-space/</id>
     <published>2015-08-25T12:30:06.000Z</published>
     <updated>2016-04-29T11:57:23.610Z</updated>
     <content type="html"><![CDATA[<p>I would like to show my computer workspace here. I have one DELL notebook which connected with two monitors running Linux as well as windows.</p>
@@ -680,20 +680,20 @@
     
     </summary>
     
-      <category term="geek" scheme="http://forwardkth.github.io/tags/geek/"/>
+      <category term="geek" scheme="/tags/geek/"/>
     
-      <category term="programmer" scheme="http://forwardkth.github.io/tags/programmer/"/>
+      <category term="programmer" scheme="/tags/programmer/"/>
     
-      <category term="workspace" scheme="http://forwardkth.github.io/tags/workspace/"/>
+      <category term="workspace" scheme="/tags/workspace/"/>
     
-      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+      <category term="Notes-随笔" scheme="/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Course Project@KTH "Stuff guarder"(2010)]]></title>
-    <link href="http://forwardkth.github.io/2015/08/22/stuff-guarder/"/>
-    <id>http://forwardkth.github.io/2015/08/22/stuff-guarder/</id>
+    <link href="/2015/08/22/stuff-guarder/"/>
+    <id>/2015/08/22/stuff-guarder/</id>
     <published>2015-08-22T10:02:36.000Z</published>
     <updated>2016-03-08T10:34:01.734Z</updated>
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device that can remind you when your private stuff is moved by others.<br>It also can remind you to get back your bank card after drawing money from a ATM machine.</p>
@@ -704,22 +704,22 @@
     <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device ]]>
     </summary>
     
-      <category term="KTH" scheme="http://forwardkth.github.io/tags/KTH/"/>
+      <category term="KTH" scheme="/tags/KTH/"/>
     
-      <category term="MSP430" scheme="http://forwardkth.github.io/tags/MSP430/"/>
+      <category term="MSP430" scheme="/tags/MSP430/"/>
     
-      <category term="alarm" scheme="http://forwardkth.github.io/tags/alarm/"/>
+      <category term="alarm" scheme="/tags/alarm/"/>
     
-      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
+      <category term="sensor" scheme="/tags/sensor/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Project@China "The Upper-Limb Tele-Rehabilitation Robot with interaction of vitual environment" (2008)]]></title>
-    <link href="http://forwardkth.github.io/2015/08/21/project-upper-limb-robot/"/>
-    <id>http://forwardkth.github.io/2015/08/21/project-upper-limb-robot/</id>
+    <link href="/2015/08/21/project-upper-limb-robot/"/>
+    <id>/2015/08/21/project-upper-limb-robot/</id>
     <published>2015-08-21T10:02:16.000Z</published>
     <updated>2016-03-06T19:52:59.000Z</updated>
     <content type="html"><![CDATA[<p>This project is my first master degree study in China just before I came to sweden in 2009.</p>
@@ -732,25 +732,25 @@
 <p>Aiming at the disadvantages of the tra]]>
     </summary>
     
-      <category term="ARM7" scheme="http://forwardkth.github.io/tags/ARM7/"/>
+      <category term="ARM7" scheme="/tags/ARM7/"/>
     
-      <category term="Interaction" scheme="http://forwardkth.github.io/tags/Interaction/"/>
+      <category term="Interaction" scheme="/tags/Interaction/"/>
     
-      <category term="cross compiling" scheme="http://forwardkth.github.io/tags/cross-compiling/"/>
+      <category term="cross compiling" scheme="/tags/cross-compiling/"/>
     
-      <category term="force feedback" scheme="http://forwardkth.github.io/tags/force-feedback/"/>
+      <category term="force feedback" scheme="/tags/force-feedback/"/>
     
-      <category term="linux" scheme="http://forwardkth.github.io/tags/linux/"/>
+      <category term="linux" scheme="/tags/linux/"/>
     
-      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+      <category term="robot" scheme="/tags/robot/"/>
     
-      <category term="tele-operation" scheme="http://forwardkth.github.io/tags/tele-operation/"/>
+      <category term="tele-operation" scheme="/tags/tele-operation/"/>
     
-      <category term="力反馈" scheme="http://forwardkth.github.io/tags/%E5%8A%9B%E5%8F%8D%E9%A6%88/"/>
+      <category term="力反馈" scheme="/tags/%E5%8A%9B%E5%8F%8D%E9%A6%88/"/>
     
-      <category term="康复训练机器人" scheme="http://forwardkth.github.io/tags/%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+      <category term="康复训练机器人" scheme="/tags/%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+      <category term="projects-项目" scheme="/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
