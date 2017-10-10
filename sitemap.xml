@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://forwardkth.github.io/about/index.html</loc>
+    <lastmod>2017-10-10T18:30:57.441Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://forwardkth.github.io/links/index.html</loc>
+    <lastmod>2017-10-10T18:23:43.223Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://forwardkth.github.io/2017/04/17/Gothenburg/</loc>
     <lastmod>2017-04-18T21:27:26.339Z</lastmod>
   </url>
@@ -24,16 +34,6 @@
   <url>
     <loc>http://forwardkth.github.io/2016/01/25/2016-new-year/</loc>
     <lastmod>2017-04-17T17:39:50.833Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://forwardkth.github.io/about/index.html</loc>
-    <lastmod>2017-04-17T17:33:25.148Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://forwardkth.github.io/links/index.html</loc>
-    <lastmod>2016-05-29T17:53:52.459Z</lastmod>
   </url>
   
   <url>
