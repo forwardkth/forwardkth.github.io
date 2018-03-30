@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://forwardkth.github.io/"/>
-  <updated>2018-01-12T21:23:12.994Z</updated>
+  <updated>2018-03-30T21:22:26.476Z</updated>
   <id>http://forwardkth.github.io/</id>
   
   <author>
@@ -13,6 +13,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[The Remote Computer vision controller for my WifiRobot]]></title>
+    <link href="http://forwardkth.github.io/2018/03/30/BBRobot-opencv/"/>
+    <id>http://forwardkth.github.io/2018/03/30/BBRobot-opencv/</id>
+    <published>2018-03-30T21:11:59.000Z</published>
+    <updated>2018-03-30T21:22:26.476Z</updated>
+    <content type="html"><![CDATA[<p>This is a ongoing project. The idea is to build a Remote Computer Vision controller based on OpenCV 3.4.0, cuDNN, CUDA and Yolo for my Beaglebone Wifi Robot.<br>You can find it here:  <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a><br>It can be seen as a mini Autonomous Vehicle project. The remote controller on PC will be a combination of Image processing, sensor fusion and deep learning with the image data streamed from the Wifi robot.</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvish1t10j23402c0kjm.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1fpviriawz6j21gu0sjaky.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fpvis7nq6vj23402c0e82.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvira0vdvj21hw0sqk1f.jpg" alt=""></p>
+<p>I just started to work on this project from time to time. So the code on Github is not so complete and well organized.</p>
+<hr>
+<p>The Wifi Robot project on windows platform can be found here: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p>My Modification to the original Blacklib recently are:</p>
+<ol>
+<li>Modification to the class of BalckPWM</li>
+<li>Implement the BlackServo class for easier Servo control like “PyBBIO”</li>
+<li>Add Servo control example code (example_Servo.h) under /BlackLib/examples folder</li>
+<li>Add my WIFI robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+</ol>
+<p>The picture below shows the visualGDB configuration with VS2015 for cross complie and remote debug and deploy<br><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
+<p>You can find the same robot project under linux with Eclipse here: <a href="https://github.com/forwardkth/Blacklib_template.git" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template.git</a> </p>
+<hr>
+<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/large/74505a4cgw1f7oypkop58j20ku0fmn0o.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/large/74505a4cgw1f7oyqnelgnj20qo0qo79n.jpg" alt=""></p>
+<p>The new DEMO video on Youtube:<br><a href="https://youtu.be/q4rHsRQ4LsQ" target="_blank" rel="external">https://youtu.be/q4rHsRQ4LsQ</a><br><a href="https://youtu.be/8c8KAbVZPCA" target="_blank" rel="external">https://youtu.be/8c8KAbVZPCA</a></p>
+<p>The old outdoor DEMO video on Youtube:<br><a href="https://www.youtube.com/v77tkjFmZqY" target="_blank" rel="external">https://www.youtube.com/v77tkjFmZqY</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This is a ongoing project. The idea is to build a Remote Computer Vision controller based on OpenCV 3.4.0, cuDNN, CUDA and Yolo for my Be]]>
+    </summary>
+    
+      <category term="BeagleBone" scheme="http://forwardkth.github.io/tags/BeagleBone/"/>
+    
+      <category term="CUDA" scheme="http://forwardkth.github.io/tags/CUDA/"/>
+    
+      <category term="CV" scheme="http://forwardkth.github.io/tags/CV/"/>
+    
+      <category term="Computer Vision" scheme="http://forwardkth.github.io/tags/Computer-Vision/"/>
+    
+      <category term="Deep learning" scheme="http://forwardkth.github.io/tags/Deep-learning/"/>
+    
+      <category term="OpenCV" scheme="http://forwardkth.github.io/tags/OpenCV/"/>
+    
+      <category term="Robot" scheme="http://forwardkth.github.io/tags/Robot/"/>
+    
+      <category term="YOLO" scheme="http://forwardkth.github.io/tags/YOLO/"/>
+    
+      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[2017 春天 哥德堡]]></title>
@@ -717,32 +768,6 @@
       <category term="workspace" scheme="http://forwardkth.github.io/tags/workspace/"/>
     
       <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Course Project@KTH "Stuff guarder"(2010)]]></title>
-    <link href="http://forwardkth.github.io/2015/08/22/stuff-guarder/"/>
-    <id>http://forwardkth.github.io/2015/08/22/stuff-guarder/</id>
-    <published>2015-08-22T10:02:36.000Z</published>
-    <updated>2016-03-08T10:34:01.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device that can remind you when your private stuff is moved by others.<br>It also can remind you to get back your bank card after drawing money from a ATM machine.</p>
-<p><img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f1pmuexnvsj20go0ciq54.jpg" alt=""></p>
-<p>It is implemented by a self made TI MSP430 experimental board with light sensor and accelemeter sensor. It is easy and simple.<br>The main purpose of this project is to learn how to use the sensors data in a smart way even very limited number and type of sensors.</p>
-<embed src="http://player.youku.com/player.php/sid/XMTU2OTc4MzIw/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg" alt=""><br>Course Project “Stuff guarder” is a simple device ]]>
-    </summary>
-    
-      <category term="KTH" scheme="http://forwardkth.github.io/tags/KTH/"/>
-    
-      <category term="MSP430" scheme="http://forwardkth.github.io/tags/MSP430/"/>
-    
-      <category term="alarm" scheme="http://forwardkth.github.io/tags/alarm/"/>
-    
-      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
-    
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
