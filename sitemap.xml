@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://forwardkth.github.io/2018/03/30/BBRobot-opencv/</loc>
+    <lastmod>2018-04-01T10:45:12.451Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://forwardkth.github.io/about/index.html</loc>
     <lastmod>2018-04-01T10:40:38.737Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</loc>
     <lastmod>2018-03-31T08:58:43.998Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://forwardkth.github.io/2018/03/30/BBRobot-opencv/</loc>
-    <lastmod>2018-03-30T21:34:03.826Z</lastmod>
   </url>
   
   <url>
