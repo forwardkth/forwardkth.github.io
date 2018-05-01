@@ -90,7 +90,7 @@ http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/">
 <meta property="og:site_name" content="Chao_Forward">
 <meta property="og:description" content="I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.
 http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/">
-<meta property="og:updated_time" content="2016-04-28T20:01:11.500Z">
+<meta property="og:updated_time" content="2018-05-01T08:14:57.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BlackLib Template">
 <meta name="twitter:description" content="I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.
@@ -364,9 +364,38 @@ http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/">
         <p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.</p>
 <p><a href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/">http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</a></p>
 <p>And I have made a C++ application template with modified version of  BlackLib v3.0 in eclipse for the Beaglebone white Development. It works quite well.</p>
-<p>I also added a “BlackServo” module and a servo control exmaple to the BlackLib V3.0 for easy Servo motor control, just like what they have done in the Python library “PyBBIO”.</p>
-<p>If you are interested to this template, you can download it from Github freely.</p>
-<p><a href="https://github.com/forwardkth/Blacklib_template.git" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template.git</a>  </p>
+<p>The Wifi Robot project on windows platform can be found here: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a><br>You can find the same robot project under linux with Eclipse here: <a href="https://github.com/forwardkth/Blacklib_template.git" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template.git</a> </p>
+<p>My Modification to the original Blacklib recently are:</p>
+<ol>
+<li>Modification to the class BalckPWM</li>
+<li>Implement the BlackServo class for easier Servo control like “PyBBIO”</li>
+<li>Add Servo control example code (example_Servo.h) under /BlackLib/examples folder</li>
+<li>Add my WIFI robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+</ol>
+<p>You can run the examples with the ExampleMain.cpp or run the formal project with WiFiRobotMain.cpp</p>
+<p>Historical project updates:</p>
+<p>2015</p>
+<ol>
+<li>Modification to the class of BalckPWM</li>
+<li>Add Servo motor control class “BlackServo”</li>
+<li>Add Servo control demo code under /BlackLib/examples folder</li>
+<li>Add demo WiFi robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+<li>Add Video streaming code</li>
+</ol>
+<p>2016 (To be continue)      </p>
+<ol>
+<li>New remote control UI with C sharp and WPF</li>
+<li>iOS APP for WiFi Robot remote control</li>
+</ol>
+<p>2017 (To be continue)   </p>
+<ol>
+<li>Start working with the Computer Vision based remote controller for the WiFiRobot</li>
+</ol>
+<p>2018 (To be continue)         </p>
+<ol>
+<li>Add formal WiFi robot project code under “BBLib_VisualGDB/WiFiRobot/“</li>
+<li>Add Json support for Multiple sensor data transmission</li>
+</ol>
 <p>enjoy!</p>
 <p>…….Tomorrow will be monday again</p>
 
