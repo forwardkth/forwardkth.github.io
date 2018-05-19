@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://forwardkth.github.io/links/index.html</loc>
+    <lastmod>2018-05-19T18:12:39.754Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://forwardkth.github.io/2015/10/25/BlackLib-Template/</loc>
     <lastmod>2018-05-01T08:28:33.489Z</lastmod>
   </url>
@@ -24,11 +29,6 @@
   <url>
     <loc>http://forwardkth.github.io/about/index.html</loc>
     <lastmod>2018-04-01T10:40:38.737Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://forwardkth.github.io/links/index.html</loc>
-    <lastmod>2018-04-01T10:37:33.320Z</lastmod>
   </url>
   
   <url>
