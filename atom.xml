@@ -586,6 +586,38 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Master Thesis work @KTH and ABB - A Hybrid Sensor for High Current and Harmonics Measurement (2011)]]></title>
+    <link href="http://forwardkth.github.io/2015/08/29/kththesis/"/>
+    <id>http://forwardkth.github.io/2015/08/29/kththesis/</id>
+    <published>2015-08-29T20:23:43.000Z</published>
+    <updated>2018-05-23T21:17:58.888Z</updated>
+    <content type="html"><![CDATA[<p><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlynmzy3hj20n10h8ju4.jpg" alt=""><br>This project is my second master degree thesis work at KTH, Sweden between 2010 and 2011.<br>The aim of this thesis project is to develop a novel current sensor probe which is low cost, light weight, and easy to be integrated in power component (compact in size, without complex insulation and relative high safety level). The bandwidth should be from DC to KHz. It should fulfill the requirements of current harmonics measurements of DC transmission system as well as the capacity of direct current measurement with acceptable response time, precision, sensitivity and accuracy.</p>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>Current measurement has been and is still one of the key aspects in power systems. In the traditional High Voltage (HV) and Extra High Voltage (EHV) grid, the current measurements are realized by current transformers - CTs. These are usually a separate unit for the CT function and for each phase. The cost is considerable and these measurements are therefore made only where strongly needed. Bad reliability of the transformer will impact directly on the system: an insulation failure of a CT will make parallel components unable to operate until repaired. The traditional CTs also need careful consideration of saturation limits during fault conditions. The CTs connect to the instrumentation, signal capturing and display equipment by direct galvanic connection, with all the EMC (electromagnetic compatibility) problems of induced voltages from electromagnetic fields, and risks if the CT insulation breaks down.<br>High current and current harmonics are also very critical parameters for the power quality monitoring, harmonics suppression and control &amp; protection mechanism in high voltage direct current transmission systems. The current sensor most commonly used is the Rogowski coil. But the traditional Rogowski coil is not very sensitive to low frequency current. And it is impossible for direct current measurement. In recent years, the all fiber OCT (Optical Current Transformer) which is based on the optical Faraday Effect began to be used. But it is too expensive and highly complex to be widely used in power systems at the present stage.<br>Therefore there is a need of HV (High Voltage) current sensor that has a wider frequency bandwidth as well as the capacity of measuring DC (Direct Current). Meanwhile this kind of current sensor should have the features like low cost, light weight, and easy to be integrated in to the power systems (compact in size, easy installation and relative high safety level).  </p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>High current and current harmonics are very critical parameters used for the power quality monitoring, harmonics suppression as well as control and protection function in high voltage direct current transmission system. Rogowski coil is one of the most common current sensors used in power system. But the traditional Rogowski coil is not sensitive to low frequency current. It is impossible to be used for direct current measurement. In recent years, the all fiber OCT (Optical Current Transformer) which is based on the optical Faraday Effect is applied. But it is too expensive and highly complex to be widely deployed in power systems at the present stage. Therefore there is a need of developing a high current sensor with a wider frequency bandwidth as well as the capacity of measuring direct current. Meanwhile this kind of current sensor should include the features like low cost, light weight, and easy to be integrated into the power systems (compact in size, easy installation and relative high safety level).<br>This thesis report presents an approach with the capacity of both high DC current measurement and high AC current measurement by using a novel hybrid current sensor probe which is the combination of the PCB based Rogowski coils, GMR (Giant Magneto Resistance) sensor and the principle HOKA. The Lab experiments have shown a qualified performance. It is capable to capture the current of 220 Amps from DC up to 250 KHz with the sensitivity about 0.002 V/A (DC), acceptable linearity and accuracy within ±1%.<br>This novel hybrid current sensor is very suitable for the direct high current measurement as well as the current harmonics measurement in the DC power transmission systems.<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlynmjvexj20lv0cwq3q.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlynmjzzhj20mg0aldh6.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlynmr9c8j20mp0fcab9.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlynms18nj20m40fgjsx.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlynmrwlej20la0esdhp.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlynmzy3hj20n10h8ju4.jpg" alt=""><br>This project is my second master degree thesis w]]>
+    </summary>
+    
+      <category term="ABB" scheme="http://forwardkth.github.io/tags/ABB/"/>
+    
+      <category term="AC" scheme="http://forwardkth.github.io/tags/AC/"/>
+    
+      <category term="DC" scheme="http://forwardkth.github.io/tags/DC/"/>
+    
+      <category term="HOKA principle" scheme="http://forwardkth.github.io/tags/HOKA-principle/"/>
+    
+      <category term="harmonics" scheme="http://forwardkth.github.io/tags/harmonics/"/>
+    
+      <category term="hybrid" scheme="http://forwardkth.github.io/tags/hybrid/"/>
+    
+      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[My Tele-operation robot, Generation II]]></title>
     <link href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/"/>
     <id>http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</id>
@@ -853,41 +885,6 @@
       <category term="wireless sensing" scheme="http://forwardkth.github.io/tags/wireless-sensing/"/>
     
       <category term="无线传感" scheme="http://forwardkth.github.io/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
-    
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[New media art work - walking man (2007)]]></title>
-    <link href="http://forwardkth.github.io/2015/08/26/walking-man/"/>
-    <id>http://forwardkth.github.io/2015/08/26/walking-man/</id>
-    <published>2015-08-26T08:52:10.000Z</published>
-    <updated>2015-08-27T13:52:37.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evhi2mwge5j20hs0dcgmm.jpg" alt=""></p>
-<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is the first project in my life when I was still a young undergraduate student in China.<br>In the winter holiday of 2007, I cooperated with my friend, Hou, who is from China Academy of Art to create this visual art work of new media. It is a 3D LED lamp matrix controlled by a very cheap 89C52 MCU. They compose the dynamic image of a walking people in 3D space.</p>
-<a id="more"></a>
-<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evhi66giljj20hs0dcaaa.jpg" alt=""><br>How it is looks like when shutting down the light</p>
-<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2q175oj20hs0dc0uf.jpg" alt=""><br>The 89C52 MCU based LED Matrix controller</p>
-<p><img src="http://ww1.sinaimg.cn/mw1024/74505a4cgw1evhi2m44kuj20hs0dct9n.jpg" alt=""><br>The <strong>walking man</strong> was under assembling.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evhi2mwge5j20hs0dcgmm.jpg" alt=""></p>
-<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is the first project in my life when I was still a young undergraduate student in China.<br>In the winter holiday of 2007, I cooperated with my friend, Hou, who is from China Academy of Art to create this visual art work of new media. It is a 3D LED lamp matrix controlled by a very cheap 89C52 MCU. They compose the dynamic image of a walking people in 3D space.</p>]]>
-    
-    </summary>
-    
-      <category term="Art" scheme="http://forwardkth.github.io/tags/Art/"/>
-    
-      <category term="LED matrix" scheme="http://forwardkth.github.io/tags/LED-matrix/"/>
-    
-      <category term="Vision" scheme="http://forwardkth.github.io/tags/Vision/"/>
-    
-      <category term="new media" scheme="http://forwardkth.github.io/tags/new-media/"/>
-    
-      <category term="新媒体" scheme="http://forwardkth.github.io/tags/%E6%96%B0%E5%AA%92%E4%BD%93/"/>
-    
-      <category term="视觉艺术" scheme="http://forwardkth.github.io/tags/%E8%A7%86%E8%A7%89%E8%89%BA%E6%9C%AF/"/>
     
       <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
