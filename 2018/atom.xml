@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Chao_Forward]]></title>
+  <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://forwardkth.github.io/"/>
+  <updated>2018-04-27T18:35:59.352Z</updated>
+  <id>http://forwardkth.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Chao Li]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Home assistant + Mysensors + Xiaomi + homebridge]]></title>
+    <link href="http://forwardkth.github.io/2018/04/25/Homeassistant/"/>
+    <id>http://forwardkth.github.io/2018/04/25/Homeassistant/</id>
+    <published>2018-04-25T20:59:28.000Z</published>
+    <updated>2018-04-27T18:35:59.352Z</updated>
+    <content type="html"><![CDATA[<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>I started to build a home sensor network with MySensors solution in 2016.<br>You can find it here:  <a href="http://forwardkth.github.io/2015/09/22/mysensors/">http://forwardkth.github.io/2015/09/22/mysensors/</a><br>Recently I have expanded this project with the Home assistnat server, xiaomi plugs and homeBridge. Now Mysensors platform, xiaomi eco system, Home assistant controller and iOS eco system can be combined together as a complete smart home system.<br>You can find many similar instruction and tutorials from internet. So I just briefly show some key components needed.</p>
+<h2 id="Raspberry_Pi_based_home_assistant_server_3A"><a href="#Raspberry_Pi_based_home_assistant_server_3A" class="headerlink" title="Raspberry Pi based home assistant server:"></a>Raspberry Pi based home assistant server:</h2><p>Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control. Perfect to run on a Raspberry Pi.<br><a href="https://www.home-assistant.io/" target="_blank" rel="external">https://www.home-assistant.io/</a><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fqm3tjzxqxj21dc0wwwuq.jpg" alt=""><br><img src="http://wx4.sinaimg.cn/large/74505a4cgy1fqrrxqivy8j21hc0qo12v.jpg" alt=""><br><img src="http://wx2.sinaimg.cn/large/74505a4cgy1fqrrxpt9i8j21hc0qqgo5.jpg" alt=""><br><img src="http://wx3.sinaimg.cn/large/74505a4cgy1fqrrxr4r2fj21gz0qo4dv.jpg" alt=""></p>
+<h2 id="MySensor_wireless_sensor_network_3A"><a href="#MySensor_wireless_sensor_network_3A" class="headerlink" title="MySensor wireless sensor network:"></a>MySensor wireless sensor network:</h2><p><img src="https://www.mysensors.org/uploads/57bd7e180b692ab55e15504f/image/network.png" alt=""><br>MySensors is an open source hardware and software community focusing on do-it-yourself home automation and Internet of Things.<br>It helps people who’d like to create original and affordable sensors and actuators based on components like, Arduino, ESP8266, Raspberry Pi, NRF24L01+ and RFM69.<br>Website: <a href="https://www.mysensors.org/" target="_blank" rel="external">https://www.mysensors.org/</a></p>
+<h3 id="ESP8266_Sensor_gateway_3A"><a href="#ESP8266_Sensor_gateway_3A" class="headerlink" title="ESP8266 Sensor gateway:"></a>ESP8266 Sensor gateway:</h3><p>In order to communicate between and collect data from your sensors, we need a wireless communications link. Currently we support a couple of small transceiver called nRF24L01+ and RFM69. You can also run the MySensors library directly on the WiFi enabled ESP8266 for sensors not running on batteries.<br>It’s pretty smart, small, low-cost and does not consume a lot of battery power.<br>Gateway - passes data from nodes to your home automation controller as well as from the home automation controller back to nodes. You can attach sensors directly to the gateway as well.<br>You can also send messages directly between two nodes in the network without transiting through the gateway. For example, your outside temperature sensor can send its data directly to another sensor in your kitchen with an attached display.<br>It’s possible to build a WIFI enabled gateway running directly on an ESP8266 module. The porting has been done by Yveaux and has been documented here.<br><a href="https://forum.mysensors.org/topic/1870/esp8266-wifi-gateway-port-for-mysensors" target="_blank" rel="external">https://forum.mysensors.org/topic/1870/esp8266-wifi-gateway-port-for-mysensors</a><br>The easiest build option is probably to use the NodeMcu Devkit v.10 (by the NodeMcu Team). This board has the ESP-12 module mounted. Just connect the radio, install gateway software and you’re good to go.<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fqm3vap22gj21dc0wwgxj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3v6r9rhj21dc0wwdp4.jpg" alt=""></p>
+<h3 id="Ardoino_Nano_sensor_nodes_3A"><a href="#Ardoino_Nano_sensor_nodes_3A" class="headerlink" title="Ardoino Nano sensor nodes:"></a>Ardoino Nano sensor nodes:</h3><p>Your sensors will form a tree network topology. Normally the sensor nodes (S) will send their information directly to the gateway (GW). If you live in a mansion or very large house, you may need to enable the repeater mode for some sensor nodes (R) to relay data from sensors that are located far away from the gateway.</p>
+<p>Sensor nodes - continuously read the status of all attached sensors and pass the sensor data through the radio network back to the gateway. These puppies have the option to sleep most of the time if you want to run them on battery.</p>
+<p>Repeater-sensor nodes - must stay awake in order to pass messages from its child sensor nodes. A repeater-node can optionally include direct-attached sensors and report their sensor data to the gateway. In most setups you will probably not need any repeater-nodes as the transmitter range for the most basic radio is about 20-60 meters.</p>
+<p>Each node is assigned a unique sensorId or address that is used for sending and receiving point-to-point messages. You can assign a static sensorId (in the sketch) or let the controller automatically assign one to the sensor. AUTO-mode configures the sensor to request a sensorId from the controller and is the default option for all the examples that we provide. The sensor stores the assigned sensorId in its non-volatile memory to ensure the correct sensorId persists across power transitions. A gateway always has sensorId 0.</p>
+<p>The first time a new sensor boots up, it will determine the path to the gateway by sending out a special Help-me-find-my-way-home-message. The repeater-sensor nodes and gateway listen for these messages and will respond to a sensor’s plea-for-help-message. Their reply will inform the sensor how far they are from the gateway so the newly born sensor can determine the shortest path to the gateway, be it directly to the gateway or through a repeater-sensor node which is the closest to the gateway. If the sensor node later loses contact with the gateway or a repeater-sensor node, it will automatically repeat this procedure to determine the best path to the gateway - a sensor node considers contact with the gateway to be lost if it fails to send 3 consecutive messages.</p>
+<p>Gateway and repeater-sensor nodes maintain a small routing table to know where to direct their messages to the network surrounding it. The routing table is built up automatically by the repeaters and gateway by introspecting messages received.</p>
+<p>A MySensor radio network can consist of up to 254 different radio nodes and each radio node can report data for 254 attached child sensors. This means that you can, in theory, manage data for up to 64516 sensors in a single radio network. If this isn’t enough, you can create another parallel radio network on a different channel and there are 126 available channels [NRF24L01+].</p>
+<p>To summarize: New nodes will automatically find the shortest path to gateway and and use a persistent unique sensorId to send and receive point-to-point messages. The tree network is robust and “self heals” as the topology changes. For example, you move a sensor node to a different physical location or a repeater-node dies.<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fqm3uyr37lj21dc0wwk2z.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3v2vwe8j21dc0wwqeo.jpg" alt=""></p>
+<h2 id="HomeBridge_and_iOS_home_automation_3A"><a href="#HomeBridge_and_iOS_home_automation_3A" class="headerlink" title="HomeBridge and iOS home automation:"></a>HomeBridge and iOS home automation:</h2><p>Homebridge is a lightweight NodeJS server you can run on your home network that emulates the iOS HomeKit API.<br>It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit to various 3rd-party APIs provided by manufacturers of “smart home” devices.<br>This project can be found here: <a href="https://github.com/nfarina/homebridge" target="_blank" rel="external">https://github.com/nfarina/homebridge</a><br><img src="https://camo.githubusercontent.com/e9e98b1b146452a6987e4a05dd4ece8c34781643/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f31306c373949436f6854753469512f67697068792e676966" alt=""><br>It is perfect to combine with the HomeAssistant to interact with your home by your iphone home APP and Siri.<br>Below you can see that homebridge help my iphone detected all my sensor nodes and Xiaomi plugs at home.<br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3uubkidj20ku112h4g.jpg" alt=""><br><a id="more"></a><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3vrx7sjj20ku112kb3.jpg" alt=""><br>I have set up some home automation rules for example turning on home lights when sunset happens. It is quite self adaptive since the sunset time differs every day.<br>Another one is that turning on the security camera when I leave my home and turning it off when my phone location is home.<br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1fqm3vme4xxj20ku1120uz.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>I started to build a home sensor network with MySensors solution in 2016.<br>You can find it here:  <a href="http://forwardkth.github.io/2015/09/22/mysensors/">http://forwardkth.github.io/2015/09/22/mysensors/</a><br>Recently I have expanded this project with the Home assistnat server, xiaomi plugs and homeBridge. Now Mysensors platform, xiaomi eco system, Home assistant controller and iOS eco system can be combined together as a complete smart home system.<br>You can find many similar instruction and tutorials from internet. So I just briefly show some key components needed.</p>
+<h2 id="Raspberry_Pi_based_home_assistant_server_3A"><a href="#Raspberry_Pi_based_home_assistant_server_3A" class="headerlink" title="Raspberry Pi based home assistant server:"></a>Raspberry Pi based home assistant server:</h2><p>Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control. Perfect to run on a Raspberry Pi.<br><a href="https://www.home-assistant.io/">https://www.home-assistant.io/</a><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fqm3tjzxqxj21dc0wwwuq.jpg" alt=""><br><img src="http://wx4.sinaimg.cn/large/74505a4cgy1fqrrxqivy8j21hc0qo12v.jpg" alt=""><br><img src="http://wx2.sinaimg.cn/large/74505a4cgy1fqrrxpt9i8j21hc0qqgo5.jpg" alt=""><br><img src="http://wx3.sinaimg.cn/large/74505a4cgy1fqrrxr4r2fj21gz0qo4dv.jpg" alt=""></p>
+<h2 id="MySensor_wireless_sensor_network_3A"><a href="#MySensor_wireless_sensor_network_3A" class="headerlink" title="MySensor wireless sensor network:"></a>MySensor wireless sensor network:</h2><p><img src="https://www.mysensors.org/uploads/57bd7e180b692ab55e15504f/image/network.png" alt=""><br>MySensors is an open source hardware and software community focusing on do-it-yourself home automation and Internet of Things.<br>It helps people who’d like to create original and affordable sensors and actuators based on components like, Arduino, ESP8266, Raspberry Pi, NRF24L01+ and RFM69.<br>Website: <a href="https://www.mysensors.org/">https://www.mysensors.org/</a></p>
+<h3 id="ESP8266_Sensor_gateway_3A"><a href="#ESP8266_Sensor_gateway_3A" class="headerlink" title="ESP8266 Sensor gateway:"></a>ESP8266 Sensor gateway:</h3><p>In order to communicate between and collect data from your sensors, we need a wireless communications link. Currently we support a couple of small transceiver called nRF24L01+ and RFM69. You can also run the MySensors library directly on the WiFi enabled ESP8266 for sensors not running on batteries.<br>It’s pretty smart, small, low-cost and does not consume a lot of battery power.<br>Gateway - passes data from nodes to your home automation controller as well as from the home automation controller back to nodes. You can attach sensors directly to the gateway as well.<br>You can also send messages directly between two nodes in the network without transiting through the gateway. For example, your outside temperature sensor can send its data directly to another sensor in your kitchen with an attached display.<br>It’s possible to build a WIFI enabled gateway running directly on an ESP8266 module. The porting has been done by Yveaux and has been documented here.<br><a href="https://forum.mysensors.org/topic/1870/esp8266-wifi-gateway-port-for-mysensors">https://forum.mysensors.org/topic/1870/esp8266-wifi-gateway-port-for-mysensors</a><br>The easiest build option is probably to use the NodeMcu Devkit v.10 (by the NodeMcu Team). This board has the ESP-12 module mounted. Just connect the radio, install gateway software and you’re good to go.<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fqm3vap22gj21dc0wwgxj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3v6r9rhj21dc0wwdp4.jpg" alt=""></p>
+<h3 id="Ardoino_Nano_sensor_nodes_3A"><a href="#Ardoino_Nano_sensor_nodes_3A" class="headerlink" title="Ardoino Nano sensor nodes:"></a>Ardoino Nano sensor nodes:</h3><p>Your sensors will form a tree network topology. Normally the sensor nodes (S) will send their information directly to the gateway (GW). If you live in a mansion or very large house, you may need to enable the repeater mode for some sensor nodes (R) to relay data from sensors that are located far away from the gateway.</p>
+<p>Sensor nodes - continuously read the status of all attached sensors and pass the sensor data through the radio network back to the gateway. These puppies have the option to sleep most of the time if you want to run them on battery.</p>
+<p>Repeater-sensor nodes - must stay awake in order to pass messages from its child sensor nodes. A repeater-node can optionally include direct-attached sensors and report their sensor data to the gateway. In most setups you will probably not need any repeater-nodes as the transmitter range for the most basic radio is about 20-60 meters.</p>
+<p>Each node is assigned a unique sensorId or address that is used for sending and receiving point-to-point messages. You can assign a static sensorId (in the sketch) or let the controller automatically assign one to the sensor. AUTO-mode configures the sensor to request a sensorId from the controller and is the default option for all the examples that we provide. The sensor stores the assigned sensorId in its non-volatile memory to ensure the correct sensorId persists across power transitions. A gateway always has sensorId 0.</p>
+<p>The first time a new sensor boots up, it will determine the path to the gateway by sending out a special Help-me-find-my-way-home-message. The repeater-sensor nodes and gateway listen for these messages and will respond to a sensor’s plea-for-help-message. Their reply will inform the sensor how far they are from the gateway so the newly born sensor can determine the shortest path to the gateway, be it directly to the gateway or through a repeater-sensor node which is the closest to the gateway. If the sensor node later loses contact with the gateway or a repeater-sensor node, it will automatically repeat this procedure to determine the best path to the gateway - a sensor node considers contact with the gateway to be lost if it fails to send 3 consecutive messages.</p>
+<p>Gateway and repeater-sensor nodes maintain a small routing table to know where to direct their messages to the network surrounding it. The routing table is built up automatically by the repeaters and gateway by introspecting messages received.</p>
+<p>A MySensor radio network can consist of up to 254 different radio nodes and each radio node can report data for 254 attached child sensors. This means that you can, in theory, manage data for up to 64516 sensors in a single radio network. If this isn’t enough, you can create another parallel radio network on a different channel and there are 126 available channels [NRF24L01+].</p>
+<p>To summarize: New nodes will automatically find the shortest path to gateway and and use a persistent unique sensorId to send and receive point-to-point messages. The tree network is robust and “self heals” as the topology changes. For example, you move a sensor node to a different physical location or a repeater-node dies.<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fqm3uyr37lj21dc0wwk2z.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3v2vwe8j21dc0wwqeo.jpg" alt=""></p>
+<h2 id="HomeBridge_and_iOS_home_automation_3A"><a href="#HomeBridge_and_iOS_home_automation_3A" class="headerlink" title="HomeBridge and iOS home automation:"></a>HomeBridge and iOS home automation:</h2><p>Homebridge is a lightweight NodeJS server you can run on your home network that emulates the iOS HomeKit API.<br>It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit to various 3rd-party APIs provided by manufacturers of “smart home” devices.<br>This project can be found here: <a href="https://github.com/nfarina/homebridge">https://github.com/nfarina/homebridge</a><br><img src="https://camo.githubusercontent.com/e9e98b1b146452a6987e4a05dd4ece8c34781643/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f31306c373949436f6854753469512f67697068792e676966" alt=""><br>It is perfect to combine with the HomeAssistant to interact with your home by your iphone home APP and Siri.<br>Below you can see that homebridge help my iphone detected all my sensor nodes and Xiaomi plugs at home.<br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3uubkidj20ku112h4g.jpg" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="Arduino" scheme="http://forwardkth.github.io/tags/Arduino/"/>
+    
+      <category term="Home assistant" scheme="http://forwardkth.github.io/tags/Home-assistant/"/>
+    
+      <category term="IoT" scheme="http://forwardkth.github.io/tags/IoT/"/>
+    
+      <category term="Mysensors" scheme="http://forwardkth.github.io/tags/Mysensors/"/>
+    
+      <category term="Raspberry Pi" scheme="http://forwardkth.github.io/tags/Raspberry-Pi/"/>
+    
+      <category term="Siri" scheme="http://forwardkth.github.io/tags/Siri/"/>
+    
+      <category term="Xiaomi" scheme="http://forwardkth.github.io/tags/Xiaomi/"/>
+    
+      <category term="hass" scheme="http://forwardkth.github.io/tags/hass/"/>
+    
+      <category term="homebridge" scheme="http://forwardkth.github.io/tags/homebridge/"/>
+    
+      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[The Remote Computer Vision controller for my WiFi Robot]]></title>
+    <link href="http://forwardkth.github.io/2018/03/30/BBRobot-opencv/"/>
+    <id>http://forwardkth.github.io/2018/03/30/BBRobot-opencv/</id>
+    <published>2018-03-30T21:11:59.000Z</published>
+    <updated>2018-05-01T08:28:33.481Z</updated>
+    <content type="html"><![CDATA[<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is a ongoing project. The idea is to build a Remote Computer Vision controller based on OpenCV 3.4.0, cuDNN, CUDA and Yolo for my Beaglebone Wifi Robot.<br>You can find it here:  <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a><br>It can be seen as a mini Autonomous Vehicle project. The remote controller on PC will be a combination of Image processing, sensor fusion and deep learning with the image data streamed from the Wifi robot.<br>I just started to work on this project from time to time since 2017. So the code on Github is not so complete and well organized.</p>
+<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvish1t10j23402c0kjm.jpg" alt=""><br><img src="http://5b0988e595225.cdn.sohucs.com/images/20170820/f96728dcc26d4eb0a7db9c49acf6756b.gif" alt=""><br><a id="more"></a><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1fpviriawz6j21gu0sjaky.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fpvis7nq6vj23402c0e82.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvira0vdvj21hw0sqk1f.jpg" alt=""></p>
+<h2 id="BBRobot_project_3A"><a href="#BBRobot_project_3A" class="headerlink" title="BBRobot project:"></a>BBRobot project:</h2><p>The Wifi Robot project on windows platform can be found here: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a><br>You can find the same robot project under linux with Eclipse here: <a href="https://github.com/forwardkth/Blacklib_template.git" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template.git</a></p>
+<p>My Modification to the original Blacklib recently are:</p>
+<ol>
+<li>Modification to the class BalckPWM</li>
+<li>Implement the BlackServo class for easier Servo control like “PyBBIO”</li>
+<li>Add Servo control example code (example_Servo.h) under /BlackLib/examples folder</li>
+<li>Add my WIFI robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+</ol>
+<p>You can run the examples with the ExampleMain.cpp or run the formal project with WiFiRobotMain.cpp</p>
+<p>Historical project updates:</p>
+<p>2015</p>
+<ol>
+<li>Modification to the class of BalckPWM</li>
+<li>Add Servo motor control class “BlackServo”</li>
+<li>Add Servo control demo code under /BlackLib/examples folder</li>
+<li>Add demo WiFi robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+<li>Add Video streaming code</li>
+</ol>
+<p>2016       </p>
+<ol>
+<li>New remote control UI with C sharp and WPF</li>
+<li>iOS APP for WiFi Robot remote control</li>
+</ol>
+<p>2017       </p>
+<ol>
+<li>Start working with the Computer Vision based remote controller for the WiFiRobot (ongoing…)</li>
+</ol>
+<p>2018       </p>
+<ol>
+<li>Add formal WiFi robot project code under “BBLib_VisualGDB/WiFiRobot/“</li>
+<li>Add Json support for Multiple sensor data transmission</li>
+</ol>
+<p>The picture below shows the visualGDB configuration with VS2017 for cross complie and remote debug and deploy<br><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
+<p>You can find the same robot project under linux with Eclipse here: <a href="https://github.com/forwardkth/Blacklib_template.git" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template.git</a> </p>
+<hr>
+<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/large/74505a4cgw1f7oypkop58j20ku0fmn0o.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/large/74505a4cgw1f7oyqnelgnj20qo0qo79n.jpg" alt=""></p>
+<p>The new DEMO video on Youtube:<br><a href="https://youtu.be/q4rHsRQ4LsQ" target="_blank" rel="external">https://youtu.be/q4rHsRQ4LsQ</a><br><a href="https://youtu.be/8c8KAbVZPCA" target="_blank" rel="external">https://youtu.be/8c8KAbVZPCA</a></p>
+<p>The old outdoor DEMO video on Youtube:<br><a href="https://www.youtube.com/v77tkjFmZqY" target="_blank" rel="external">https://www.youtube.com/v77tkjFmZqY</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is a ongoing project. The idea is to build a Remote Computer Vision controller based on OpenCV 3.4.0, cuDNN, CUDA and Yolo for my Beaglebone Wifi Robot.<br>You can find it here:  <a href="https://github.com/forwardkth/BBRobot_OpenCV">https://github.com/forwardkth/BBRobot_OpenCV</a><br>It can be seen as a mini Autonomous Vehicle project. The remote controller on PC will be a combination of Image processing, sensor fusion and deep learning with the image data streamed from the Wifi robot.<br>I just started to work on this project from time to time since 2017. So the code on Github is not so complete and well organized.</p>
+<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvish1t10j23402c0kjm.jpg" alt=""><br><img src="http://5b0988e595225.cdn.sohucs.com/images/20170820/f96728dcc26d4eb0a7db9c49acf6756b.gif" alt=""><br>]]>
+    
+    </summary>
+    
+      <category term="BeagleBone" scheme="http://forwardkth.github.io/tags/BeagleBone/"/>
+    
+      <category term="CUDA" scheme="http://forwardkth.github.io/tags/CUDA/"/>
+    
+      <category term="CV" scheme="http://forwardkth.github.io/tags/CV/"/>
+    
+      <category term="Computer Vision" scheme="http://forwardkth.github.io/tags/Computer-Vision/"/>
+    
+      <category term="Deep learning" scheme="http://forwardkth.github.io/tags/Deep-learning/"/>
+    
+      <category term="OpenCV" scheme="http://forwardkth.github.io/tags/OpenCV/"/>
+    
+      <category term="Robot" scheme="http://forwardkth.github.io/tags/Robot/"/>
+    
+      <category term="YOLO" scheme="http://forwardkth.github.io/tags/YOLO/"/>
+    
+      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2017 春天 哥德堡]]></title>
+    <link href="http://forwardkth.github.io/2017/04/17/Gothenburg/"/>
+    <id>http://forwardkth.github.io/2017/04/17/Gothenburg/</id>
+    <published>2017-04-17T18:38:46.000Z</published>
+    <updated>2018-01-12T21:23:12.994Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://wx1.sinaimg.cn/large/74505a4cgy1feri173f5oj21400qok3p.jpg" alt=""><br>  2017年哥德堡的春天来了，虽然天气依然寒冷多变，但是市中心公园的樱花已然开放。过去的一年里发生了很多事情，总体来说是积极的。换工作，辞职，买房，搬家一切都在短短的几个月内发生了。3月我们已经开始在哥德堡的生活，而这并不在之前的计划之内。<br>就这样离开生活了几年的家，离开了我付出心血的花园，离开了可爱的黄喵还有亲切的邻居爷爷奶奶以及那些好朋友们。虽然有一些不舍，但是为了未来我们还是毅然决然的踏出了这一步。生活是充满挑战还是安逸都无所谓好坏，无非是自己选择。对我来说30岁就过上退休般的生活是没法接受的。更何况之前的安逸也说不好是不是只是一场并不长久的梦，当有朝一日从梦中惊醒却发现再也回不去了。</p>
+<p>寒冬过去，春天到来，最爱这些迎着寒风开放的花。</p>
+<hr>
+<p>为自己心爱的XT1配了个新的广角头，以后就带着它们踏上新的旅途。<br>在500px 建立了主页，欢迎访问：<a href="https://500px.com/forwardkth" target="_blank" rel="external">https://500px.com/forwardkth</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://wx1.sinaimg.cn/large/74505a4cgy1feri173f5oj21400qok3p.jpg" alt=""><br>  2017年哥德堡的春天来了，虽然天气依然寒冷多变，但是市中心公园的樱花已然开放。过去的一年里发生]]>
+    </summary>
+    
+      <category term="Gothenburg" scheme="http://forwardkth.github.io/tags/Gothenburg/"/>
+    
+      <category term="challenge" scheme="http://forwardkth.github.io/tags/challenge/"/>
+    
+      <category term="spring" scheme="http://forwardkth.github.io/tags/spring/"/>
+    
+      <category term="哥德堡" scheme="http://forwardkth.github.io/tags/%E5%93%A5%E5%BE%B7%E5%A0%A1/"/>
+    
+      <category term="春天" scheme="http://forwardkth.github.io/tags/%E6%98%A5%E5%A4%A9/"/>
+    
+      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[我的庭院]]></title>
+    <link href="http://forwardkth.github.io/2016/05/10/my-homegarden/"/>
+    <id>http://forwardkth.github.io/2016/05/10/my-homegarden/</id>
+    <published>2016-05-10T13:43:11.000Z</published>
+    <updated>2018-01-12T21:24:08.879Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/mw690/74505a4cjw9f3qf2o4y78j21kw16ob2a.jpg" alt=""><br>这是我在瑞典住处的后院。两年前从一对70多岁老夫妇手中接收这个房子的时候后院是一片破败的景象，荒草丛生，苔藓遍地。各种高高低低的植物混乱的生长着，墙根一颗瘦弱的玫瑰勉强从草缝间挤出来，点缀出了杂草中的一抹鲜红。遮阳篷还有几处是漏雨的。木台的跳板也需要重新刷桐油了。总之看到眼前的院子我长长的叹了一口气。。。未来工程浩大，无奈当时秋天将近，冬天不远，只能简单补了补顶棚，给木台清洗刷了一遍桐油，算是做出了改变。等到寒冬过去，去年的春天四月我启动了后院的整修计划。虽然这个房子我也并不打算长期居住，但是作为一个园艺爱好者无论如何是无法忍受自己的院子是那么一种状态。</p>
+<p>先是设计了一个草图，拿给专业的工程小公司报价，简单的地面和花坛装修竟然要我7万克朗，相当于6万人民币。。。 这让我彻底断了请人搞的念头。于是重新设计图纸，确定了结合日式庭院石子地面设计的折中的方案。<br> 第一步清理院子的各种杂草和高高的草本植物，墙边的一排灌木被我完全铲除了。没想到之前掩埋在灌木下的那株瘦弱的玫瑰竟是还不错的品种，而且从以前院子的种种痕迹看来，老夫妇以前的第一任房主是个擅长园艺的人，但是老夫妇本人不善管理，慢慢在20多年里毁了之前的努力。后来这株玫瑰恢复了活力，在夏天开出了大朵繁密鲜红的玫瑰，像是在报答我的知遇之恩。</p>
+ <a id="more"></a>
+<p> 第二步，挖地三尺，清理院子将近一半面积的草坪，挖下去了大概10厘米的图层，露出了泥土并修整平整踩实，这一步就用了两个星期。 接下来买砖回来修葺围边和花坛。然后用地布覆盖整个地面。</p>
+<p> 第三步就是覆盖白色的石子了，从网上预订了7000块钱大概4吨重的石子，一个瑞典小哥用叉车直接给我推进了车库里，我慢慢的蚂蚁搬家一桶一桶覆盖在铺了地布的地面上。</p>
+<p> 第四步，就是种花种草，修建种菜框和地面的木质小道了。</p>
+<p> 整个工程从三月底一直进行到了5月初，不算我的人工消耗，材料成本也就是不到一万块钱。。。跟公司7万的报价相比，顿时感觉心中很满足。</p>
+<p> 下面这些图都是去年夏天拍的，展示了我种的薰衣草，玫瑰，还有蔬菜之类的细节。当然还有我的好朋友，邻居家的小黄喵 （从我修院子开始就跟我建立了友谊，我从来没有见过性格这么好的猫。。。国内家里那只，你要学学人家）<br> <img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f0ces39q51j20qo0k0dlz.jpg" alt=""><br> 玫瑰盛开<br> <img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1evgjonwshgj20k00qogrn.jpg" alt=""><br> 丑小鸭变天鹅了<br> <img src="http://ww2.sinaimg.cn/mw690/74505a4cjw1euvpw3bf97j20xc18gdoa.jpg" alt=""><br> 爬墙蔷薇<br> <img src="http://ww1.sinaimg.cn/mw690/74505a4cjw1euvpw8xkakj20xc18gapk.jpg" alt=""><br> mini玫瑰<br> <img src="http://ww2.sinaimg.cn/mw690/74505a4cjw1euvpvhbrryj20xc18gqii.jpg" alt=""><br> 刚种一年的薰衣草<br> <img src="http://ww2.sinaimg.cn/mw690/74505a4cjw1euvpv7j9gaj20xc18g187.jpg" alt=""><br> 阳光下的薰衣草<br> <img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1f0cepaaj8tj20k00qo43o.jpg" alt=""><br> 在桶里种草莓防止被蜗牛吃<br> <img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1f0cepfgta8j20k00qowj1.jpg" alt=""><br> 刚摘下来的草莓<br> <img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1f0ceoto5jlj20qo0k00xt.jpg" alt=""><br> 收获的蔬菜和草莓<br> <img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f0cebpx3gej21kw16onpd.jpg" alt=""><br> 泰国大叶香菜<br> <img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1f0ceblpiryj21kw16o1ky.jpg" alt=""><br> 种的香菜和韭菜，两种在瑞典不招虫子和蜗牛吃的菜，以后基本只种这两种了<br> <img src="http://ww3.sinaimg.cn/mw690/74505a4cjw9f3qi0yhvqdj21kw16oe81.jpg" alt=""><br> 大门前的旱金莲，有高矮两个品种，在瑞典种非常招虫子<br> <img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f0ceqzfb2qj20qo0zkgwm.jpg" alt=""><br> 接骨木果，哈利波特的魔法杖就是接骨木的<br> <img src="http://ww2.sinaimg.cn/mw690/74505a4cjw1euvpwi6vgpj20no0hswi9.jpg" alt=""><br> 睡觉的黄喵<br> <img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f0i9egaistj20k00qoqaf.jpg" alt=""><br> 黄喵是一只不纯的挪威森林喵<br> <img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f0i9e7piqij20qo0k0tg3.jpg" alt=""><br> 舒服的喵<br> <img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f0i9ep10jij20k00qo11g.jpg" alt=""><br> 飘逸的喵<br> <img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f0cerm30t7j20qo0zk125.jpg" alt=""><br> 蓝莓<br> <img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1f0cerdlupkj20qo0zkgvs.jpg" alt=""><br> 蓝莓<br> <img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f0ceqp95bnj20zk0qowp4.jpg" alt=""><br> 洗蓝莓<br> <img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1f0cerxvjfyj20qo0zkqbh.jpg" alt=""><br> 蓝莓派</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww4.sinaimg.cn/mw690/74505a4cjw9f3qf2o4y78j21kw16ob2a.jpg" alt=""><br>这是我在瑞典住处的后院。两年前从一对70多岁老夫妇手中接收这个房子的时候后院是一片破败的景象，荒草丛生，苔藓遍地。各种高高低低的植物混乱的生长着，墙根一颗瘦弱的玫瑰勉强从草缝间挤出来，点缀出了杂草中的一抹鲜红。遮阳篷还有几处是漏雨的。木台的跳板也需要重新刷桐油了。总之看到眼前的院子我长长的叹了一口气。。。未来工程浩大，无奈当时秋天将近，冬天不远，只能简单补了补顶棚，给木台清洗刷了一遍桐油，算是做出了改变。等到寒冬过去，去年的春天四月我启动了后院的整修计划。虽然这个房子我也并不打算长期居住，但是作为一个园艺爱好者无论如何是无法忍受自己的院子是那么一种状态。</p>
+<p>先是设计了一个草图，拿给专业的工程小公司报价，简单的地面和花坛装修竟然要我7万克朗，相当于6万人民币。。。 这让我彻底断了请人搞的念头。于是重新设计图纸，确定了结合日式庭院石子地面设计的折中的方案。<br> 第一步清理院子的各种杂草和高高的草本植物，墙边的一排灌木被我完全铲除了。没想到之前掩埋在灌木下的那株瘦弱的玫瑰竟是还不错的品种，而且从以前院子的种种痕迹看来，老夫妇以前的第一任房主是个擅长园艺的人，但是老夫妇本人不善管理，慢慢在20多年里毁了之前的努力。后来这株玫瑰恢复了活力，在夏天开出了大朵繁密鲜红的玫瑰，像是在报答我的知遇之恩。</p>]]>
+    
+    </summary>
+    
+      <category term="garden" scheme="http://forwardkth.github.io/tags/garden/"/>
+    
+      <category term="园艺" scheme="http://forwardkth.github.io/tags/%E5%9B%AD%E8%89%BA/"/>
+    
+      <category term="夏天" scheme="http://forwardkth.github.io/tags/%E5%A4%8F%E5%A4%A9/"/>
+    
+      <category term="庭院" scheme="http://forwardkth.github.io/tags/%E5%BA%AD%E9%99%A2/"/>
+    
+      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[关于Hexo next主题如何在首页隐藏指定的文章]]></title>
+    <link href="http://forwardkth.github.io/2016/05/08/next-theme-post-visibility/"/>
+    <id>http://forwardkth.github.io/2016/05/08/next-theme-post-visibility/</id>
+    <published>2016-05-08T20:21:29.000Z</published>
+    <updated>2016-05-10T14:45:44.000Z</updated>
+    <content type="html"><![CDATA[<p>之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。<br>比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。<br>这样就不用像以前的老博客那样开两个博客再链接了。<br><a href="https://github.com/iissnan/hexo-theme-next/issues/843" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next/issues/843</a><br>具体做法如下：<br><a id="more"></a></p>
+<h3 id="u4FEE_u6539next_u4E3B_u9898_u6587_u4EF6_u5939_u4E0B_u7684layout_u4E2D_u7684index-swig_u6587_u4EF6"><a href="#u4FEE_u6539next_u4E3B_u9898_u6587_u4EF6_u5939_u4E0B_u7684layout_u4E2D_u7684index-swig_u6587_u4EF6" class="headerlink" title="修改next主题文件夹下的layout中的index.swig文件"></a>修改next主题文件夹下的layout中的index.swig文件</h3><p>定位修改 post_template.render(post, true) </p>
+<p><img src="http://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg" alt=""></p>
+<p>其中修改的是为文章的首页显示添加判断条件</p>
+<h3 id="u5728_u65B0_u7684post_u4E2D_u6DFB_u52A0visible_u5B57_u6BB5_u6765_u63A7_u5236_u662F_u5426_u9996_u9875_u663E_u793A"><a href="#u5728_u65B0_u7684post_u4E2D_u6DFB_u52A0visible_u5B57_u6BB5_u6765_u63A7_u5236_u662F_u5426_u9996_u9875_u663E_u793A" class="headerlink" title="在新的post中添加visible字段来控制是否首页显示"></a>在新的post中添加visible字段来控制是否首页显示</h3><p>例如我的当前这篇文章：</p>
+<p>title: 关于Hexo next主题如何在首页隐藏指定的文章<br>date: 2016-05-08 22:21:29<br>tags:<br>…<br>…<br>categories: Notes-随笔<br>visible: hide   这里如果加上hide则该文章就不会在文章首页显示，如果留空则表示默认显示<br>…..</p>
+<h3 id="u5728_u5355_u72EC_u7684category_u4E0B__u663E_u793A_u5F52_u7C7B_u7684_u591A_u7BC7_u6587_u7AE0_u76EE_u5F55"><a href="#u5728_u5355_u72EC_u7684category_u4E0B__u663E_u793A_u5F52_u7C7B_u7684_u591A_u7BC7_u6587_u7AE0_u76EE_u5F55" class="headerlink" title="在单独的category下 显示归类的多篇文章目录"></a>在单独的category下 显示归类的多篇文章目录</h3><p>看这里<br><a href="http://www.zhihu.com/question/33324071/answer/58775540?group_id=654307162210365440#comment-106092511" target="_blank" rel="external">http://www.zhihu.com/question/33324071/answer/58775540?group_id=654307162210365440#comment-106092511</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。<br>比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。<br>这样就不用像以前的老博客那样开两个博客再链接了。<br><a href="https://github.com/iissnan/hexo-theme-next/issues/843">https://github.com/iissnan/hexo-theme-next/issues/843</a><br>具体做法如下：<br>]]>
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://forwardkth.github.io/tags/hexo/"/>
+    
+      <category term="next" scheme="http://forwardkth.github.io/tags/next/"/>
+    
+      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Made an iOS App for my wifi robot]]></title>
+    <link href="http://forwardkth.github.io/2016/04/07/iOS-app-for-wifirobot/"/>
+    <id>http://forwardkth.github.io/2016/04/07/iOS-app-for-wifirobot/</id>
+    <published>2016-04-07T21:06:45.000Z</published>
+    <updated>2016-04-23T11:13:55.958Z</updated>
+    <content type="html"><![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot last week. It is simple and not looks so nice. I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
+<p>There is a demo video below:<br>youtube:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe><br><a id="more"></a><br>youku:<br><a href="http://v.youku.com/v_show/id_XMTUyMjU1NDAyMA==.html?from=y1.7-2" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTUyMjU1NDAyMA==.html?from=y1.7-2</a><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTUyMjU1NDAyMA==" frameborder="0" allowfullscreen></iframe>]]></content>
+    <summary type="html">
+    <![CDATA[<p>I made a simple iOS App for the remote control of my WifiRobot last week. It is simple and not looks so nice. I will try to make it better later.<br>The communication is based on TCP protocol. I am considering to build it like a general App for all kinds of Wifi Robot projects.<br>You can do the commands configurations and modify the video streaming address to fit your robot design.</p>
+<p>There is a demo video below:<br>youtube:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe><br>]]>
+    
+    </summary>
+    
+      <category term="App" scheme="http://forwardkth.github.io/tags/App/"/>
+    
+      <category term="Beaglebone" scheme="http://forwardkth.github.io/tags/Beaglebone/"/>
+    
+      <category term="iOS" scheme="http://forwardkth.github.io/tags/iOS/"/>
+    
+      <category term="open source" scheme="http://forwardkth.github.io/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+    
+      <category term="smart car" scheme="http://forwardkth.github.io/tags/smart-car/"/>
+    
+      <category term="机器人" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Cross compling and remote debuging with VisualGDB on Windows]]></title>
+    <link href="http://forwardkth.github.io/2016/03/06/visualGDB/"/>
+    <id>http://forwardkth.github.io/2016/03/06/visualGDB/</id>
+    <published>2016-03-06T15:08:24.000Z</published>
+    <updated>2016-03-06T18:49:15.686Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
+<p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
+<p><a href="http://visualgdb.com/tutorials/beaglebone/" target="_blank" rel="external">http://visualgdb.com/tutorials/beaglebone/</a></p>
+<h2 id="But_I_got_some_problems_when_I_compiled_my_code"><a href="#But_I_got_some_problems_when_I_compiled_my_code" class="headerlink" title="But I got some problems when I compiled my code."></a>But I got some problems when I compiled my code.</h2><h3 id="The_first_one_is__3A"><a href="#The_first_one_is__3A" class="headerlink" title="The first one is :"></a>The first one is :</h3><p>error directive: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x.<br>This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.    </p>
+<p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std=c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std=c++0x</p>
+<h3 id="The_second_one_is_about_Pthread_3A"><a href="#The_second_one_is_about_Pthread_3A" class="headerlink" title="The second one is about Pthread:"></a>The second one is about Pthread:</h3><p>The error info indicate that pthread library is missing. </p>
+<p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
+<p>The real solution is:</p>
+<a id="more"></a>
+<p>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
+<p>I think that is because this configuration is related to your target environment, not your host machine.<br>You can see the screenshot of the configurations below:</p>
+<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""></p>
+<p><a href="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" target="_blank" rel="external">http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
+<p>You can find the new DEMO video of my wifi robot on Youtube：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg" alt=""><br>Today I tried to use VisualGDB with Visual Studio 2015 to compile and run my wifi robot C++ code on my beaglebone.</p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<p><a href="https://github.com/forwardkth/BBRobot_VisualGDB.git">https://github.com/forwardkth/BBRobot_VisualGDB.git</a></p>
+<p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
+<p><a href="http://visualgdb.com/tutorials/beaglebone/">http://visualgdb.com/tutorials/beaglebone/</a></p>
+<h2 id="But_I_got_some_problems_when_I_compiled_my_code"><a href="#But_I_got_some_problems_when_I_compiled_my_code" class="headerlink" title="But I got some problems when I compiled my code."></a>But I got some problems when I compiled my code.</h2><h3 id="The_first_one_is__3A"><a href="#The_first_one_is__3A" class="headerlink" title="The first one is :"></a>The first one is :</h3><p>error directive: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x.<br>This support is currently experimental, and must be enabled with the -std=c++0x or -std=gnu++0x compiler options.    </p>
+<p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std=c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std=c++0x</p>
+<h3 id="The_second_one_is_about_Pthread_3A"><a href="#The_second_one_is_about_Pthread_3A" class="headerlink" title="The second one is about Pthread:"></a>The second one is about Pthread:</h3><p>The error info indicate that pthread library is missing. </p>
+<p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
+<p>The real solution is:</p>]]>
+    
+    </summary>
+    
+      <category term="Beaglebone" scheme="http://forwardkth.github.io/tags/Beaglebone/"/>
+    
+      <category term="VisualGDB" scheme="http://forwardkth.github.io/tags/VisualGDB/"/>
+    
+      <category term="cross compiling" scheme="http://forwardkth.github.io/tags/cross-compiling/"/>
+    
+      <category term="open source" scheme="http://forwardkth.github.io/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://forwardkth.github.io/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://forwardkth.github.io/tags/smart-car/"/>
+    
+      <category term="智能车" scheme="http://forwardkth.github.io/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+    
+      <category term="机器人" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2016 Happy new year 新年快乐，迎接挑战]]></title>
+    <link href="http://forwardkth.github.io/2016/01/25/2016-new-year/"/>
+    <id>http://forwardkth.github.io/2016/01/25/2016-new-year/</id>
+    <published>2016-01-25T20:53:28.000Z</published>
+    <updated>2018-01-12T21:21:41.428Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1enscqbfjlzj20qo0k0gr4.jpg" alt=""><br>2016年新年快乐，今年不回家过年了。村儿里大雪，学名 西方狍的小鹿也下山到后院觅食。<br>都说逢羊年年景不好，去年各种坠机，冲突，灾害，难民种种也应了这伪科学的老话。2016年刚开年又是全球经济要步入新一轮危机的节奏。对自己来说也是事业突破或是转折的关键一年。<br>不管这新的一年会发生什么，兵来将挡，水来土掩。寒冬到来，春天就不远了。<br>GP bless me.<br><img src="http://ww4.sinaimg.cn/large/74505a4cgw1f0ces39q51j20qo0k0dlz.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1enscqbfjlzj20qo0k0gr4.jpg" alt=""><br>2016年新年快乐，今年不回家过年了。村儿里大雪，学名 西方狍的小鹿也下山到后院觅食。<br>都说逢]]>
+    </summary>
+    
+      <category term="challenge" scheme="http://forwardkth.github.io/tags/challenge/"/>
+    
+      <category term="winter" scheme="http://forwardkth.github.io/tags/winter/"/>
+    
+      <category term="冬天" scheme="http://forwardkth.github.io/tags/%E5%86%AC%E5%A4%A9/"/>
+    
+      <category term="挑战" scheme="http://forwardkth.github.io/tags/%E6%8C%91%E6%88%98/"/>
+    
+      <category term="新年" scheme="http://forwardkth.github.io/tags/%E6%96%B0%E5%B9%B4/"/>
+    
+      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Filco Ninja keyboard]]></title>
+    <link href="http://forwardkth.github.io/2015/11/05/filco-keyboard/"/>
+    <id>http://forwardkth.github.io/2015/11/05/filco-keyboard/</id>
+    <published>2015-11-05T20:11:57.000Z</published>
+    <updated>2016-04-29T11:56:57.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""><br>Filco Ninja Majestouch-2 Tenkeyless Tactile Action UK Keyboard</p>
+<p>I bought this mechanical keyboard from the UK website ‘thekeyboardcompany’. I received the package today. It is a very nice programmer keyboard with high quality. I am very satisfied with it. </p>
+<p>In the beginning, I don’t know which swtich I should choose, especially the brown switch or the blue switch. Frankly speaking I prefer the blue switch. Because I hear the type sound from youtube. The blue one let you type faster and feel more clear. But considering the noise and other people around you, finally I chose the brown switch one. This is also recommanded by a google engineer. Another good thing I like this keyboard is the front face printing design. I have an old logitec keyboard. All the printing characters are gone or not clear after five years’use. The new keyboard overcomes this problem completely by priting nothing on the top. That is clever. The only thing is that it is a little expensive. It cost me 1700 SEK. But the similer keyboard from the same OEM producer only cost you half. I think between 600 SEK to 800 SEK can be a reasonable price.</p>
+<p>Anyway I like this keyboard and feel happy when typing my code under linux. (by the way, it takes about 5 mins to start to work after I plugged in the usb cable… Before that,I thought this keyboard did not support linux system)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""><br>Filco Ninja Majestouch-2 Tenkeyless Tactile Action]]>
+    </summary>
+    
+      <category term="filco" scheme="http://forwardkth.github.io/tags/filco/"/>
+    
+      <category term="机械键盘" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98/"/>
+    
+      <category term="茶轴" scheme="http://forwardkth.github.io/tags/%E8%8C%B6%E8%BD%B4/"/>
+    
+      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[BlackLib Template]]></title>
+    <link href="http://forwardkth.github.io/2015/10/25/BlackLib-Template/"/>
+    <id>http://forwardkth.github.io/2015/10/25/BlackLib-Template/</id>
+    <published>2015-10-25T17:06:56.000Z</published>
+    <updated>2018-05-01T08:28:33.489Z</updated>
+    <content type="html"><![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.</p>
+<p><a href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/">http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</a></p>
+<p>And I have made a C++ application template with modified version of  BlackLib v3.0 in eclipse for the Beaglebone white Development. It works quite well.</p>
+<p>The Wifi Robot project on windows platform can be found here: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a><br>You can find the same robot project under linux with Eclipse here: <a href="https://github.com/forwardkth/Blacklib_template.git" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template.git</a></p>
+<p>My Modification to the original Blacklib recently are:</p>
+<ol>
+<li>Modification to the class BalckPWM</li>
+<li>Implement the BlackServo class for easier Servo control like “PyBBIO”</li>
+<li>Add Servo control example code (example_Servo.h) under /BlackLib/examples folder</li>
+<li>Add my WIFI robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+</ol>
+<p>You can run the examples with the ExampleMain.cpp or run the formal project with WiFiRobotMain.cpp</p>
+<p>Historical project updates:</p>
+<p>2015</p>
+<ol>
+<li>Modification to the class of BalckPWM</li>
+<li>Add Servo motor control class “BlackServo”</li>
+<li>Add Servo control demo code under /BlackLib/examples folder</li>
+<li>Add demo WiFi robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+<li>Add Video streaming code</li>
+</ol>
+<p>2016 (To be continue)      </p>
+<ol>
+<li>New remote control UI with C sharp and WPF</li>
+<li>iOS APP for WiFi Robot remote control</li>
+</ol>
+<p>2017 (To be continue)   </p>
+<ol>
+<li>Start working with the Computer Vision based remote controller for the WiFiRobot</li>
+</ol>
+<p>2018 (To be continue)         </p>
+<ol>
+<li>Add formal WiFi robot project code under “BBLib_VisualGDB/WiFiRobot/“</li>
+<li>Add Json support for Multiple sensor data transmission</li>
+</ol>
+<p>enjoy!</p>
+<p>…….Tomorrow will be monday again</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” boa]]>
+    </summary>
+    
+      <category term="BlackLib" scheme="http://forwardkth.github.io/tags/BlackLib/"/>
+    
+      <category term="C++" scheme="http://forwardkth.github.io/tags/C/"/>
+    
+      <category term="beaglebone" scheme="http://forwardkth.github.io/tags/beaglebone/"/>
+    
+      <category term="library" scheme="http://forwardkth.github.io/tags/library/"/>
+    
+      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+    
+      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[秋 Autumn]]></title>
+    <link href="http://forwardkth.github.io/2015/10/17/dark-before-dawn/"/>
+    <id>http://forwardkth.github.io/2015/10/17/dark-before-dawn/</id>
+    <published>2015-10-17T20:01:38.000Z</published>
+    <updated>2018-01-12T21:22:19.123Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋天色彩斑斓的树叶和纯净的美,Dalarna的景色似乎更胜一筹.举起手机拍下了上面这张很满意的照片.现在的手机照相性能越来越强,即便家里有好相机也很少用了.</p>
+<p><img src="http://ww1.sinaimg.cn/large/74505a4cjw1ex3iot0647j218g0iv0x3.jpg" alt=""><br>吃完饭早早退场回家,出了饭店的门面对如此孤寂唯美的渐变色彩又忍不住拍了个全景.</p>
+<p>秋天来了,冬天就在未来不远,但是为了迎来蛰伏后充满生机的春天,现在就要一点点的努力. 这么多年了,人纵然老去,可是心还是一样的. 我从来都了解自己是什么样的人,要到哪里去.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww4.sinaimg.cn/large/74505a4cjw1ex3ip9rg08j218g0xch3n.jpg" alt=""><br>周五公司在湖边餐厅吃饭party,走在路上欣赏瑞典典型的美丽秋色,以前在斯德哥尔摩的时候就喜欢瑞典秋]]>
+    </summary>
+    
+      <category term="life" scheme="http://forwardkth.github.io/tags/life/"/>
+    
+      <category term="sweden" scheme="http://forwardkth.github.io/tags/sweden/"/>
+    
+      <category term="瑞典" scheme="http://forwardkth.github.io/tags/%E7%91%9E%E5%85%B8/"/>
+    
+      <category term="秋天" scheme="http://forwardkth.github.io/tags/%E7%A7%8B%E5%A4%A9/"/>
+    
+      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[转载-正在与硅谷打得火热的深圳]]></title>
+    <link href="http://forwardkth.github.io/2015/10/10/shenzhen/"/>
+    <id>http://forwardkth.github.io/2015/10/10/shenzhen/</id>
+    <published>2015-10-10T17:58:44.000Z</published>
+    <updated>2018-01-12T21:24:59.703Z</updated>
+    <content type="html"><![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi Ito的一篇回忆文章《一位MIT学者眼中的深圳硬件制造业》中说到，他参观了注塑厂、PCB工厂、在电路板上嵌入芯片的工厂……去了像华强北那样的硬件市场还有去了像大疆这样的公司，彻底被震撼了。</p>
+<p>最后他说，在深圳，他们体验到的是一个完整的生态系统，低成本的劳动力，他们把深圳打造成了一个最先进的世界级制造基地，这个生态系统由大量的工厂和制造技术组成，可以生产各种规模的硬件产品。</p>
+<a id="more"></a>
+<p>实际上，被这种完整的生态链系统吸引过来的，不仅仅是Joi Ito以及Reid Hoffman。一些国外做智能手表、智能帽子和智能音箱的创业者说，去年他们还是深圳硅谷两边来回飞，一年来两次深圳，待上一段时间，而今年，则干脆在 深圳设立办事处，其实除了他们，他们的朋友，也在与深圳有着越来越紧密的联系，找中国这边的工厂枢纽。</p>
+<p>你会发现，无论是普通创客还是学术机构、政府，深圳与硅谷的关系都越来越“暧昧”。从深圳举办的一些官方非官方活动上都能感受到这一点，或许某天你在活动上，遇到的是加州伯克利分校的教授，也有可能是未来研究所的所长，或者全球最大的硬件加速器HAXLR8R合伙人等等。</p>
+<p>在上个月的深圳第二届工业设计大展与Android论坛上，除了全球各地的创客代表，硅谷的学术机构、硬件创业代表人物Chris Andressen，以及MIT Fablab实验室主任Neil等也都出现在了会场，而后面这位，在11月的时候，为了Fab Lab还专程来过深圳，一同到来的还有美国麻省理工学院比特和院子研究中心项目经理Sherry Lassiter，麻省理工学院助理研究员Nadyd Peed及麻省理工大学Fab 12授权专员David Jin。</p>
+<p>这一群人在出席工业设计协会的小型讨论活动上，见过深圳比较有代表性的硬件创业公司和创客空间之后，便参加了与政府的会谈，最终将 Fab Lab 2.0开放创新实验室设在了深圳，而Neil所说的机器制造机器，也就是Fab Lab2.0升级版最终敲定于2016年在深圳举行。</p>
+<p>而另一边，是深圳向硅谷的反向渗透。2015年1月5号，由于两地都想通过政府层面去推动商业的融合，所以双方政府将在硅谷共同举办一场活动，两地市长都会出席。</p>
+<p>除了政府，民营企业的态度也是如此积极。Seeed的订单有90%以上来自于海外，而90%中又有很多来自于美国，所以干脆把部分产线设在了美国硅谷，以便更好服务于 当地的公司。而被誉为深圳小苹果的大疆，除了在洛杉矶设立了办公室，旧金山的办公室也在建设当中，我们经常在大疆宣传视频中看见的Eric Cheng，就负责旧金山办公室的事务，以及好莱坞、硅谷的商务拓展。</p>
+<p>如果你认为走进硅谷的只是那些全球知名的深圳企业，那你就错了。一些低调的创业公司也在寻求美国市场的合作，首选的，还是硅谷公司。PingWest 1月要在旧金山举办的一场《智能硬件的5个维度》活动，就将帮助深圳与硅谷的硬件公司进行对接。</p>
+<p>可以说，硅谷的公司主要看中的是深圳的供应链，而深圳的公司更多的是看中硅谷的渠道、消费市场、PR以及设计。无论是智能喂奶器、WiFi音箱或者睡眠检测仪、血压仪……他们的创始人都会问我，“这个东西的市场在美国，所以我们想上Indiegogo或 Kickstarter，可不可以帮我们找找当地的媒体或者PR公司呢？”</p>
+<p>但是，在创业中心北京，却反而看不到类似的现象发生。虽然领着几个国际科技大佬们出来走秀的会议越来越多，但是，你却看不到这么深层次、友好的合作。</p>
+<p>正如我的同事骆轶航说的，“如果说北京与硅谷之间，会因为长久以来各自形成的创业文化的差异，导致两地存在某种程度上的隔离甚至冲突，那么硅谷和深圳却能很好地融合。”</p>
+<p>从一方面来看，深圳亲近硅谷，两者打得火热，却没有带上北京，但是从另外一方面来说，北京和深圳之间，关系从未如此紧密、又如此微妙。</p>
+<p>两者之间是彼此需要的：北京需要深圳的供应链，深圳也同样离不开北京的设计与营销。所以深圳与北京之间来往甚密，除去南山A8音乐大厦集中了一大批将从北京来深圳的企业，还有一些位于其他地方的京东、360、点名时间、云知声等等，从数量上说，从北京涌向深圳的公司以及从业人员往返北京与深圳两地的频次之高似乎证明了两者关系还不错。</p>
+<p>但是，可是它们存在一种暗地里的博弈和竞争，都在争抢到底是你代表了中国的科技还是我代表中国的科技，以及到底谁是“中国的硅谷”。北京对深圳的态度是既需要、但似乎又有一种不屑掺杂其中的，态度难免有些傲慢，而深圳的反馈相应也不是那么热情，这从北京与深圳两地从业者之间的交流多少也能感受到这点。</p>
+<p>前者会认为后者只会闷头做事、连故事都不会讲，后者认为前者不做实事只爱谈概念，可是他们也期待自己能有故事，也渴求某种价值观的身份认同，所以“深圳也是有理想的”这种说法会在他们之中形成共鸣并迅速得到传播，一旦给他贴上只会低头做事不会讲故事没有理想没有情怀的标签，其实，他们是不乐意的，尽管理想情怀已被用烂。</p>
+<p>而深圳与硅谷两者的关系，也起于彼此需要。这边政府性媒体经常会把深圳描述为“全球创客之都”，“硬件创业者的天堂”，除了必须要硅谷补给的PR和设计，深圳也需要的是硅谷这个长期以来在科技行业塑造的全球化标签，来帮助摆脱制造工厂的固定偏见。</p>
+<p>但是，这不仅仅是资源价值上的互补，更是两种文化的契合。两者都是由“外来者”建设的城市，存在着非同一般的包容文化；两者更欢迎新鲜的价值观诞生，并且不怎么在乎传统。两边创业者之间也更多的是尊重或者相互认同，从工业设计圆桌论坛上硅谷学者对本土创业者那尊重和真诚的赞美，但激情得到肯定并得到热切回应，两者“爱得炽热”。</p>
+<p>所以你也看见了，在各种有关“硬件天堂”的官方与非官方活动与见面会上，硅谷与深圳永远是主角，两者频频互动——唯独少了北京。</p>
+<p>原文地址 <a href="http://www.pingwest.com/shenzhen-silicon-valley/" target="_blank" rel="external">http://www.pingwest.com/shenzhen-silicon-valley/</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>去年，MIT一群Media Lab的学生访问了深圳，组织这次活动的，就是MIT实验室媒体总监Joi Ito，一起的，还有黑掉Xbox的著名硬件黑客Bunnie，以及LinkedIn创始人Reid Hoffman和麻省理工大学的教务长Marty Schmidt。在Joi Ito的一篇回忆文章《一位MIT学者眼中的深圳硬件制造业》中说到，他参观了注塑厂、PCB工厂、在电路板上嵌入芯片的工厂……去了像华强北那样的硬件市场还有去了像大疆这样的公司，彻底被震撼了。</p>
+<p>最后他说，在深圳，他们体验到的是一个完整的生态系统，低成本的劳动力，他们把深圳打造成了一个最先进的世界级制造基地，这个生态系统由大量的工厂和制造技术组成，可以生产各种规模的硬件产品。</p>]]>
+    
+    </summary>
+    
+      <category term="shenzhen" scheme="http://forwardkth.github.io/tags/shenzhen/"/>
+    
+      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mysensors Wireless sensing network at home]]></title>
+    <link href="http://forwardkth.github.io/2015/09/22/mysensors/"/>
+    <id>http://forwardkth.github.io/2015/09/22/mysensors/</id>
+    <published>2015-09-22T07:07:50.000Z</published>
+    <updated>2015-10-06T21:10:26.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://www.mysensors.org/started/network.png" alt=""><br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew98gkmzhnj20k00qogqi.jpg" alt=""><br>you can see more by clicking <strong>Read more</strong> below :)<br>点击下方按钮阅读文章正文 （基于Mysensors开源项目的家庭无线传感网络 ）<br><a id="more"></a></p>
+<h2 id="Wireless_sensing_network_based_on__u201Cmysensors_u201D_opensource_project_3A"><a href="#Wireless_sensing_network_based_on__u201Cmysensors_u201D_opensource_project_3A" class="headerlink" title="Wireless sensing network based on “mysensors” opensource project:"></a>Wireless sensing network based on “mysensors” opensource project:</h2><p>I built a wireless sensing network based on “Mysensors” (www.mysensors.org) with two humidity and temperature sensing nodes and a gateway controller.<br>I use beaglebone black running Openhab solution (<a href="http://www.openhab.org/" target="_blank" rel="external">http://www.openhab.org/</a>)  as the controller (server). you can see the pictures below.<br>It is not necessary to copy and paste the information about “Mysensors”. If you are interested in it, please browse their website. </p>
+<p>The interesting thing is that the introduction of “mysensor” says Arduino nano has unstable 3.3V  output. So it needs to connect a 4.7uF capacitor to stable the voltage.<br>But there is no this problem on all my arduino nano boards. The sensing network works stable without the capacitor. And the radio range and strenth are no problem too.<br>I think this is because I did not perchase the official version Arduino. I bought the modified and compatible version from a chinese dealer. They made their own version of Arduino boards. I think they fix the probelm from the original circuit design. That is good.</p>
+<p>Another thing is I don`t want to call something like this “Smart home”. It is far from smart but remote control only…<br>In my opinion, a real smart home should not use APP, use monitoring chart, use digital numbers, many complex settings and so on. It should run behind your home silently and aware what you need.<br>A simple example is when you go back home, the system will know that you are back and give your home a proper temperature and humidity environment according to your activities like awake or sleep. If you want warmer, you can just speak out “warmer please” instead of open a APP and click buttons or input some temperature numbers.<br>Most products we can see in the market now is someting like a remote control. I think that is why all of these products can not  succeed. A smart home system that always bother peolpe life or make you tired will never succeed.</p>
+<p>Of course, my ideal thinking is limited by our technology. But at least we should stop calling those thing “Smart xxx”. Remote control is not smart…</p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1ew98d2kw6hj20qo0k078e.jpg" alt=""><br>Server(controller) with Arduino nano radio gateway in “Mysensors” wireless sensing network<br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cgw1ew98ge4sztj20qo0k0tf3.jpg" alt=""><br>One of the sensor node in “Mysensors” wireless sensing network<br><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1ew9m56tnspj20xc18gdvm.jpg" alt=""><br>One of the sensor node with humidity and temperature sensor mounted on the wall<br><img src="http://ww1.sinaimg.cn/mw1024/74505a4cgw1ewarapj02cj20hs0qomzc.jpg" alt=""><br>Control and Monitoring UI with “OPenhab” running in Beaglebone Black</p>
+<h2 id="u57FA_u4E8EMysensors_u5F00_u6E90_u9879_u76EE_u7684_u5BB6_u5EAD_u65E0_u7EBF_u4F20_u611F_u7F51_u7EDC__uFF08_u6CE8_u610F_u4E0D_u662F_u667A_u80FD_u5BB6_u5C45_uFF09_3A"><a href="#u57FA_u4E8EMysensors_u5F00_u6E90_u9879_u76EE_u7684_u5BB6_u5EAD_u65E0_u7EBF_u4F20_u611F_u7F51_u7EDC__uFF08_u6CE8_u610F_u4E0D_u662F_u667A_u80FD_u5BB6_u5C45_uFF09_3A" class="headerlink" title="基于Mysensors开源项目的家庭无线传感网络 （注意不是智能家居）:"></a>基于Mysensors开源项目的家庭无线传感网络 （注意不是智能家居）:</h2><p>上周末在家用Mysensors开源项目构建了一个简单的只含有两个节点外加gateway的无线传感网络。关于什么是Mysensors开源项目，如何构建一个自己的Mysensors网络。这里就不复制粘贴了。详细的信息可以访问 www.mysensors.org 了解。<br>简单的说，Mysensors 无线传感网络采用 Arduino外加nRF2401+无线模块做为单个传感节点，配合一个网关控制器可以组成含有成百上千个传感器和执行器的传感和控制网络。这个网络可以自动组织，自动修复，同时单个传感节点有功耗管理能力，在优化程序的基础上可以实现超低功耗，适合电池独立供电。<br>在Beaglebone或者树莓派server控制器中运行Openhab （<a href="http://www.openhab.org/）" target="_blank" rel="external">http://www.openhab.org/）</a> 开源软件，提供UI界面网络监控服务。 </p>
+<p>以上都是可以在官网详细了解的信息。 我自己构建的简单网络如下图所示，楼上卧室和楼下客厅有两个传感节点，直接固定在含有USB接口的插座上，我认为这样的结构是未来的方向，对于室内的常规应用是中合理方便的供电方式。Openhab server （Beagblone）放置于路由器旁边，方便接入家庭局域网和internet。<br>然后就可以从任何设备的浏览器中访问网页来对传感网络进行监控。</p>
+<p>这里我想发表一点儿个人的想法。现在国内对于智能家居或者物联网的概念炒作乌烟瘴气的，看看现在面世的各种产品，好像所谓的智能家居就是可以用远程摄像头看看家里情况，然后可以随时随地用手机控制家中设备，小到开关灯，大到监视温湿度，烟雾报警什么的。<br>直接的体现就是要各种设置，各种在屏幕上点点戳戳。不知道各位觉得怎样，我觉得很累。生活中加入了这样的系统，我不会觉得方便，反而觉得麻烦。这也就是为什么现在所谓的智能家居，并没有普及和很大的市场了吧。<br>因为它们这些根本就不是真的智能家居，叫做传感网络或者是遥控更适合。 </p>
+<p>未来所谓的智能家居是应该在尽量不麻烦人，不干扰人正常生活的情况下，默默的在后台运行，可以体察到人的需求而自动进行动作。举个最简单的例子，我并不关心温度湿度的数字和曲线变化，我只关心是否体感舒适，如果系统发现环境不合适了直接动作调整就好了，数字曲线关我鸟事。<br>即便是需要人的命令，自然手势，语音控制这些都比一个APP上好多个页面各种数据和按钮调节条要来得正宗也是需要重点突破的技术。 而且系统和节点的部署需要方便快捷，对用户屏蔽专业的设置，这些都是需要解决的问题。<br>再扯远点儿，上升到理论，那就是我坚信，好的科技是顺应人的自然状态，而不是改变，所谓的 “科技以人为本”。突然好怀念诺基亚。。。。</p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1ew98d2kw6hj20qo0k078e.jpg" alt=""><br>Beaglebone black做为交互界面互联网server和传感网络网关（Arduino nano with nRF24L01+）的控制器<br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew98gkmzhnj20k00qogqi.jpg" alt=""><br>“Mysensors” 无线传感网络单个节点<br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew9m7qszxmj20xc18g4f7.jpg" alt=""><br>含有温度湿度传感器的单个网络节点固定在墙上，由含有USB接口的插座供电，功耗非常小<br><img src="http://ww1.sinaimg.cn/mw1024/74505a4cgw1ewarapj02cj20hs0qomzc.jpg" alt=""><br>在Beaglebone Black中运行的UI界面服务器（Openhab）显示两个房间温湿度监控和历史记录曲线</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://www.mysensors.org/started/network.png" alt=""><br><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1ew98gkmzhnj20k00qogqi.jpg" alt=""><br>you can see more by clicking <strong>Read more</strong> below :)<br>点击下方按钮阅读文章正文 （基于Mysensors开源项目的家庭无线传感网络 ）<br>]]>
+    
+    </summary>
+    
+      <category term="Arduino" scheme="http://forwardkth.github.io/tags/Arduino/"/>
+    
+      <category term="Beaglebone" scheme="http://forwardkth.github.io/tags/Beaglebone/"/>
+    
+      <category term="nRF24L01+" scheme="http://forwardkth.github.io/tags/nRF24L01/"/>
+    
+      <category term="open source" scheme="http://forwardkth.github.io/tags/open-source/"/>
+    
+      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
+    
+      <category term="wireless sensing network" scheme="http://forwardkth.github.io/tags/wireless-sensing-network/"/>
+    
+      <category term="传感器" scheme="http://forwardkth.github.io/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
+    
+      <category term="家庭无线传感网络" scheme="http://forwardkth.github.io/tags/%E5%AE%B6%E5%BA%AD%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Beaglebone libraries]]></title>
+    <link href="http://forwardkth.github.io/2015/09/05/beaglebone-lib/"/>
+    <id>http://forwardkth.github.io/2015/09/05/beaglebone-lib/</id>
+    <published>2015-09-05T19:33:25.000Z</published>
+    <updated>2016-04-28T19:55:37.366Z</updated>
+    <content type="html"><![CDATA[<p>The following links are the excellent libraries you can use for the beaglebone development. Pybbio is based on Python. Libbulldog is for java. And BlackLib employs the power of C++. Maybe Lua in the future?</p>
+<p>It seems like the script languages are more and more popular for the embedded system. I think it will be more easier as the embedded platform is more and more powerful. I would like to try all the following three libs on my beaglebone robot and compare the performances. My robot is using Pybbio. And i am working with BlackLib now.</p>
+<p><a href="https://github.com/graycatlabs/PyBBIO" target="_blank" rel="external">pybbio</a><br><a href="http://libbulldog.org/bulldog/" target="_blank" rel="external">libbulldog</a><br><a href="http://blacklib.yigityuce.com/" target="_blank" rel="external">BlackLib</a></p>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p>The following links are the excellent libraries you can use for the beaglebone development. Pybbio is based on Python. Libbulldog is for java. And BlackLib employs the power of C++. Maybe Lua in the future?</p>
+<p>It seems like the script languages are more and more popular for the embedded system. I think it will be more easier as the embedded platform is more and more powerful. I would like to try all the following three libs on my beaglebone robot and compare the performances. My robot is using Pybbio. And i am working with BlackLib now.</p>
+<p><a href="https://github.com/graycatlabs/PyBBIO">pybbio</a><br><a href="http://libbulldog.org/bulldog/">libbulldog</a><br><a href="http://blacklib.yigityuce.com/">BlackLib</a></p>]]>
+    
+    </summary>
+    
+      <category term="C++" scheme="http://forwardkth.github.io/tags/C/"/>
+    
+      <category term="Python" scheme="http://forwardkth.github.io/tags/Python/"/>
+    
+      <category term="beaglebone" scheme="http://forwardkth.github.io/tags/beaglebone/"/>
+    
+      <category term="library" scheme="http://forwardkth.github.io/tags/library/"/>
+    
+      <category term="lua" scheme="http://forwardkth.github.io/tags/lua/"/>
+    
+      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Master Thesis work @KTH and ABB - A Hybrid Sensor for High Current and Harmonics Measurement (2011)]]></title>
+    <link href="http://forwardkth.github.io/2015/08/29/thesis/"/>
+    <id>http://forwardkth.github.io/2015/08/29/thesis/</id>
+    <published>2015-08-29T20:23:43.000Z</published>
+    <updated>2018-05-23T21:09:45.107Z</updated>
+    <content type="html"><![CDATA[<p><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlynmzy3hj20n10h8ju4.jpg" alt=""><br>This project is my second master degree thesis work at KTH, Sweden between 2010 and 2011.<br>The aim of this thesis project is to develop a novel current sensor probe which is low cost, light weight, and easy to be integrated in power component (compact in size, without complex insulation and relative high safety level). The bandwidth should be from DC to KHz. It should fulfill the requirements of current harmonics measurements of DC transmission system as well as the capacity of direct current measurement with acceptable response time, precision, sensitivity and accuracy.</p>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>Current measurement has been and is still one of the key aspects in power systems. In the traditional High Voltage (HV) and Extra High Voltage (EHV) grid, the current measurements are realized by current transformers - CTs. These are usually a separate unit for the CT function and for each phase. The cost is considerable and these measurements are therefore made only where strongly needed. Bad reliability of the transformer will impact directly on the system: an insulation failure of a CT will make parallel components unable to operate until repaired. The traditional CTs also need careful consideration of saturation limits during fault conditions. The CTs connect to the instrumentation, signal capturing and display equipment by direct galvanic connection, with all the EMC (electromagnetic compatibility) problems of induced voltages from electromagnetic fields, and risks if the CT insulation breaks down.<br>High current and current harmonics are also very critical parameters for the power quality monitoring, harmonics suppression and control &amp; protection mechanism in high voltage direct current transmission systems. The current sensor most commonly used is the Rogowski coil. But the traditional Rogowski coil is not very sensitive to low frequency current. And it is impossible for direct current measurement. In recent years, the all fiber OCT (Optical Current Transformer) which is based on the optical Faraday Effect began to be used. But it is too expensive and highly complex to be widely used in power systems at the present stage.<br>Therefore there is a need of HV (High Voltage) current sensor that has a wider frequency bandwidth as well as the capacity of measuring DC (Direct Current). Meanwhile this kind of current sensor should have the features like low cost, light weight, and easy to be integrated in to the power systems (compact in size, easy installation and relative high safety level).  </p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>High current and current harmonics are very critical parameters used for the power quality monitoring, harmonics suppression as well as control and protection function in high voltage direct current transmission system. Rogowski coil is one of the most common current sensors used in power system. But the traditional Rogowski coil is not sensitive to low frequency current. It is impossible to be used for direct current measurement. In recent years, the all fiber OCT (Optical Current Transformer) which is based on the optical Faraday Effect is applied. But it is too expensive and highly complex to be widely deployed in power systems at the present stage. Therefore there is a need of developing a high current sensor with a wider frequency bandwidth as well as the capacity of measuring direct current. Meanwhile this kind of current sensor should include the features like low cost, light weight, and easy to be integrated into the power systems (compact in size, easy installation and relative high safety level).<br>This thesis report presents an approach with the capacity of both high DC current measurement and high AC current measurement by using a novel hybrid current sensor probe which is the combination of the PCB based Rogowski coils, GMR (Giant Magneto Resistance) sensor and the principle HOKA. The Lab experiments have shown a qualified performance. It is capable to capture the current of 220 Amps from DC up to 250 KHz with the sensitivity about 0.002 V/A (DC), acceptable linearity and accuracy within ±1%.<br>This novel hybrid current sensor is very suitable for the direct high current measurement as well as the current harmonics measurement in the DC power transmission systems.<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlynmjvexj20lv0cwq3q.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlynmjzzhj20mg0aldh6.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlynmr9c8j20mp0fcab9.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlynms18nj20m40fgjsx.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlynmrwlej20la0esdhp.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlynmzy3hj20n10h8ju4.jpg" alt=""><br>This project is my second master degree thesis w]]>
+    </summary>
+    
+      <category term="ABB" scheme="http://forwardkth.github.io/tags/ABB/"/>
+    
+      <category term="AC" scheme="http://forwardkth.github.io/tags/AC/"/>
+    
+      <category term="DC" scheme="http://forwardkth.github.io/tags/DC/"/>
+    
+      <category term="HOKA principle" scheme="http://forwardkth.github.io/tags/HOKA-principle/"/>
+    
+      <category term="harmonics" scheme="http://forwardkth.github.io/tags/harmonics/"/>
+    
+      <category term="hybrid" scheme="http://forwardkth.github.io/tags/hybrid/"/>
+    
+      <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[My Tele-operation robot, Generation II]]></title>
+    <link href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/"/>
+    <id>http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</id>
+    <published>2015-08-28T06:59:16.000Z</published>
+    <updated>2018-05-01T08:27:43.499Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my second generation Tele-operation robot  built since 2015. This robot is based on the open source  platform <a href="http://beagleboard.org/bone" target="_blank" rel="external">Beaglebone white</a> which running Debian Linux.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br>The <strong>Beaglebone</strong> is a credit-card-sized Linux computer that connects to the Internet and runs software such as Android 4.0 and Ubuntu with plenty of I/O and processing power for real-time analysis provided by an AM335x 720MHz ARM® processor. It has 256M DDR2 RAM, 3D graphics accelerator, power management capacity.</p>
+<p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
+<p>The code under Linux compiled with Eclipse: <a href="https://github.com/forwardkth/Blacklib_template" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template</a></p>
+<p>The code under Windows and compiled with Visual Studio 2017 and VisualGDB: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<h2 id="Historical_Project_Updates_3A"><a href="#Historical_Project_Updates_3A" class="headerlink" title="Historical Project Updates:"></a>Historical Project Updates:</h2><p>2015</p>
+<ol>
+<li>Modification to the class BalckPWM</li>
+<li>Add Servo motor control class “BlackServo”</li>
+<li>Add Servo control demo code under /BlackLib/examples folder</li>
+<li>Add demo WiFi robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+<li>Add Video streaming code</li>
+</ol>
+<p>2016       </p>
+<ol>
+<li>New remote control UI with C sharp and WPF</li>
+<li>iOS APP for WiFi Robot remote control</li>
+</ol>
+<p>2017       </p>
+<ol>
+<li>Start working with the Computer Vision based remote controller for the WiFiRobot (ongoing…)</li>
+</ol>
+<p>2018       </p>
+<ol>
+<li>Add formal WiFi robot project code under “BBLib_VisualGDB/WiFiRobot/“</li>
+<li>Add Json support for Multiple sensor data transmission</li>
+</ol>
+<h2 id="DEMO_videos_3A"><a href="#DEMO_videos_3A" class="headerlink" title="DEMO videos:"></a>DEMO videos:</h2><p>The Old DEMO video in 2015 summer on Youtube: (The performance now is much better than it is shown in the video. There are new demo videos in 2016 below.)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v77tkjFmZqY" frameborder="0" allowfullscreen></iframe>
+
+<p>The new DEMO video in 2016 on Youtube：</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/8c8KAbVZPCA" frameborder="0" allowfullscreen></iframe><br>DEMO video in Youku: (For Visitors from China…)</p>
+<embed src="http://player.youku.com/player.php/sid/XMTMyMjM2MTE5Ng==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+
+<p>you can see more by clicking <strong>Read more</strong> below :)<br><a id="more"></a><br>Compare to my first Generation robot, thanks to the Beaglebone, the hardware structure of the second Generation is more simple now. The Beaglebone runnning with Linux is responsible for all the tasks: motion control, networking communication, sensor interface and video streaming.<br>I can realize more advanced  features for my robot like the machine vision with it. Now I just only connect a laser lamp and a Ultra sound sensor to it.</p>
+<p>I will not talk about a lot of basic things here like motion control or networking programming. I prefer to say some my feelings and experience from <strong>system point of view</strong> about this project.</p>
+<h3 id="Structure_Overview"><a href="#Structure_Overview" class="headerlink" title="Structure Overview"></a>Structure Overview</h3><p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evho2vc9exj21kw16o4qp.jpg" alt=""><br>This robot uses Beaglebone white as the local smart brain, TPLINK WR702N as the WIFI module, one power supply and motor driver circuit board, ultra sound sensor and Laser lamp. The Beaglebone use TPLINK WR702N mini router as the wireless networking card to receive the control orders and send the data and video streaming through WIFI. But you should notice that this is not the popular <strong>OpenWR+router+arduio or what</strong> soluction. Why not? I will explain later.</p>
+<h3 id="Mounting"><a href="#Mounting" class="headerlink" title="Mounting"></a>Mounting</h3><p>The first thing I thought about is not the programming…it is how to mount the beaglebone on to the Robot Body. I bought the body from Chinese website TAOBAO.COM (Chinese version ebay) which cost about 500 RMB (650SEK).  Its metal material makes it strong and the two powerful DC motors with encoders mounted on it came from Japan.<br>There are a lot of holes on the body. But most of them is designed to fit the Arduino… (I always think that Arduino is more like a Toy for Kids…). My beaglebone is put inside a nice looking iron box with transparent cover which bought from Canada. And I do not like sticking it on the surface of the body. There is no confidence with this solution when imaging the robot running offroad.<br>So what I have done is to use the cable holders (usually you can find them when you open the box of your new Digi devices) to mount the whole beaglebone box tightly. I am glad to see their silver color mathching each other. (You can see it the second picture above)</p>
+<h3 id="Wireless_communication"><a href="#Wireless_communication" class="headerlink" title="Wireless communication"></a>Wireless communication</h3><p>The second is the WIFI module. If you search for “OpenWRT robot” in Google, you can find plenty of examples shows how easy it is to own your own wifi robot. I think it is a quick and cheap solution. Then you do not need a expensive beaglebone but a cheap 8 bits sigle chip processor like 8051.<br>But I don’t like this solution. I prefer a strong and powerful local brain to let the robot own the potential to be smart (self control capacity). If you have a look at all the Mars rover or Moon rover nowadays, you can easily understand why the cheap solution is not always good. The Mars rover should be smart enough to control and recover itself since receiving the control signal from the earth takes even 20 mins.<br>In my opinion, Robot means <strong>“the machine like human” but not “the machine waiting orders”</strong>. </p>
+<p>So the Beaglebone is like a computer that you can just use the Ethernet port to connect to the WR702N router then configure the router to the bridge work mode. In this mode, the router works like beaglebone’s wifi module. That’s good. Everything is original, very stable.</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgrdr0lsdj21kw16o4qp.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgrdnssl3j21kw16o4qp.jpg" alt=""></p>
+<h3 id="The_remote_controller_UI_on_the_PC"><a href="#The_remote_controller_UI_on_the_PC" class="headerlink" title="The remote controller UI on the PC"></a>The remote controller UI on the PC</h3><p>You can find the C Sharp UI here: <a href="https://github.com/forwardkth/robot_WPF_UI" target="_blank" rel="external">https://github.com/forwardkth/robot_WPF_UI</a><br>You can find the JAVA UI here: <a href="https://github.com/forwardkth/JAVAUI_WifiRobot" target="_blank" rel="external">https://github.com/forwardkth/JAVAUI_WifiRobot</a></p>
+<h3 id="The_project_source_code_3A"><a href="#The_project_source_code_3A" class="headerlink" title="The project source code:"></a>The project source code:</h3><p>The code under Linux compiled with Eclipse: <a href="https://github.com/forwardkth/Blacklib_template" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template</a> </p>
+<p>The code under Windows compiled with Visual Studio 2017 and VisualGDB: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<h3 id="Issues_and_Some_opinions"><a href="#Issues_and_Some_opinions" class="headerlink" title="Issues and Some opinions"></a>Issues and Some opinions</h3><p>C++ and C are much better than java or python to do the embedded system development. When I use the pybbio library for the robot APP, the power consuming is 0.01A or 0.02A much more than using BlackLib(C++)which is 0.7A. And you can feel that the C++ application runs more smooth than the python APP. This is only a small robot application. If you consider a huge complex system, the power you can save is considerable. Besides I feel powerful and environmental friendly when I use C++. That means I can control all the details and do optimization rather than being a top layer API caller.</p>
+<p>Here is the video on Youtube: Bjarne Stroustrup-Why I Created C++</p>
+<p><a href="https://www.youtube.com/watch?v=JBjjnqG0BP8" target="_blank" rel="external">https://www.youtube.com/watch?v=JBjjnqG0BP8</a></p>
+<h3 id="My_future_work"><a href="#My_future_work" class="headerlink" title="My future work"></a>My future work</h3><p>This is a ongoing project. The idea is to build a Remote Computer Vision controller based on OpenCV 3.4.0, cuDNN, CUDA and Yolo for my Beaglebone Wifi Robot.<br>You can find it here:  <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a><br>It can be seen as a mini Autonomous Vehicle project. The remote controller on PC will be a combination of Image processing, sensor fusion and deep learning with the image data streamed from the Wifi robot.<br>I just started to work on this project from time to time since 2017. So the code on Github is not so complete and well organized.</p>
+<p><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvish1t10j23402c0kjm.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1fpviriawz6j21gu0sjaky.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fpvis7nq6vj23402c0e82.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvira0vdvj21hw0sqk1f.jpg" alt=""></p>
+<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1evho2kpw0gj21kw16o4qp.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evho2aaw0fj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw690/74505a4cgw1evho3dathuj21kw16o1kx.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho3h7p5jj21kw16otx2.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evho3kkf90j21kw16o4qp.jpg" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg" alt=""><br><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my second generation Tele-operation robot  built since 2015. This robot is based on the open source  platform <a href="http://beagleboard.org/bone">Beaglebone white</a> which running Debian Linux.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg" alt=""><br>The <strong>Beaglebone</strong> is a credit-card-sized Linux computer that connects to the Internet and runs software such as Android 4.0 and Ubuntu with plenty of I/O and processing power for real-time analysis provided by an AM335x 720MHz ARM® processor. It has 256M DDR2 RAM, 3D graphics accelerator, power management capacity.</p>
+<p>All of these above  makes it  a very powerful and excellent platform  for building smart systems and Robotics.</p>
+<p>The code under Linux compiled with Eclipse: <a href="https://github.com/forwardkth/Blacklib_template">https://github.com/forwardkth/Blacklib_template</a></p>
+<p>The code under Windows and compiled with Visual Studio 2017 and VisualGDB: <a href="https://github.com/forwardkth/BBRobot_VisualGDB">https://github.com/forwardkth/BBRobot_VisualGDB</a></p>
+<h2 id="Historical_Project_Updates_3A"><a href="#Historical_Project_Updates_3A" class="headerlink" title="Historical Project Updates:"></a>Historical Project Updates:</h2><p>2015</p>
+<ol>
+<li>Modification to the class BalckPWM</li>
+<li>Add Servo motor control class “BlackServo”</li>
+<li>Add Servo control demo code under /BlackLib/examples folder</li>
+<li>Add demo WiFi robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
+<li>Add Video streaming code</li>
+</ol>
+<p>2016       </p>
+<ol>
+<li>New remote control UI with C sharp and WPF</li>
+<li>iOS APP for WiFi Robot remote control</li>
+</ol>
+<p>2017       </p>
+<ol>
+<li>Start working with the Computer Vision based remote controller for the WiFiRobot (ongoing…)</li>
+</ol>
+<p>2018       </p>
+<ol>
+<li>Add formal WiFi robot project code under “BBLib_VisualGDB/WiFiRobot/“</li>
+<li>Add Json support for Multiple sensor data transmission</li>
+</ol>
+<h2 id="DEMO_videos_3A"><a href="#DEMO_videos_3A" class="headerlink" title="DEMO videos:"></a>DEMO videos:</h2><p>The Old DEMO video in 2015 summer on Youtube: (The performance now is much better than it is shown in the video. There are new demo videos in 2016 below.)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v77tkjFmZqY" frameborder="0" allowfullscreen></iframe>
+
+<p>The new DEMO video in 2016 on Youtube：</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/8HmHFWRzwfQ" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/8c8KAbVZPCA" frameborder="0" allowfullscreen></iframe><br>DEMO video in Youku: (For Visitors from China…)</p>
+<embed src="http://player.youku.com/player.php/sid/XMTMyMjM2MTE5Ng==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
+<p>you can see more by clicking <strong>Read more</strong> below :)<br>]]>
+    
+    </summary>
+    
+      <category term="Beaglebone" scheme="http://forwardkth.github.io/tags/Beaglebone/"/>
+    
+      <category term="open source" scheme="http://forwardkth.github.io/tags/open-source/"/>
+    
+      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://forwardkth.github.io/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://forwardkth.github.io/tags/smart-car/"/>
+    
+      <category term="智能车" scheme="http://forwardkth.github.io/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+    
+      <category term="机器人" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[My tele-operation  Robot, Generation I]]></title>
+    <link href="http://forwardkth.github.io/2015/08/27/tele-robot-1/"/>
+    <id>http://forwardkth.github.io/2015/08/27/tele-robot-1/</id>
+    <published>2015-08-27T08:52:10.000Z</published>
+    <updated>2016-03-07T18:56:21.862Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgreifis4j218g0xcauk.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my first generation Tele-operation robot  built during 2014. Now I have  already had my second generation robot with pure Linux OS. But the first one is still a interesting try.</p>
+<p>The old google Nexus android phone is used as the controller as well as wireless communication module.&amp;ensp The <a href="https://github.com/ytai/ioio/wiki" target="_blank" rel="external">IOIO-OTG</a> Open source board is employed to be the interface between android OS and other devices. Another Experimental board <strong>EXP F5438</strong> with  TI MSP430 F5438 mcu is connected with the IOIO board through RX/TX.</p>
+<p>Maybe you have question like “this MSP430 board is not needed or not necessary”. Yes, you are right. The IOIO board is enough for basic GPIOs, PWM control and so on. But this robot is my  experimental platform.<br>It means that I would like to construct it as complex as this in order to do more experiments and explore more possibilities. </p>
+<p>The EXP F5438 board running uCOS II real-time operation system does all the real-time control job e.g motor control, sensor data capture, control other executer.<br>And the Android phone can focus its work on video, audio streaming, data communication, receiving orders from my laptop. On my laptop I write a GUI with JAVA as control terminal which communicate through WIFI with my Anroid controller APP.</p>
+<p>The whole structure is not difficult to understand. But as we known, more complex  the system is, the more problem will happen. you will never know them until you actually debug it.</p>
+<p>you can see more <strong>pictures and DEMO videos</strong> by clicking <strong>read more</strong> below :)<br><a id="more"></a></p>
+<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww3.sinaimg.cn/bmiddle/74505a4cgw1eddsn5e4qpj216n68t4qr.jpg" alt=""></p>
+<h2 id="DEMO_videos_3A"><a href="#DEMO_videos_3A" class="headerlink" title="DEMO videos:"></a>DEMO videos:</h2><p>DEMO video in Youtube:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vaqixZOrqzM" frameborder="0" allowfullscreen></iframe>
+
+
+<p>DEMO video in Youku:<br><a href="http://v.youku.com/v_show/id_XNjcxNDYzNzUy.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XNjcxNDYzNzUy.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww3.sinaimg.cn/mw690/74505a4cgw1evgreifis4j218g0xcauk.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is my first generation Tele-operation robot  built during 2014. Now I have  already had my second generation robot with pure Linux OS. But the first one is still a interesting try.</p>
+<p>The old google Nexus android phone is used as the controller as well as wireless communication module.&amp;ensp The <a href="https://github.com/ytai/ioio/wiki">IOIO-OTG</a> Open source board is employed to be the interface between android OS and other devices. Another Experimental board <strong>EXP F5438</strong> with  TI MSP430 F5438 mcu is connected with the IOIO board through RX/TX.</p>
+<p>Maybe you have question like “this MSP430 board is not needed or not necessary”. Yes, you are right. The IOIO board is enough for basic GPIOs, PWM control and so on. But this robot is my  experimental platform.<br>It means that I would like to construct it as complex as this in order to do more experiments and explore more possibilities. </p>
+<p>The EXP F5438 board running uCOS II real-time operation system does all the real-time control job e.g motor control, sensor data capture, control other executer.<br>And the Android phone can focus its work on video, audio streaming, data communication, receiving orders from my laptop. On my laptop I write a GUI with JAVA as control terminal which communicate through WIFI with my Anroid controller APP.</p>
+<p>The whole structure is not difficult to understand. But as we known, more complex  the system is, the more problem will happen. you will never know them until you actually debug it.</p>
+<p>you can see more <strong>pictures and DEMO videos</strong> by clicking <strong>read more</strong> below :)<br>]]>
+    
+    </summary>
+    
+      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
+    
+      <category term="robotics" scheme="http://forwardkth.github.io/tags/robotics/"/>
+    
+      <category term="smart car" scheme="http://forwardkth.github.io/tags/smart-car/"/>
+    
+      <category term="智能车" scheme="http://forwardkth.github.io/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/"/>
+    
+      <category term="机器人" scheme="http://forwardkth.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project@KTH "Cardio wireless ECG handheld device" (2010)]]></title>
+    <link href="http://forwardkth.github.io/2015/08/26/cardio-ECG/"/>
+    <id>http://forwardkth.github.io/2015/08/26/cardio-ECG/</id>
+    <published>2015-08-26T19:42:00.000Z</published>
+    <updated>2015-08-31T20:29:33.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrf9np3gj20e80ao3zx.jpg" alt=""></p>
+<h2 id="Overview_3A"><a href="#Overview_3A" class="headerlink" title="Overview:"></a>Overview:</h2><p>The basic idea of this project is to develop a kind of ECG monitoring and analysis system. It includes a handheld ECG recording device, a data gateway, mobile phone application, web application (GUI) and a stationary which used to do the interaction between the patients and the doctors. The patients can monitor their ECG condition any time and upload the data via bluetooth and internet to the remote database for the analysis by the doctors later. The doctors can give the feedback to the patients via the web application or Phone application.</p>
+<p>I together with my team were responsible for the development of the Cardio Device which is based on MSP430experimental board “WASA” and a bluetooth module from “Bluegiga”. </p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1eviq4d5w48j20f30bbabf.jpg" alt=""><br>The data transmiting among Cardio device, PC and mobilephone.</p>
+<a id="more"></a>
+<h2 id="Gateway_3A"><a href="#Gateway_3A" class="headerlink" title="Gateway:"></a>Gateway:</h2><p>The gateway is a piece of hardware, which is connected to a TV screen (optional when there is a mobile phone with internet connection). It serves to the patient as a means of displaying the cardio data and sending it to the server. It is capable of receiving Bluetooth signals and can send HTTPS request via an existing Internet connection.</p>
+<h2 id="cardio_Device_3A"><a href="#cardio_Device_3A" class="headerlink" title="cardio Device:"></a>cardio Device:</h2><p>The cardio handheld  device which measures the pulse/ECG of the patient can send the ECG data to other devices via  bluetooth.<br><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdjt1ouj21kw0zpdld.jpg" alt=""><br>Cardio Device architecture</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/74505a4cgw1evhi2qoiicj20go0cidh0.jpg" alt=""><br>the cardio device prototype</p>
+<h2 id="Mobile_phone_3A"><a href="#Mobile_phone_3A" class="headerlink" title="Mobile phone:"></a>Mobile phone:</h2><p>The patients mobile phone (optional when there is a gateway) can receive cardio data from the device and output the EKG image. If there is an internet connection, it can send the data via an HTTPS request to the server. If there is no internet connection, the data can be sent to the gateway via Bluetooth.</p>
+<h2 id="Web_application_3A"><a href="#Web_application_3A" class="headerlink" title="Web application:"></a>Web application:</h2><p>This encompasses the web interface for phones and stationary computers of patients and doctors, the main database, the authentication/security mechanisms, and the update commands interface for the gateway and mobile phones.</p>
+<h2 id="Stationary_3A"><a href="#Stationary_3A" class="headerlink" title="Stationary:"></a>Stationary:</h2><p>A computer located at a patients home or a doctors office/hospital, etc. It can be used to access the website.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww1.sinaimg.cn/mw690/74505a4cgw1evgrf9np3gj20e80ao3zx.jpg" alt=""></p>
+<h2 id="Overview_3A"><a href="#Overview_3A" class="headerlink" title="Overview:"></a>Overview:</h2><p>The basic idea of this project is to develop a kind of ECG monitoring and analysis system. It includes a handheld ECG recording device, a data gateway, mobile phone application, web application (GUI) and a stationary which used to do the interaction between the patients and the doctors. The patients can monitor their ECG condition any time and upload the data via bluetooth and internet to the remote database for the analysis by the doctors later. The doctors can give the feedback to the patients via the web application or Phone application.</p>
+<p>I together with my team were responsible for the development of the Cardio Device which is based on MSP430experimental board “WASA” and a bluetooth module from “Bluegiga”. </p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/74505a4cgw1eviq4d5w48j20f30bbabf.jpg" alt=""><br>The data transmiting among Cardio device, PC and mobilephone.</p>]]>
+    
+    </summary>
+    
+      <category term="Bluetooth" scheme="http://forwardkth.github.io/tags/Bluetooth/"/>
+    
+      <category term="ECG" scheme="http://forwardkth.github.io/tags/ECG/"/>
+    
+      <category term="handheld" scheme="http://forwardkth.github.io/tags/handheld/"/>
+    
+      <category term="wireless" scheme="http://forwardkth.github.io/tags/wireless/"/>
+    
+      <category term="心率" scheme="http://forwardkth.github.io/tags/%E5%BF%83%E7%8E%87/"/>
+    
+      <category term="手持设备" scheme="http://forwardkth.github.io/tags/%E6%89%8B%E6%8C%81%E8%AE%BE%E5%A4%87/"/>
+    
+      <category term="蓝牙" scheme="http://forwardkth.github.io/tags/%E8%93%9D%E7%89%99/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Real courage]]></title>
+    <link href="http://forwardkth.github.io/2015/08/26/Real-courage/"/>
+    <id>http://forwardkth.github.io/2015/08/26/Real-courage/</id>
+    <published>2015-08-26T18:20:31.000Z</published>
+    <updated>2018-01-12T21:24:45.502Z</updated>
+    <content type="html"><![CDATA[<!-- HTML -->
+<!-- Built-in tag (Require NexT 0.4.5 or above) -->
+<blockquote class="blockquote-center"><p>But you wana know what takes real courage?<br> keeping your mouth shut, no matter what you might be feeling.<br> Holding it all together when the stakes are this high.</p>
+<p><strong>Francis Underwood</strong> from HOUSE of CARDS</p>
+</blockquote>
+<!-- Built-in tag (Require NexT 0.4.5 or above) -->
+<blockquote class="blockquote-center"><p>但你知道什么才是真的勇敢吗？<br>无论有何感受都能隐忍不发。泰山压顶依然不乱阵脚。</p>
+<p><strong>Francis Underwood</strong> from HOUSE of CARDS</p>
+</blockquote>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<!-- HTML -->
+<!-- Built-in tag (Require NexT 0.4.5 or above) -->
+<blockquote class="blockquote-center"><p>But you wana know what takes real courage?<br> keeping your mouth shut, no matter what you might be feeling.<br> Holding it all together when the stakes are this high.</p>
+<p><strong>Francis Underwood</strong> from HOUSE of CARDS</p>
+</blockquote>
+<!-- Built-in tag (Require NexT 0.4.5 or above) -->
+<blockquote class="blockquote-center"><p>但你知道什么才是真的勇敢吗？<br>无论有何感受都能隐忍不发。泰山压顶依然不乱阵脚。</p>
+<p><strong>Francis Underwood</strong> from HOUSE of CARDS</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="House of cards" scheme="http://forwardkth.github.io/tags/House-of-cards/"/>
+    
+      <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project@KTH "The wireless RFID sensing device"(2010)]]></title>
+    <link href="http://forwardkth.github.io/2015/08/26/passive-RFID/"/>
+    <id>http://forwardkth.github.io/2015/08/26/passive-RFID/</id>
+    <published>2015-08-26T18:11:11.000Z</published>
+    <updated>2015-09-01T20:40:37.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
+<p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
+<p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
+<h2 id="DEMO_VIDEO_3A"><a href="#DEMO_VIDEO_3A" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
+<p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
+<p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
+<h2 id="DEMO_VIDEO_3A"><a href="#DEMO_VIDEO_3A" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>]]>
+    
+    </summary>
+    
+      <category term="RFID" scheme="http://forwardkth.github.io/tags/RFID/"/>
+    
+      <category term="wireless sensing" scheme="http://forwardkth.github.io/tags/wireless-sensing/"/>
+    
+      <category term="无线传感" scheme="http://forwardkth.github.io/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+</feed>
