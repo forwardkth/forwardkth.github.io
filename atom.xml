@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://forwardkth.github.io/"/>
-  <updated>2018-04-27T18:35:59.352Z</updated>
+  <updated>2018-05-24T22:58:06.000Z</updated>
   <id>http://forwardkth.github.io/</id>
   
   <author>
@@ -13,6 +13,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[HP OMEN Desktop PC for Deep learning and Vision Dev]]></title>
+    <link href="http://forwardkth.github.io/2018/05/05/deeplearningstation/"/>
+    <id>http://forwardkth.github.io/2018/05/05/deeplearningstation/</id>
+    <published>2018-05-04T22:18:13.000Z</published>
+    <updated>2018-05-24T22:58:06.000Z</updated>
+    <content type="html"><![CDATA[<p>In order to continue my project (computer vision remote contoller for my wifiRobot), I just bought a powerful Desktop PC from HP with Nvidia Geforce GTX1070 Video Card. It looks quite nice and very easy for maintenance. But I am too old to have interest in playing games. Just use it as a working horse running with Ubuntu16.04LTS…</p>
+<p><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg" alt=""></p>
+<p>I took three days to make the development enviroment ready. It takes a lot of time to figure out the solutions for different issues.</p>
+<ol>
+<li><p>You need to disable the default driver for the video card and install the nvidia one. It is also OK to directly install the CUDA Tookit which has the official driver included.</p>
+</li>
+<li><p>Disable the secure boot in BIOS. Otherwise the Nvidia driver will not be loaded to take effect.</p>
+</li>
+<li><p>It also takes me a lot of time to figure out how to install tensorflow with CUDA9.2.<br>actually you need to compile the tensorflow source code by yourself with the CUDA9.2 configuration by yourself. this blog might help:  <a href="http://www.python36.com/install-tensorflow141-gpu/" target="_blank" rel="external">http://www.python36.com/install-tensorflow141-gpu/</a></p>
+</li>
+</ol>
+<p>I install both the lastest versions of CUDA and CUDNN. But the TensorRT do not support CUDA9.2.</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxjykddej23402c0e82.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxk74fhdj23402c0e82.jpg" alt=""></p>
+<ol>
+<li><p>Python version is also a problem. It is very important to know under which version of python the tensorflow is installed. And you need to do corresponding python interpreter configuration in the Pycharm IDE when working with tensorflow<br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frn6qe1itqj21h80rmagc.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn6qdjc88j20p30kc413.jpg" alt=""></p>
+</li>
+<li><p>OpenCV is quite easy to install without any issue.</p>
+</li>
+<li><p>Another thing is that when you compile the Darknet Yolo with Debug = 1, you need to add the following lines in the makefile. Unless the make process will not be successful.<br><img src="http://ww2.sinaimg.cn/large/74505a4cgw1exqqj14xqvj20qo0k0gs9.jpg" alt=""></p>
+</li>
+</ol>
+<p>Then I am happy to see the Yolo model can run almost in real-time on this PC!</p>
+<iframe width="560" height="315" src="http://t.cn/R17WN8R?m=4243400951456111&u=1951423052" frameborder="0" allowfullscreen></iframe>
+
+<p>Finally I can really continue my project now: <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a></p>
+<p>I will have both versions of software for Linux and Windows.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In order to continue my project (computer vision remote contoller for my wifiRobot), I just bought a powerful Desktop PC from HP with Nvi]]>
+    </summary>
+    
+      <category term="Deep learning" scheme="http://forwardkth.github.io/tags/Deep-learning/"/>
+    
+      <category term="Ubuntu" scheme="http://forwardkth.github.io/tags/Ubuntu/"/>
+    
+      <category term="深度学习" scheme="http://forwardkth.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Home assistant + Mysensors + Xiaomi + homebridge]]></title>
@@ -856,37 +903,6 @@
       <category term="House of cards" scheme="http://forwardkth.github.io/tags/House-of-cards/"/>
     
       <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Project@KTH "The wireless RFID sensing device"(2010)]]></title>
-    <link href="http://forwardkth.github.io/2015/08/26/passive-RFID/"/>
-    <id>http://forwardkth.github.io/2015/08/26/passive-RFID/</id>
-    <published>2015-08-26T18:11:11.000Z</published>
-    <updated>2015-09-01T20:40:37.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
-<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
-<p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
-<p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
-<h2 id="DEMO_VIDEO_3A"><a href="#DEMO_VIDEO_3A" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>
-<a id="more"></a>]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
-<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
-<p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
-<p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
-<h2 id="DEMO_VIDEO_3A"><a href="#DEMO_VIDEO_3A" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>]]>
-    
-    </summary>
-    
-      <category term="RFID" scheme="http://forwardkth.github.io/tags/RFID/"/>
-    
-      <category term="wireless sensing" scheme="http://forwardkth.github.io/tags/wireless-sensing/"/>
-    
-      <category term="无线传感" scheme="http://forwardkth.github.io/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
-    
-      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
