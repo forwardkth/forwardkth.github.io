@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://forwardkth.github.io/"/>
-  <updated>2018-05-24T22:58:06.000Z</updated>
+  <updated>2018-05-24T23:02:58.000Z</updated>
   <id>http://forwardkth.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://forwardkth.github.io/2018/05/05/deeplearningstation/"/>
     <id>http://forwardkth.github.io/2018/05/05/deeplearningstation/</id>
     <published>2018-05-04T22:18:13.000Z</published>
-    <updated>2018-05-24T22:58:06.000Z</updated>
+    <updated>2018-05-24T23:02:58.000Z</updated>
     <content type="html"><![CDATA[<p>In order to continue my project (computer vision remote contoller for my wifiRobot), I just bought a powerful Desktop PC from HP with Nvidia Geforce GTX1070 Video Card. It looks quite nice and very easy for maintenance. But I am too old to have interest in playing games. Just use it as a working horse running with Ubuntu16.04LTS…</p>
 <p><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg" alt=""></p>
 <p>I took three days to make the development enviroment ready. It takes a lot of time to figure out the solutions for different issues.</p>
@@ -42,7 +42,7 @@
 </li>
 </ol>
 <p>Then I am happy to see the Yolo model can run almost in real-time on this PC!</p>
-<iframe width="560" height="315" src="http://t.cn/R17WN8R?m=4243400951456111&u=1951423052" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="http://t.cn/R17WN8R" frameborder="0" allowfullscreen></iframe>
 
 <p>Finally I can really continue my project now: <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a></p>
 <p>I will have both versions of software for Linux and Windows.</p>
