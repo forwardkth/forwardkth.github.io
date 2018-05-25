@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://forwardkth.github.io/2018/03/30/BBRobot-opencv/</loc>
+    <lastmod>2018-05-25T15:12:07.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://forwardkth.github.io/2018/04/02/deeplearningstation/</loc>
     <lastmod>2018-05-25T06:27:45.000Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://forwardkth.github.io/2015/10/25/BlackLib-Template/</loc>
     <lastmod>2018-05-01T08:28:33.489Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://forwardkth.github.io/2018/03/30/BBRobot-opencv/</loc>
-    <lastmod>2018-05-01T08:28:33.481Z</lastmod>
   </url>
   
   <url>
