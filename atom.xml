@@ -4,7 +4,7 @@
   <subtitle><![CDATA[I want to go to the moon. Not because it is easy, but because it is hard.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://forwardkth.github.io/"/>
-  <updated>2018-05-24T23:10:59.000Z</updated>
+  <updated>2018-04-27T18:35:59.352Z</updated>
   <id>http://forwardkth.github.io/</id>
   
   <author>
@@ -13,53 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[HP OMEN Desktop PC for Deep learning and Vision Dev]]></title>
-    <link href="http://forwardkth.github.io/2018/05/05/deeplearningstation/"/>
-    <id>http://forwardkth.github.io/2018/05/05/deeplearningstation/</id>
-    <published>2018-05-04T22:18:13.000Z</published>
-    <updated>2018-05-24T23:10:59.000Z</updated>
-    <content type="html"><![CDATA[<p>In order to continue my project (computer vision remote contoller for my wifiRobot), I just bought a powerful Desktop PC from HP with the Nvidia Geforce GTX1070 Video Card. It looks quite nice and very easy for maintenance. But I am too old to have interest in playing games. Just use it as a working horse running with Ubuntu16.04LTS…</p>
-<p><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg" alt=""></p>
-<p>I took three days to make the development enviroment ready. It takes a lot of time to figure out the solutions for different issues.</p>
-<ol>
-<li><p>You need to disable the default driver for the video card and install the nvidia one. It is also OK to directly install the CUDA Tookit which has the official driver included.</p>
-</li>
-<li><p>Disable the secure boot in BIOS. Otherwise the Nvidia driver will not be loaded to take effect.</p>
-</li>
-<li><p>It also takes me a lot of time to figure out how to install tensorflow with CUDA9.2.<br>actually you need to compile the tensorflow source code by yourself with the CUDA9.2 configuration by yourself. this blog might help:  <a href="http://www.python36.com/install-tensorflow141-gpu/" target="_blank" rel="external">http://www.python36.com/install-tensorflow141-gpu/</a></p>
-</li>
-</ol>
-<p>I install both the lastest versions of CUDA and CUDNN. But the TensorRT do not support CUDA9.2.</p>
-<p><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxjykddej23402c0e82.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxk74fhdj23402c0e82.jpg" alt=""></p>
-<ol>
-<li>Python version is also a problem. It is very important to know under which version of python the tensorflow is installed. And you need to do corresponding python interpreter configuration in the Pycharm IDE when working with tensorflow<br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frn6qe1itqj21h80rmagc.jpg" alt=""></li>
-</ol>
-<ol>
-<li><p>OpenCV is quite easy to install without any issue.</p>
-</li>
-<li><p>Another thing is that when you compile the Darknet Yolo with Debug = 1, you need to add the following lines in the makefile. Unless the make process will not be successful.<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn6qdjc88j20p30kc413.jpg" alt=""></p>
-</li>
-</ol>
-<p>Then I am happy to see the Yolo model can run almost in real-time on this PC!<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn0x6dh7zj20qo0qon1g.jpg" alt=""></p>
-<p>You can see the Video of testing here: <a href="http://t.cn/R17WN8R" target="_blank" rel="external">http://t.cn/R17WN8R</a></p>
-<p>Finally I can really continue my project now: <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a></p>
-<p>I will have the both versions of software for Linux and Windows.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>In order to continue my project (computer vision remote contoller for my wifiRobot), I just bought a powerful Desktop PC from HP with the]]>
-    </summary>
-    
-      <category term="Deep learning" scheme="http://forwardkth.github.io/tags/Deep-learning/"/>
-    
-      <category term="Ubuntu" scheme="http://forwardkth.github.io/tags/Ubuntu/"/>
-    
-      <category term="深度学习" scheme="http://forwardkth.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[Home assistant + Mysensors + Xiaomi + homebridge]]></title>
@@ -119,6 +72,53 @@
       <category term="sensor" scheme="http://forwardkth.github.io/tags/sensor/"/>
     
       <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[HP OMEN Desktop PC for Deep learning and Vision Dev]]></title>
+    <link href="http://forwardkth.github.io/2018/04/02/deeplearningstation/"/>
+    <id>http://forwardkth.github.io/2018/04/02/deeplearningstation/</id>
+    <published>2018-04-01T22:18:13.000Z</published>
+    <updated>2018-05-25T06:20:34.000Z</updated>
+    <content type="html"><![CDATA[<p>In order to continue my project (remote contoller for my wifiRobot based on computer vision and sensor fusion), I bought a powerful Desktop PC from HP with the Nvidia Geforce GTX1070 Video Card. It looks quite nice and very easy for maintenance. But I am too old to have interest in playing games. Just use it as a working horse…</p>
+<p><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg" alt=""></p>
+<p>It took a lot of time to figure out the solutions for different issues before making the development enviroment ready.</p>
+<ol>
+<li><p>You need to disable the default driver for the video card and install the nvidia one. It is also OK to directly install the CUDA Tookit which has the official driver included.</p>
+</li>
+<li><p>Disable the secure boot in BIOS. Otherwise the Nvidia driver will not be loaded. And It will not take effect.</p>
+</li>
+<li><p>It also takes me a lot of time to figure out how to install tensorflow with CUDA9.2.<br>actually you need to compile the tensorflow source code with the CUDA9.2 configuration by yourself. this blog might help:  <a href="http://www.python36.com/install-tensorflow141-gpu/" target="_blank" rel="external">http://www.python36.com/install-tensorflow141-gpu/</a></p>
+</li>
+</ol>
+<p>I installed both the lastest versions of CUDA and CUDNN. But the TensorRT does not support CUDA9.2 for now. Later I will try to install multi versions of CUDA and try switch among them.</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxjykddej23402c0e82.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxk74fhdj23402c0e82.jpg" alt=""></p>
+<ol>
+<li>The version of Phython is also a something needs to be noticed. It is very important to know under which version of python the tensorflow is installed. And you need to do corresponding python interpreter configuration in the Pycharm IDE when working with tensorflow<br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frn6qe1itqj21h80rmagc.jpg" alt=""></li>
+</ol>
+<ol>
+<li><p>OpenCV is quite easy to install without any issue.</p>
+</li>
+<li><p>Another thing is that when you compile the Darknet Yolo with Debug = 1, you need to add the following lines in the makefile. Unless the make process will not be successful.<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn6qdjc88j20p30kc413.jpg" alt=""></p>
+</li>
+</ol>
+<p>Then I am happy to see the YoloV3 model can run more in real-time on this PC with maximum rate of 14FPS!<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn0x6dh7zj20qo0qon1g.jpg" alt=""></p>
+<p>You can see the Video of testing here: <a href="http://t.cn/R17WN8R" target="_blank" rel="external">http://t.cn/R17WN8R</a></p>
+<p>Finally I can really continue my project now: <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a></p>
+<p>I will have the both versions of software for Linux and Windows.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In order to continue my project (remote contoller for my wifiRobot based on computer vision and sensor fusion), I bought a powerful Deskt]]>
+    </summary>
+    
+      <category term="Deep learning" scheme="http://forwardkth.github.io/tags/Deep-learning/"/>
+    
+      <category term="Ubuntu" scheme="http://forwardkth.github.io/tags/Ubuntu/"/>
+    
+      <category term="深度学习" scheme="http://forwardkth.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

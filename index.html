@@ -281,162 +281,6 @@
             
               
                 
-                <a class="post-title-link" href="/2018/05/05/deeplearningstation/" itemprop="url">
-                  HP OMEN Desktop PC for Deep learning and Vision Dev
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2018-05-05T00:18:13+02:00" content="2018-05-05">
-              2018-05-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Notes-随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes-随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/05/05/deeplearningstation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/05/deeplearningstation/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2018/05/05/deeplearningstation/" class="leancloud_visitors" data-flag-title="HP OMEN Desktop PC for Deep learning and Vision Dev">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>In order to continue my project (computer vision remote contoller for my wifiRobot), I just bought a powerful Desktop PC from HP with the Nvidia Geforce GTX1070 Video Card. It looks quite nice and very easy for maintenance. But I am too old to have interest in playing games. Just use it as a working horse running with Ubuntu16.04LTS…</p>
-<p><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg" alt=""></p>
-<p>I took three days to make the development enviroment ready. It takes a lot of time to figure out the solutions for different issues.</p>
-<ol>
-<li><p>You need to disable the default driver for the video card and install the nvidia one. It is also OK to directly install the CUDA Tookit which has the official driver included.</p>
-</li>
-<li><p>Disable the secure boot in BIOS. Otherwise the Nvidia driver will not be loaded to take effect.</p>
-</li>
-<li><p>It also takes me a lot of time to figure out how to install tensorflow with CUDA9.2.<br>actually you need to compile the tensorflow source code by yourself with the CUDA9.2 configuration by yourself. this blog might help:  <a href="http://www.python36.com/install-tensorflow141-gpu/" target="_blank" rel="external">http://www.python36.com/install-tensorflow141-gpu/</a></p>
-</li>
-</ol>
-<p>I install both the lastest versions of CUDA and CUDNN. But the TensorRT do not support CUDA9.2.</p>
-<p><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxjykddej23402c0e82.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxk74fhdj23402c0e82.jpg" alt=""></p>
-<ol>
-<li>Python version is also a problem. It is very important to know under which version of python the tensorflow is installed. And you need to do corresponding python interpreter configuration in the Pycharm IDE when working with tensorflow<br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frn6qe1itqj21h80rmagc.jpg" alt=""></li>
-</ol>
-<ol>
-<li><p>OpenCV is quite easy to install without any issue.</p>
-</li>
-<li><p>Another thing is that when you compile the Darknet Yolo with Debug = 1, you need to add the following lines in the makefile. Unless the make process will not be successful.<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn6qdjc88j20p30kc413.jpg" alt=""></p>
-</li>
-</ol>
-<p>Then I am happy to see the Yolo model can run almost in real-time on this PC!<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn0x6dh7zj20qo0qon1g.jpg" alt=""></p>
-<p>You can see the Video of testing here: <a href="http://t.cn/R17WN8R" target="_blank" rel="external">http://t.cn/R17WN8R</a></p>
-<p>Finally I can really continue my project now: <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a></p>
-<p>I will have the both versions of software for Linux and Windows.</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-	  
-    
-	  
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2018/04/25/Homeassistant/" itemprop="url">
                   Home assistant + Mysensors + Xiaomi + homebridge
                 </a>
@@ -533,6 +377,162 @@
               Read more &raquo;
             </a>
           </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+	  
+    
+	  
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/04/02/deeplearningstation/" itemprop="url">
+                  HP OMEN Desktop PC for Deep learning and Vision Dev
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-04-02T00:18:13+02:00" content="2018-04-02">
+              2018-04-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Notes-随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes-随笔</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/04/02/deeplearningstation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/02/deeplearningstation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/04/02/deeplearningstation/" class="leancloud_visitors" data-flag-title="HP OMEN Desktop PC for Deep learning and Vision Dev">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>In order to continue my project (remote contoller for my wifiRobot based on computer vision and sensor fusion), I bought a powerful Desktop PC from HP with the Nvidia Geforce GTX1070 Video Card. It looks quite nice and very easy for maintenance. But I am too old to have interest in playing games. Just use it as a working horse…</p>
+<p><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg" alt=""></p>
+<p>It took a lot of time to figure out the solutions for different issues before making the development enviroment ready.</p>
+<ol>
+<li><p>You need to disable the default driver for the video card and install the nvidia one. It is also OK to directly install the CUDA Tookit which has the official driver included.</p>
+</li>
+<li><p>Disable the secure boot in BIOS. Otherwise the Nvidia driver will not be loaded. And It will not take effect.</p>
+</li>
+<li><p>It also takes me a lot of time to figure out how to install tensorflow with CUDA9.2.<br>actually you need to compile the tensorflow source code with the CUDA9.2 configuration by yourself. this blog might help:  <a href="http://www.python36.com/install-tensorflow141-gpu/" target="_blank" rel="external">http://www.python36.com/install-tensorflow141-gpu/</a></p>
+</li>
+</ol>
+<p>I installed both the lastest versions of CUDA and CUDNN. But the TensorRT does not support CUDA9.2 for now. Later I will try to install multi versions of CUDA and try switch among them.</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxjykddej23402c0e82.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxk74fhdj23402c0e82.jpg" alt=""></p>
+<ol>
+<li>The version of Phython is also a something needs to be noticed. It is very important to know under which version of python the tensorflow is installed. And you need to do corresponding python interpreter configuration in the Pycharm IDE when working with tensorflow<br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frn6qe1itqj21h80rmagc.jpg" alt=""></li>
+</ol>
+<ol>
+<li><p>OpenCV is quite easy to install without any issue.</p>
+</li>
+<li><p>Another thing is that when you compile the Darknet Yolo with Debug = 1, you need to add the following lines in the makefile. Unless the make process will not be successful.<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn6qdjc88j20p30kc413.jpg" alt=""></p>
+</li>
+</ol>
+<p>Then I am happy to see the YoloV3 model can run more in real-time on this PC with maximum rate of 14FPS!<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn0x6dh7zj20qo0qon1g.jpg" alt=""></p>
+<p>You can see the Video of testing here: <a href="http://t.cn/R17WN8R" target="_blank" rel="external">http://t.cn/R17WN8R</a></p>
+<p>Finally I can really continue my project now: <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a></p>
+<p>I will have the both versions of software for Linux and Windows.</p>
+
+          
         
       
     </div>
