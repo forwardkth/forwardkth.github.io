@@ -457,68 +457,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[BlackLib Template]]></title>
-    <link href="http://forwardkth.github.io/2015/10/25/BlackLib-Template/"/>
-    <id>http://forwardkth.github.io/2015/10/25/BlackLib-Template/</id>
-    <published>2015-10-25T17:06:56.000Z</published>
-    <updated>2018-05-01T08:28:33.489Z</updated>
-    <content type="html"><![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” board.</p>
-<p><a href="http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/">http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</a></p>
-<p>And I have made a C++ application template with modified version of  BlackLib v3.0 in eclipse for the Beaglebone white Development. It works quite well.</p>
-<p>The Wifi Robot project on windows platform can be found here: <a href="https://github.com/forwardkth/BBRobot_VisualGDB" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_VisualGDB</a><br>You can find the same robot project under linux with Eclipse here: <a href="https://github.com/forwardkth/Blacklib_template.git" target="_blank" rel="external">https://github.com/forwardkth/Blacklib_template.git</a></p>
-<p>My Modification to the original Blacklib recently are:</p>
-<ol>
-<li>Modification to the class BalckPWM</li>
-<li>Implement the BlackServo class for easier Servo control like “PyBBIO”</li>
-<li>Add Servo control example code (example_Servo.h) under /BlackLib/examples folder</li>
-<li>Add my WIFI robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
-</ol>
-<p>You can run the examples with the ExampleMain.cpp or run the formal project with WiFiRobotMain.cpp</p>
-<p>Historical project updates:</p>
-<p>2015</p>
-<ol>
-<li>Modification to the class of BalckPWM</li>
-<li>Add Servo motor control class “BlackServo”</li>
-<li>Add Servo control demo code under /BlackLib/examples folder</li>
-<li>Add demo WiFi robot code (example_wifirobot.h) as a example under /BlackLib/examples folder</li>
-<li>Add Video streaming code</li>
-</ol>
-<p>2016 (To be continue)      </p>
-<ol>
-<li>New remote control UI with C sharp and WPF</li>
-<li>iOS APP for WiFi Robot remote control</li>
-</ol>
-<p>2017 (To be continue)   </p>
-<ol>
-<li>Start working with the Computer Vision based remote controller for the WiFiRobot</li>
-</ol>
-<p>2018 (To be continue)         </p>
-<ol>
-<li>Add formal WiFi robot project code under “BBLib_VisualGDB/WiFiRobot/“</li>
-<li>Add Json support for Multiple sensor data transmission</li>
-</ol>
-<p>enjoy!</p>
-<p>…….Tomorrow will be monday again</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>I worked with the “BlackLib” on my beaglebone White based Robot this weekend. There is no big problem for using BlackLib on a “White” boa]]>
-    </summary>
-    
-      <category term="BlackLib" scheme="http://forwardkth.github.io/tags/BlackLib/"/>
-    
-      <category term="C++" scheme="http://forwardkth.github.io/tags/C/"/>
-    
-      <category term="beaglebone" scheme="http://forwardkth.github.io/tags/beaglebone/"/>
-    
-      <category term="library" scheme="http://forwardkth.github.io/tags/library/"/>
-    
-      <category term="robot" scheme="http://forwardkth.github.io/tags/robot/"/>
-    
-      <category term="Notes-随笔" scheme="http://forwardkth.github.io/categories/Notes-%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[秋 Autumn]]></title>
     <link href="http://forwardkth.github.io/2015/10/17/dark-before-dawn/"/>
     <id>http://forwardkth.github.io/2015/10/17/dark-before-dawn/</id>
@@ -926,6 +864,37 @@
       <category term="House of cards" scheme="http://forwardkth.github.io/tags/House-of-cards/"/>
     
       <category term="Diary-日记" scheme="http://forwardkth.github.io/categories/Diary-%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Project@KTH "The wireless RFID sensing device"(2010)]]></title>
+    <link href="http://forwardkth.github.io/2015/08/26/passive-RFID/"/>
+    <id>http://forwardkth.github.io/2015/08/26/passive-RFID/</id>
+    <published>2015-08-26T18:11:11.000Z</published>
+    <updated>2015-09-01T20:40:37.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
+<p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
+<p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
+<h2 id="DEMO_VIDEO_3A"><a href="#DEMO_VIDEO_3A" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>
+<a id="more"></a>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt=""></p>
+<h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
+<p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
+<p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
+<h2 id="DEMO_VIDEO_3A"><a href="#DEMO_VIDEO_3A" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>]]>
+    
+    </summary>
+    
+      <category term="RFID" scheme="http://forwardkth.github.io/tags/RFID/"/>
+    
+      <category term="wireless sensing" scheme="http://forwardkth.github.io/tags/wireless-sensing/"/>
+    
+      <category term="无线传感" scheme="http://forwardkth.github.io/tags/%E6%97%A0%E7%BA%BF%E4%BC%A0%E6%84%9F/"/>
+    
+      <category term="projects-项目" scheme="http://forwardkth.github.io/categories/projects-%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
