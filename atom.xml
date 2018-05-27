@@ -80,7 +80,7 @@
     <link href="http://forwardkth.github.io/2018/04/02/deeplearningstation/"/>
     <id>http://forwardkth.github.io/2018/04/02/deeplearningstation/</id>
     <published>2018-04-01T22:18:13.000Z</published>
-    <updated>2018-05-25T06:27:45.000Z</updated>
+    <updated>2018-05-27T10:39:22.459Z</updated>
     <content type="html"><![CDATA[<p>In order to continue my project (remote contoller for my wifiRobot based on computer vision and sensor fusion), I bought a powerful Desktop PC from HP with the Nvidia Geforce GTX1070 Video Card. It looks quite nice and very easy for maintenance. But I am too old to have interest in playing games. Just use it as a working horse…</p>
 <p><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg" alt=""><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg" alt=""></p>
 <p>It took a lot of time to figure out the solutions for different issues before making the development enviroment ready.</p>
@@ -103,8 +103,9 @@
 <li><p>Another thing is that when you compile the Darknet Yolo with Debug = 1, you need to add the following lines in the makefile. Unless the make process will not be successful.<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn6qdjc88j20p30kc413.jpg" alt=""></p>
 </li>
 </ol>
-<p>Then I am happy to see the YoloV3 model can run more in real-time on this PC with maximum rate of 14FPS!<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn0x6dh7zj20qo0qon1g.jpg" alt=""></p>
-<p>You can see the Video of testing here: <a href="http://t.cn/R17WN8R" target="_blank" rel="external">http://t.cn/R17WN8R</a></p>
+<p>Then I am happy to see the YoloV3 model can run more in real-time on this PC with maximum rate of 14FPS!<br>You can see the Video of testing here:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1jZm1aZNGg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 <p>Finally I can really continue my project now: <a href="https://github.com/forwardkth/BBRobot_OpenCV" target="_blank" rel="external">https://github.com/forwardkth/BBRobot_OpenCV</a></p>
 <p>I will have the both versions of project for Linux and Windows.</p>
 ]]></content>
