@@ -661,9 +661,18 @@
 
       
         
-          <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is a ongoing project. The idea is to build a remote Wifi Robot controller based on OpenCV 3.4.0, cuDNN, CUDA, Deep learning and Sensorfusion.<br>The sensor data and video are streamed to the PC for computer vision functions and Sensorfusion solutions realization. Then the controller sends back the control command back to the Wifi robot to execute.<br>You can find it here:  <a href="https://github.com/forwardkth/BBRobotController_CV_DL_SF">https://github.com/forwardkth/BBRobotController_CV_DL_SF</a><br>It can be seen as a mini Autonomous Vehicle project with a RaCAM （forward looking Radar and Camera.<br>I just started to work on this project from time to time since 2017. So the code on Github has not been completed and well organized yet.</p>
-<h2 id="Pictures_3A"><a href="#Pictures_3A" class="headerlink" title="Pictures:"></a>Pictures:</h2><p><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvish1t10j23402c0kjm.jpg" alt=""><br><img src="http://5b0988e595225.cdn.sohucs.com/images/20170820/f96728dcc26d4eb0a7db9c49acf6756b.gif" alt=""></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1jZm1aZNGg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+          <h2 id="Description_3A"><a href="#Description_3A" class="headerlink" title="Description:"></a>Description:</h2><p>This is a ongoing project. The idea is to build a remote Wifi Robot controller based on OpenCV 3.4.0, cuDNN, CUDA, Deep learning and Sensorfusion.<br>The sensor data and video are streamed to the PC for computer vision functions and Sensorfusion solutions realization. Then the controller sends back the control command back to the Wifi robot to execute.<br>You can find it here:  <a href="https://github.com/forwardkth/BBRobotController_CV_DL_SF">https://github.com/forwardkth/BBRobotController_CV_DL_SF</a><br>It can be seen as a mini Autonomous Vehicle project with a RaCAM （forward looking Radar and Camera.<br>I just started to work on this project from time to time since 2017. So the code on Github has not been completed yet.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1jZm1aZNGg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p>Historical updates:</p>
+<p>2018.5  Project moved to Linux platform<br>2018.6  Integrate YoloV3 into BBRobot controller project with C++ Wrapper and shared library<br>        BBRobot controller C++ project built up with Eclipse setup<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fs496rv0zrj21hb0t31kx.jpg" alt=""></p>
+<p>Some tips:<br>1.in the makefile for generating the shared lib of Darknet, the nvcc configuration should be the path of your local cuda bin folder.<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fs496vfj4aj212p0ql7bj.jpg" alt=""></p>
+<ol>
+<li>Suggest to copy the shared lib to /usr/lib folder to avoid the “can not find xxxx.so” problem.<br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fs496lhc7qj20z90khn1k.jpg" alt=""></li>
+<li>The OpenCV lib dependancies should be manually added to the project build configuration in Eclipse.</li>
+<li>You can find the Darknet shared lib builder here: <a href="https://github.com/forwardkth/DarkLibBuilder">https://github.com/forwardkth/DarkLibBuilder</a></li>
+</ol>
+<h2 id="Some_old_Pictures_3A"><a href="#Some_old_Pictures_3A" class="headerlink" title="Some old Pictures:"></a>Some old Pictures:</h2><p><img src="http://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg" alt=""><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg" alt=""><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvish1t10j23402c0kjm.jpg" alt=""><br><img src="http://5b0988e595225.cdn.sohucs.com/images/20170820/f96728dcc26d4eb0a7db9c49acf6756b.gif" alt=""></p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/03/30/BBRobot-opencv/#more" rel="contents">
               Read more &raquo;
