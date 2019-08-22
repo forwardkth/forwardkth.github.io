@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Chao_Forward">
 <meta property="og:description" content="之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。这样就不用像以前的老博客那样开两个博客再链接了。https://github.com/iissnan/">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg">
-<meta property="og:updated_time" content="2016-05-10T14:45:44.000Z">
+<meta property="og:updated_time" content="2019-08-22T18:11:57.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Hexo next主题如何在首页隐藏指定的文章">
 <meta name="twitter:description" content="之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。这样就不用像以前的老博客那样开两个博客再链接了。https://github.com/iissnan/">
@@ -359,7 +359,9 @@
       
 
       
-        <p>之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。<br>比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。<br>这样就不用像以前的老博客那样开两个博客再链接了。<br><a href="https://github.com/iissnan/hexo-theme-next/issues/843" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next/issues/843</a><br>具体做法如下：<br><a id="more"></a></p>
+        <meta name="referrer" content="no-referrer">
+
+<p>之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。<br>比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。<br>这样就不用像以前的老博客那样开两个博客再链接了。<br><a href="https://github.com/iissnan/hexo-theme-next/issues/843" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next/issues/843</a><br>具体做法如下：<br><a id="more"></a></p>
 <h3 id="u4FEE_u6539next_u4E3B_u9898_u6587_u4EF6_u5939_u4E0B_u7684layout_u4E2D_u7684index-swig_u6587_u4EF6"><a href="#u4FEE_u6539next_u4E3B_u9898_u6587_u4EF6_u5939_u4E0B_u7684layout_u4E2D_u7684index-swig_u6587_u4EF6" class="headerlink" title="修改next主题文件夹下的layout中的index.swig文件"></a>修改next主题文件夹下的layout中的index.swig文件</h3><p>定位修改 post_template.render(post, true) </p>
 <p><img src="http://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg" alt=""></p>
 <p>其中修改的是为文章的首页显示添加判断条件</p>
