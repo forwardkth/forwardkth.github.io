@@ -91,12 +91,12 @@
 <meta property="og:site_name" content="Chao_Forward">
 <meta property="og:description" content="Description:Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. Th">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg">
-<meta property="og:updated_time" content="2019-08-22T18:12:07.000Z">
+<meta property="og:image" content="https://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg">
+<meta property="og:updated_time" content="2020-03-07T21:30:51.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Project@KTH &quot;The wireless RFID sensing device&quot;(2010)">
 <meta name="twitter:description" content="Description:Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. Th">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg">
+<meta name="twitter:image" content="https://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg">
 
 
 
@@ -365,11 +365,11 @@
       
         <meta name="referrer" content="no-referrer">
 
-<p><img src="http://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt></p>
+<p><img src="https://ww2.sinaimg.cn/mw1024/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg" alt></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
 <p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
 <p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
-<h2 id="DEMO-VIDEO"><a href="#DEMO-VIDEO" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html" target="_blank" rel="noopener">http://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>
+<h2 id="DEMO-VIDEO"><a href="#DEMO-VIDEO" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a href="https://v.youku.com/v_show/id_XMjE1MDQzNzc2.html" target="_blank" rel="noopener">https://v.youku.com/v_show/id_XMjE1MDQzNzc2.html</a></p>
 <a id="more"></a>
       
     </div>

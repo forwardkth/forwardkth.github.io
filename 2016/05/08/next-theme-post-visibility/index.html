@@ -91,12 +91,12 @@
 <meta property="og:site_name" content="Chao_Forward">
 <meta property="og:description" content="之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。这样就不用像以前的老博客那样开两个博客再链接了。https://github.com/iissna">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg">
-<meta property="og:updated_time" content="2019-08-22T18:11:57.000Z">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg">
+<meta property="og:updated_time" content="2020-03-07T21:30:46.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Hexo next主题如何在首页隐藏指定的文章">
 <meta name="twitter:description" content="之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。这样就不用像以前的老博客那样开两个博客再链接了。https://github.com/iissna">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg">
+<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg">
 
 
 
@@ -367,11 +367,11 @@
 
 <p>之前我有一个关于next主题的需求就是希望可以在next主题的主页只显示特定category下的文章。这样就可以在home 首页下控制想要突出展示的文章。<br>比如我的博客下混合了技术类和生活类文章，我可以选择只在首页展示技术类的，而其他类别的文章不会在首页列出，但是可以到category里面点击查看。<br>这样就不用像以前的老博客那样开两个博客再链接了。<br><a href="https://github.com/iissnan/hexo-theme-next/issues/843" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next/issues/843</a><br>具体做法如下：<br><a id="more"></a></p>
 <h3 id="修改next主题文件夹下的layout中的index-swig文件"><a href="#修改next主题文件夹下的layout中的index-swig文件" class="headerlink" title="修改next主题文件夹下的layout中的index.swig文件"></a>修改next主题文件夹下的layout中的index.swig文件</h3><p>定位修改 post_template.render(post, true) </p>
-<p><img src="http://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg" alt></p>
+<p><img src="https://ww1.sinaimg.cn/large/74505a4cgw1f3onp6eculj20ds0d70vb.jpg" alt></p>
 <p>其中修改的是为文章的首页显示添加判断条件</p>
 <h3 id="在新的post中添加visible字段来控制是否首页显示"><a href="#在新的post中添加visible字段来控制是否首页显示" class="headerlink" title="在新的post中添加visible字段来控制是否首页显示"></a>在新的post中添加visible字段来控制是否首页显示</h3><p>例如我的当前这篇文章：</p>
 <p>title: 关于Hexo next主题如何在首页隐藏指定的文章<br>date: 2016-05-08 22:21:29<br>tags:<br>…<br>…<br>categories: Notes-随笔<br>visible: hide   这里如果加上hide则该文章就不会在文章首页显示，如果留空则表示默认显示<br>…..</p>
-<h3 id="在单独的category下-显示归类的多篇文章目录"><a href="#在单独的category下-显示归类的多篇文章目录" class="headerlink" title="在单独的category下 显示归类的多篇文章目录"></a>在单独的category下 显示归类的多篇文章目录</h3><p>看这里<br><a href="http://www.zhihu.com/question/33324071/answer/58775540?group_id=654307162210365440#comment-106092511" target="_blank" rel="noopener">http://www.zhihu.com/question/33324071/answer/58775540?group_id=654307162210365440#comment-106092511</a></p>
+<h3 id="在单独的category下-显示归类的多篇文章目录"><a href="#在单独的category下-显示归类的多篇文章目录" class="headerlink" title="在单独的category下 显示归类的多篇文章目录"></a>在单独的category下 显示归类的多篇文章目录</h3><p>看这里<br><a href="https://www.zhihu.com/question/33324071/answer/58775540?group_id=654307162210365440#comment-106092511" target="_blank" rel="noopener">https://www.zhihu.com/question/33324071/answer/58775540?group_id=654307162210365440#comment-106092511</a></p>
 
       
     </div>
