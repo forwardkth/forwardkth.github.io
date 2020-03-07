@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://forwardkth.github.io/about/index.html</loc>
+    
+    <lastmod>2020-03-07T21:19:31.769Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://forwardkth.github.io/2015/08/28/wifi-robot-gen-two/</loc>
     
     <lastmod>2019-08-22T18:13:48.000Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>http://forwardkth.github.io/links/index.html</loc>
     
     <lastmod>2018-05-19T22:13:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://forwardkth.github.io/about/index.html</loc>
-    
-    <lastmod>2018-04-01T10:40:38.000Z</lastmod>
     
   </url>
   
