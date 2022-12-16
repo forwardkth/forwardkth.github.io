@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"forwardkth.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Description:This is a ongoing project. The idea is to build a remote Wifi Robot controller based on OpenCV 3.4.0, cuDNN, CUDA, Deep learning and Sensorfusion.The sensor data and video are streamed t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Remote autonomous controller with Computer vision, Deep learning and Sensor fusion for my WiFi Robot (ongoing)">
+<meta property="og:url" content="http://forwardkth.github.io/2018/03/30/BBRobot-opencv/index.html">
+<meta property="og:site_name" content="Chao_Forward">
+<meta property="og:description" content="Description:This is a ongoing project. The idea is to build a remote Wifi Robot controller based on OpenCV 3.4.0, cuDNN, CUDA, Deep learning and Sensorfusion.The sensor data and video are streamed t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fs496rv0zrj21hb0t31kx.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fs496vfj4aj212p0ql7bj.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fs496lhc7qj20z90khn1k.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvish1t10j23402c0kjm.jpg">
+<meta property="og:image" content="https://5b0988e595225.cdn.sohucs.com/images/20170820/f96728dcc26d4eb0a7db9c49acf6756b.gif">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/74505a4cgy1fpviriawz6j21gu0sjaky.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fpvis7nq6vj23402c0e82.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvira0vdvj21hw0sqk1f.jpg">
+<meta property="og:image" content="https://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg">
+<meta property="og:image" content="https://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/74505a4cgw1f7oypkop58j20ku0fmn0o.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/74505a4cgw1f7oyqnelgnj20qo0qo79n.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxjykddej23402c0e82.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxk74fhdj23402c0e82.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frn6qe1itqj21h80rmagc.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn6qdjc88j20p30kc413.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn0x6dh7zj20qo0qon1g.jpg">
+<meta property="article:published_time" content="2018-03-30T21:11:59.000Z">
+<meta property="article:modified_time" content="2022-12-16T12:57:04.156Z">
+<meta property="article:author" content="Chao Li">
+<meta property="article:tag" content="sensor">
+<meta property="article:tag" content="BeagleBone">
+<meta property="article:tag" content="Robot">
+<meta property="article:tag" content="CV">
+<meta property="article:tag" content="Computer Vision">
+<meta property="article:tag" content="CUDA">
+<meta property="article:tag" content="YOLO">
+<meta property="article:tag" content="Deep learning">
+<meta property="article:tag" content="OpenCV">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fs496rv0zrj21hb0t31kx.jpg">
+
+
+<link rel="canonical" href="http://forwardkth.github.io/2018/03/30/BBRobot-opencv/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://forwardkth.github.io/2018/03/30/BBRobot-opencv/","path":"2018/03/30/BBRobot-opencv/","title":"The Remote autonomous controller with Computer vision, Deep learning and Sensor fusion for my WiFi Robot (ongoing)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>The Remote autonomous controller with Computer vision, Deep learning and Sensor fusion for my WiFi Robot (ongoing) | Chao_Forward</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chao_Forward</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">I want to go to the moon. Not because it is easy, but because it is hard.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-project"><a href="/categories/Projects-%E9%A1%B9%E7%9B%AE" rel="section">project</a></li><li class="menu-item menu-item-notes"><a href="/categories/Notes-%E7%AC%94%E8%AE%B0" rel="section">notes</a></li><li class="menu-item menu-item-diary"><a href="/categories/Diary-%E6%97%A5%E8%AE%B0" rel="section">diary</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">25</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-old-Pictures"><span class="nav-number">2.</span> <span class="nav-text">Some old Pictures:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BBRobot-project"><span class="nav-number">3.</span> <span class="nav-text">BBRobot project:</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chao Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">101</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://forwardkth.github.io/2018/03/30/BBRobot-opencv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chao Li">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chao_Forward">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="The Remote autonomous controller with Computer vision, Deep learning and Sensor fusion for my WiFi Robot (ongoing) | Chao_Forward">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          The Remote autonomous controller with Computer vision, Deep learning and Sensor fusion for my WiFi Robot (ongoing)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-30 23:11:59" itemprop="dateCreated datePublished" datetime="2018-03-30T23:11:59+02:00">2018-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-12-16 13:57:04" itemprop="dateModified" datetime="2022-12-16T13:57:04+01:00">2022-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/projects-%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">projects-项目</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <meta name="referrer" content="no-referrer" />
+
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h2><p>This is a ongoing project. The idea is to build a remote Wifi Robot controller based on OpenCV 3.4.0, cuDNN, CUDA, Deep learning and Sensorfusion.<br>The sensor data and video are streamed to the PC for computer vision functions and Sensorfusion solutions realization. Then the controller sends back the control command back to the Wifi robot to execute.<br>You can find it here:  <a target="_blank" rel="noopener" href="https://github.com/forwardkth/BBRobotController_CV_DL_SF">https://github.com/forwardkth/BBRobotController_CV_DL_SF</a><br>It can be seen as a mini Autonomous Vehicle project with a RaCAM （forward looking Radar and Camera.<br>I just started to work on this project from time to time since 2017. So the code on Github has not been completed yet.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1jZm1aZNGg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p>Historical updates:</p>
+<p>2018.5  Project moved to Linux platform<br>2018.6  Integrate YoloV3 into BBRobot controller project with C++ Wrapper and shared library<br>        BBRobot controller C++ project built up with Eclipse setup<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fs496rv0zrj21hb0t31kx.jpg"></p>
+<p>Some tips:<br>1.in the makefile for generating the shared lib of Darknet, the nvcc configuration should be the path of your local cuda bin folder.<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fs496vfj4aj212p0ql7bj.jpg"><br>2. Suggest to copy the shared lib to &#x2F;usr&#x2F;lib folder to avoid the “can not find xxxx.so” problem.<br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fs496lhc7qj20z90khn1k.jpg"><br>3. The OpenCV lib dependancies should be manually added to the project build configuration in Eclipse.<br>4. You can find the Darknet shared lib builder here: <a target="_blank" rel="noopener" href="https://github.com/forwardkth/DarkLibBuilder">https://github.com/forwardkth/DarkLibBuilder</a></p>
+<h2 id="Some-old-Pictures"><a href="#Some-old-Pictures" class="headerlink" title="Some old Pictures:"></a>Some old Pictures:</h2><p><img src="https://ww4.sinaimg.cn/mw1024/74505a4cjw1f15bm3c82lj218g0xcqku.jpg"><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fpvirumai6j23402c0e82.jpg"><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvish1t10j23402c0kjm.jpg"><br><img src="https://5b0988e595225.cdn.sohucs.com/images/20170820/f96728dcc26d4eb0a7db9c49acf6756b.gif"></p>
+<span id="more"></span>
+<p><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1fpviriawz6j21gu0sjaky.jpg"><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fpvis7nq6vj23402c0e82.jpg"><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fpvira0vdvj21hw0sqk1f.jpg"></p>
+<h2 id="BBRobot-project"><a href="#BBRobot-project" class="headerlink" title="BBRobot project:"></a>BBRobot project:</h2><p>The source code of the Wifi Robot project can be found here: <a target="_blank" rel="noopener" href="https://github.com/forwardkth/BBRobot">https://github.com/forwardkth/BBRobot</a></p>
+<p>My Modification to the original Blacklib recently are:</p>
+<ol>
+<li>Modification to the class BalckPWM</li>
+<li>Implement the BlackServo class for easier Servo control like “PyBBIO”</li>
+<li>Add Servo control example code (example_Servo.h) under &#x2F;BlackLib&#x2F;examples folder</li>
+<li>Add my WIFI robot code (example_wifirobot.h) as a example under &#x2F;BlackLib&#x2F;examples folder</li>
+</ol>
+<p>You can run the examples with the ExampleMain.cpp or run the formal project with WiFiRobotMain.cpp</p>
+<p>Historical project updates:</p>
+<p>2015</p>
+<ol>
+<li>Modification to the class of BalckPWM</li>
+<li>Add Servo motor control class “BlackServo”</li>
+<li>Add Servo control demo code under &#x2F;BlackLib&#x2F;examples folder</li>
+<li>Add demo WiFi robot code (example_wifirobot.h) as a example under &#x2F;BlackLib&#x2F;examples folder</li>
+<li>Add Video streaming code</li>
+</ol>
+<p>2016       </p>
+<ol>
+<li>New remote control UI with C sharp and WPF</li>
+<li>iOS APP for WiFi Robot remote control</li>
+</ol>
+<p>2017       </p>
+<ol>
+<li>Start working with the Computer Vision based remote controller for the WiFiRobot (ongoing…)</li>
+</ol>
+<p>2018       </p>
+<ol>
+<li>Add formal WiFi robot project code under “BBRobot&#x2F;WiFiRobot&#x2F;“</li>
+<li>Add Json support for Multiple sensor data transmission</li>
+</ol>
+<p>The picture below shows the visualGDB configuration with VS2017 for cross complie and remote debug and deploy<br><a target="_blank" rel="noopener" href="https://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg">https://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
+<hr>
+<p><img src="https://ww2.sinaimg.cn/mw690/74505a4cgw1evho2onxwsj21kw16o7wh.jpg"><br><img src="https://ww1.sinaimg.cn/mw690/74505a4cgw1evgrdvaux5j21kw16o1if.jpg"><br><img src="https://ww2.sinaimg.cn/large/74505a4cgw1f7oypkop58j20ku0fmn0o.jpg"><br><img src="https://ww4.sinaimg.cn/large/74505a4cgw1f7oyqnelgnj20qo0qo79n.jpg"></p>
+<p>The new DEMO video on Youtube:<br><a target="_blank" rel="noopener" href="https://youtu.be/q4rHsRQ4LsQ">https://youtu.be/q4rHsRQ4LsQ</a><br><a target="_blank" rel="noopener" href="https://youtu.be/8c8KAbVZPCA">https://youtu.be/8c8KAbVZPCA</a></p>
+<p>The old outdoor DEMO video on Youtube:<br><a target="_blank" rel="noopener" href="https://www.youtube.com/v77tkjFmZqY">https://www.youtube.com/v77tkjFmZqY</a></p>
+<hr>
+<p>In order to continue my project (remote contoller for my wifiRobot based on computer vision and sensor fusion), I bought a powerful Desktop PC from HP with the Nvidia Geforce GTX1070 Video Card. It looks quite nice and very easy for maintenance. But I am too old to have interest in playing games. Just use it as a working horse…</p>
+<p><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frlwtesrlpj22c0340kjm.jpg"><br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1frlwt4rv50j22c03404qq.jpg"><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwu19befj23402c07wj.jpg"><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1frlwuctqswj23402c0x6q.jpg"></p>
+<p>It took a lot of time to figure out the solutions for different issues before making the development enviroment ready.</p>
+<ol>
+<li><p>You need to disable the default driver for the video card and install the nvidia one. It is also OK to directly install the CUDA Tookit which has the official driver included.</p>
+</li>
+<li><p>Disable the secure boot in BIOS. Otherwise the Nvidia driver will not be loaded. And It will not take effect.</p>
+</li>
+<li><p>It also takes me a lot of time to figure out how to install tensorflow with CUDA9.2.<br>actually you need to compile the tensorflow source code with the CUDA9.2 configuration by yourself. this blog might help:  <a target="_blank" rel="noopener" href="https://www.python36.com/install-tensorflow141-gpu/">https://www.python36.com/install-tensorflow141-gpu/</a></p>
+</li>
+</ol>
+<p>I installed both the lastest versions of CUDA and CUDNN. But the TensorRT does not support CUDA9.2 for now. Later I will try to install multi versions of CUDA and try to switch among them.</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxjykddej23402c0e82.jpg"><br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frmxk74fhdj23402c0e82.jpg"></p>
+<ol start="4">
+<li><p>The version of Phython is also a something needs to be noticed. It is very important to know under which version of python the tensorflow is installed. And you need to do corresponding python interpreter configuration in the Pycharm IDE when working with tensorflow<br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1frn6qe1itqj21h80rmagc.jpg"></p>
+</li>
+<li><p>OpenCV is quite easy to install without any issue.</p>
+</li>
+<li><p>Another thing is that when you compile the Darknet Yolo with Debug &#x3D; 1, you need to add the following lines in the makefile. Unless the make process will not be successful.<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn6qdjc88j20p30kc413.jpg"></p>
+</li>
+</ol>
+<p>Then I am happy to see the YoloV3 model can run more in real-time on this PC with maximum rate of 14FPS!<br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1frn0x6dh7zj20qo0qon1g.jpg"></p>
+<p>You can see the Video of testing here:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1jZm1aZNGg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p>Finally I can really continue my project now: <a target="_blank" rel="noopener" href="https://github.com/forwardkth/BBRobotController_CV_DL_SF">https://github.com/forwardkth/BBRobotController_CV_DL_SF</a></p>
+<p>I will have the both versions of project for Linux and Windows.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/sensor/" rel="tag"># sensor</a>
+              <a href="/tags/BeagleBone/" rel="tag"># BeagleBone</a>
+              <a href="/tags/Robot/" rel="tag"># Robot</a>
+              <a href="/tags/CV/" rel="tag"># CV</a>
+              <a href="/tags/Computer-Vision/" rel="tag"># Computer Vision</a>
+              <a href="/tags/CUDA/" rel="tag"># CUDA</a>
+              <a href="/tags/YOLO/" rel="tag"># YOLO</a>
+              <a href="/tags/Deep-learning/" rel="tag"># Deep learning</a>
+              <a href="/tags/OpenCV/" rel="tag"># OpenCV</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/04/17/Gothenburg/" rel="prev" title="2017 春天 哥德堡">
+                  <i class="fa fa-chevron-left"></i> 2017 春天 哥德堡
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/04/02/deeplearningstation/" rel="next" title="HP OMEN Desktop PC for Deep learning and Vision Dev">
+                  HP OMEN Desktop PC for Deep learning and Vision Dev <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chao Li</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"forwardkth.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Description:I started to build a home sensor network with MySensors solution in 2016.You can find it here:  https:&#x2F;&#x2F;forwardkth.github.io&#x2F;2015&#x2F;09&#x2F;22&#x2F;mysensors&#x2F;Recently I have expanded this project wi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Home assistant + Mysensors + Xiaomi + homebridge">
+<meta property="og:url" content="http://forwardkth.github.io/2018/04/25/Homeassistant/index.html">
+<meta property="og:site_name" content="Chao_Forward">
+<meta property="og:description" content="Description:I started to build a home sensor network with MySensors solution in 2016.You can find it here:  https:&#x2F;&#x2F;forwardkth.github.io&#x2F;2015&#x2F;09&#x2F;22&#x2F;mysensors&#x2F;Recently I have expanded this project wi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fqm3tjzxqxj21dc0wwwuq.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/large/74505a4cgy1fqrrxqivy8j21hc0qo12v.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/74505a4cgy1fqrrxpt9i8j21hc0qqgo5.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/large/74505a4cgy1fqrrxr4r2fj21gz0qo4dv.jpg">
+<meta property="og:image" content="https://www.mysensors.org/uploads/57bd7e180b692ab55e15504f/image/network.png">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fqm3vap22gj21dc0wwgxj.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3v6r9rhj21dc0wwdp4.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fqm3uyr37lj21dc0wwk2z.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3v2vwe8j21dc0wwqeo.jpg">
+<meta property="og:image" content="https://camo.githubusercontent.com/e9e98b1b146452a6987e4a05dd4ece8c34781643/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f31306c373949436f6854753469512f67697068792e676966">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3uubkidj20ku112h4g.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3vrx7sjj20ku112kb3.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/74505a4cgy1fqm3vme4xxj20ku1120uz.jpg">
+<meta property="article:published_time" content="2018-04-25T20:59:28.000Z">
+<meta property="article:modified_time" content="2022-08-13T20:26:37.407Z">
+<meta property="article:author" content="Chao Li">
+<meta property="article:tag" content="sensor">
+<meta property="article:tag" content="Raspberry Pi">
+<meta property="article:tag" content="Mysensors">
+<meta property="article:tag" content="Xiaomi">
+<meta property="article:tag" content="Siri">
+<meta property="article:tag" content="Home assistant">
+<meta property="article:tag" content="hass">
+<meta property="article:tag" content="homebridge">
+<meta property="article:tag" content="IoT">
+<meta property="article:tag" content="Arduino">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fqm3tjzxqxj21dc0wwwuq.jpg">
+
+
+<link rel="canonical" href="http://forwardkth.github.io/2018/04/25/Homeassistant/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://forwardkth.github.io/2018/04/25/Homeassistant/","path":"2018/04/25/Homeassistant/","title":"Home assistant + Mysensors + Xiaomi + homebridge"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Home assistant + Mysensors + Xiaomi + homebridge | Chao_Forward</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chao_Forward</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">I want to go to the moon. Not because it is easy, but because it is hard.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-project"><a href="/categories/Projects-%E9%A1%B9%E7%9B%AE" rel="section">project</a></li><li class="menu-item menu-item-notes"><a href="/categories/Notes-%E7%AC%94%E8%AE%B0" rel="section">notes</a></li><li class="menu-item menu-item-diary"><a href="/categories/Diary-%E6%97%A5%E8%AE%B0" rel="section">diary</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">25</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Raspberry-Pi-based-home-assistant-server"><span class="nav-number">2.</span> <span class="nav-text">Raspberry Pi based home assistant server:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySensor-wireless-sensor-network"><span class="nav-number">3.</span> <span class="nav-text">MySensor wireless sensor network:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ESP8266-Sensor-gateway"><span class="nav-number">3.1.</span> <span class="nav-text">ESP8266 Sensor gateway:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ardoino-Nano-sensor-nodes"><span class="nav-number">3.2.</span> <span class="nav-text">Ardoino Nano sensor nodes:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HomeBridge-and-iOS-home-automation"><span class="nav-number">4.</span> <span class="nav-text">HomeBridge and iOS home automation:</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chao Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">101</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://forwardkth.github.io/2018/04/25/Homeassistant/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chao Li">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chao_Forward">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Home assistant + Mysensors + Xiaomi + homebridge | Chao_Forward">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Home assistant + Mysensors + Xiaomi + homebridge
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-04-25 22:59:28" itemprop="dateCreated datePublished" datetime="2018-04-25T22:59:28+02:00">2018-04-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-08-13 22:26:37" itemprop="dateModified" datetime="2022-08-13T22:26:37+02:00">2022-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/projects-%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">projects-项目</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <meta name="referrer" content="no-referrer" />
+
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h2><p>I started to build a home sensor network with MySensors solution in 2016.<br>You can find it here:  <a href="https://forwardkth.github.io/2015/09/22/mysensors/">https://forwardkth.github.io/2015/09/22/mysensors/</a><br>Recently I have expanded this project with the Home assistnat server, xiaomi plugs and homeBridge. Now Mysensors platform, xiaomi eco system, Home assistant controller and iOS eco system can be combined together as a complete smart home system.<br>You can find many similar instruction and tutorials from internet. So I just briefly show some key components needed.</p>
+<h2 id="Raspberry-Pi-based-home-assistant-server"><a href="#Raspberry-Pi-based-home-assistant-server" class="headerlink" title="Raspberry Pi based home assistant server:"></a>Raspberry Pi based home assistant server:</h2><p>Home Assistant is an open-source home automation platform running on Python 3. Track and control all devices at home and automate control. Perfect to run on a Raspberry Pi.<br><a target="_blank" rel="noopener" href="https://www.home-assistant.io/">https://www.home-assistant.io/</a><br><img src="https://wx4.sinaimg.cn/mw1024/74505a4cgy1fqm3tjzxqxj21dc0wwwuq.jpg"><br><img src="https://wx4.sinaimg.cn/large/74505a4cgy1fqrrxqivy8j21hc0qo12v.jpg"><br><img src="https://wx2.sinaimg.cn/large/74505a4cgy1fqrrxpt9i8j21hc0qqgo5.jpg"><br><img src="https://wx3.sinaimg.cn/large/74505a4cgy1fqrrxr4r2fj21gz0qo4dv.jpg"></p>
+<h2 id="MySensor-wireless-sensor-network"><a href="#MySensor-wireless-sensor-network" class="headerlink" title="MySensor wireless sensor network:"></a>MySensor wireless sensor network:</h2><p><img src="https://www.mysensors.org/uploads/57bd7e180b692ab55e15504f/image/network.png"><br>MySensors is an open source hardware and software community focusing on do-it-yourself home automation and Internet of Things.<br>It helps people who’d like to create original and affordable sensors and actuators based on components like, Arduino, ESP8266, Raspberry Pi, NRF24L01+ and RFM69.<br>Website: <a target="_blank" rel="noopener" href="https://www.mysensors.org/">https://www.mysensors.org/</a></p>
+<h3 id="ESP8266-Sensor-gateway"><a href="#ESP8266-Sensor-gateway" class="headerlink" title="ESP8266 Sensor gateway:"></a>ESP8266 Sensor gateway:</h3><p>In order to communicate between and collect data from your sensors, we need a wireless communications link. Currently we support a couple of small transceiver called nRF24L01+ and RFM69. You can also run the MySensors library directly on the WiFi enabled ESP8266 for sensors not running on batteries.<br>It’s pretty smart, small, low-cost and does not consume a lot of battery power.<br>Gateway - passes data from nodes to your home automation controller as well as from the home automation controller back to nodes. You can attach sensors directly to the gateway as well.<br>You can also send messages directly between two nodes in the network without transiting through the gateway. For example, your outside temperature sensor can send its data directly to another sensor in your kitchen with an attached display.<br>It’s possible to build a WIFI enabled gateway running directly on an ESP8266 module. The porting has been done by Yveaux and has been documented here.<br><a target="_blank" rel="noopener" href="https://forum.mysensors.org/topic/1870/esp8266-wifi-gateway-port-for-mysensors">https://forum.mysensors.org/topic/1870/esp8266-wifi-gateway-port-for-mysensors</a><br>The easiest build option is probably to use the NodeMcu Devkit v.10 (by the NodeMcu Team). This board has the ESP-12 module mounted. Just connect the radio, install gateway software and you’re good to go.<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fqm3vap22gj21dc0wwgxj.jpg"><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3v6r9rhj21dc0wwdp4.jpg"></p>
+<h3 id="Ardoino-Nano-sensor-nodes"><a href="#Ardoino-Nano-sensor-nodes" class="headerlink" title="Ardoino Nano sensor nodes:"></a>Ardoino Nano sensor nodes:</h3><p>Your sensors will form a tree network topology. Normally the sensor nodes (S) will send their information directly to the gateway (GW). If you live in a mansion or very large house, you may need to enable the repeater mode for some sensor nodes (R) to relay data from sensors that are located far away from the gateway.</p>
+<p>Sensor nodes - continuously read the status of all attached sensors and pass the sensor data through the radio network back to the gateway. These puppies have the option to sleep most of the time if you want to run them on battery.</p>
+<p>Repeater-sensor nodes - must stay awake in order to pass messages from its child sensor nodes. A repeater-node can optionally include direct-attached sensors and report their sensor data to the gateway. In most setups you will probably not need any repeater-nodes as the transmitter range for the most basic radio is about 20-60 meters.</p>
+<p>Each node is assigned a unique sensorId or address that is used for sending and receiving point-to-point messages. You can assign a static sensorId (in the sketch) or let the controller automatically assign one to the sensor. AUTO-mode configures the sensor to request a sensorId from the controller and is the default option for all the examples that we provide. The sensor stores the assigned sensorId in its non-volatile memory to ensure the correct sensorId persists across power transitions. A gateway always has sensorId 0.</p>
+<p>The first time a new sensor boots up, it will determine the path to the gateway by sending out a special Help-me-find-my-way-home-message. The repeater-sensor nodes and gateway listen for these messages and will respond to a sensor’s plea-for-help-message. Their reply will inform the sensor how far they are from the gateway so the newly born sensor can determine the shortest path to the gateway, be it directly to the gateway or through a repeater-sensor node which is the closest to the gateway. If the sensor node later loses contact with the gateway or a repeater-sensor node, it will automatically repeat this procedure to determine the best path to the gateway - a sensor node considers contact with the gateway to be lost if it fails to send 3 consecutive messages.</p>
+<p>Gateway and repeater-sensor nodes maintain a small routing table to know where to direct their messages to the network surrounding it. The routing table is built up automatically by the repeaters and gateway by introspecting messages received.</p>
+<p>A MySensor radio network can consist of up to 254 different radio nodes and each radio node can report data for 254 attached child sensors. This means that you can, in theory, manage data for up to 64516 sensors in a single radio network. If this isn’t enough, you can create another parallel radio network on a different channel and there are 126 available channels [NRF24L01+].</p>
+<p>To summarize: New nodes will automatically find the shortest path to gateway and and use a persistent unique sensorId to send and receive point-to-point messages. The tree network is robust and “self heals” as the topology changes. For example, you move a sensor node to a different physical location or a repeater-node dies.<br><img src="https://wx1.sinaimg.cn/mw1024/74505a4cgy1fqm3uyr37lj21dc0wwk2z.jpg"><br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3v2vwe8j21dc0wwqeo.jpg"></p>
+<h2 id="HomeBridge-and-iOS-home-automation"><a href="#HomeBridge-and-iOS-home-automation" class="headerlink" title="HomeBridge and iOS home automation:"></a>HomeBridge and iOS home automation:</h2><p>Homebridge is a lightweight NodeJS server you can run on your home network that emulates the iOS HomeKit API.<br>It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit to various 3rd-party APIs provided by manufacturers of “smart home” devices.<br>This project can be found here: <a target="_blank" rel="noopener" href="https://github.com/nfarina/homebridge">https://github.com/nfarina/homebridge</a><br><img src="https://camo.githubusercontent.com/e9e98b1b146452a6987e4a05dd4ece8c34781643/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f31306c373949436f6854753469512f67697068792e676966"><br>It is perfect to combine with the HomeAssistant to interact with your home by your iphone home APP and Siri.<br>Below you can see that homebridge help my iphone detected all my sensor nodes and Xiaomi plugs at home.<br><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3uubkidj20ku112h4g.jpg"></p>
+<span id="more"></span>
+<p><img src="https://wx2.sinaimg.cn/mw1024/74505a4cgy1fqm3vrx7sjj20ku112kb3.jpg"><br>I have set up some home automation rules for example turning on home lights when sunset happens. It is quite self adaptive since the sunset time differs every day.<br>Another one is that turning on the security camera when I leave my home and turning it off when my phone location is home.<br><img src="https://wx3.sinaimg.cn/mw1024/74505a4cgy1fqm3vme4xxj20ku1120uz.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/sensor/" rel="tag"># sensor</a>
+              <a href="/tags/Raspberry-Pi/" rel="tag"># Raspberry Pi</a>
+              <a href="/tags/Mysensors/" rel="tag"># Mysensors</a>
+              <a href="/tags/Xiaomi/" rel="tag"># Xiaomi</a>
+              <a href="/tags/Siri/" rel="tag"># Siri</a>
+              <a href="/tags/Home-assistant/" rel="tag"># Home assistant</a>
+              <a href="/tags/hass/" rel="tag"># hass</a>
+              <a href="/tags/homebridge/" rel="tag"># homebridge</a>
+              <a href="/tags/IoT/" rel="tag"># IoT</a>
+              <a href="/tags/Arduino/" rel="tag"># Arduino</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/04/02/deeplearningstation/" rel="prev" title="HP OMEN Desktop PC for Deep learning and Vision Dev">
+                  <i class="fa fa-chevron-left"></i> HP OMEN Desktop PC for Deep learning and Vision Dev
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chao Li</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
