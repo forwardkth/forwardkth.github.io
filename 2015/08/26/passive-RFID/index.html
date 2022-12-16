@@ -26,15 +26,15 @@
 <meta property="og:site_name" content="Chao_Forward">
 <meta property="og:description" content="Description:Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. Th">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1evhi2sbx8nj20go0cimz4?raw=true">
+<meta property="og:image" content="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg?raw=true">
 <meta property="article:published_time" content="2015-08-26T18:11:11.000Z">
-<meta property="article:modified_time" content="2022-12-16T21:20:49.525Z">
+<meta property="article:modified_time" content="2022-12-16T21:27:27.008Z">
 <meta property="article:author" content="Chao Li">
 <meta property="article:tag" content="RFID">
 <meta property="article:tag" content="wireless sensing">
 <meta property="article:tag" content="无线传感">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1evhi2sbx8nj20go0cimz4?raw=true">
+<meta name="twitter:image" content="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg?raw=true">
 
 
 <link rel="canonical" href="http://forwardkth.github.io/2015/08/26/passive-RFID/">
@@ -225,7 +225,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-12-16 22:20:49" itemprop="dateModified" datetime="2022-12-16T22:20:49+01:00">2022-12-16</time>
+      <time title="Modified: 2022-12-16 22:27:27" itemprop="dateModified" datetime="2022-12-16T22:27:27+01:00">2022-12-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -256,7 +256,7 @@
     <div class="post-body" itemprop="articleBody">
         <meta name="referrer" content="no-referrer" />
 
-<p><img src="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1evhi2sbx8nj20go0cimz4?raw=true"></p>
+<p><img src="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1evhi2sbx8nj20go0cimz4.jpg?raw=true"></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
 <p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
 <p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
