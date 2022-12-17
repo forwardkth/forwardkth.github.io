@@ -19,23 +19,40 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"forwardkth.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Chao_Forward">
-<meta property="og:url" content="http://forwardkth.github.io/page/2/index.html">
+    <meta name="description" content="Today I tried to use VisualGDB with Visual Studio 2017 to compile and run my wifi robot C++ code on my beaglebone. https:&#x2F;&#x2F;github.com&#x2F;forwardkth&#x2F;BBRobot The experience is good. You can follow the li">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cross compling and remote debuging with VisualGDB on Windows">
+<meta property="og:url" content="http://forwardkth.github.io/removed/visualGDB.html">
 <meta property="og:site_name" content="Chao_Forward">
+<meta property="og:description" content="Today I tried to use VisualGDB with Visual Studio 2017 to compile and run my wifi robot C++ code on my beaglebone. https:&#x2F;&#x2F;github.com&#x2F;forwardkth&#x2F;BBRobot The experience is good. You can follow the li">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg?raw=true">
+<meta property="og:image" content="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg?raw=true">
+<meta property="article:published_time" content="2016-03-06T15:08:24.000Z">
+<meta property="article:modified_time" content="2022-12-16T21:27:37.080Z">
 <meta property="article:author" content="Chao Li">
+<meta property="article:tag" content="robotics">
+<meta property="article:tag" content="robot">
+<meta property="article:tag" content="smart car">
+<meta property="article:tag" content="机器人">
+<meta property="article:tag" content="智能车">
+<meta property="article:tag" content="Beaglebone">
+<meta property="article:tag" content="open source">
+<meta property="article:tag" content="VisualGDB">
+<meta property="article:tag" content="cross compiling">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg?raw=true">
 
 
-<link rel="canonical" href="http://forwardkth.github.io/page/2/">
+<link rel="canonical" href="http://forwardkth.github.io/removed/visualGDB">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"http://forwardkth.github.io/removed/visualGDB.html","path":"removed/visualGDB.html","title":"Cross compling and remote debuging with VisualGDB on Windows"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Chao_Forward</title>
+<title>Cross compling and remote debuging with VisualGDB on Windows | Chao_Forward
+</title>
   
 
 
@@ -70,7 +87,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Chao_Forward</h1>
+      <p class="site-title">Chao_Forward</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">I want to go to the moon. Not because it is easy, but because it is hard.</p>
@@ -97,7 +114,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -110,6 +127,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#But-I-got-some-problems-when-I-compiled-my-code"><span class="nav-number">1.</span> <span class="nav-text">But I got some problems when I compiled my code.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-first-one-is"><span class="nav-number">1.1.</span> <span class="nav-text">The first one is :</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-second-one-is-about-Pthread"><span class="nav-number">1.2.</span> <span class="nav-text">The second one is about Pthread:</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -124,7 +142,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -135,7 +153,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-count">90</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -171,101 +189,53 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner page posts-expand">
+
 
     
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
 
+<h1 class="post-title" itemprop="name headline">Cross compling and remote debuging with VisualGDB on Windows
+</h1>
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://forwardkth.github.io/2015/08/22/stuff-guarder/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Chao Li">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chao_Forward">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Chao_Forward">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/08/22/stuff-guarder/" class="post-title-link" itemprop="url">Course Project@KTH "Stuff guarder"(2010)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-08-22 12:02:36" itemprop="dateCreated datePublished" datetime="2015-08-22T12:02:36+02:00">2015-08-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-12-16 22:27:49" itemprop="dateModified" datetime="2022-12-16T22:27:49+01:00">2022-12-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/projects-%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">projects-项目</span></a>
-        </span>
-    </span>
-
-  
+<div class="post-meta-container">
 </div>
 
-        </div>
-      </header>
+</header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      
+      
+      <div class="post-body">
           <meta name="referrer" content="no-referrer" />
 
-<p><img src="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1f1pmup9u7fj20go0cidhl.jpg?raw=true"><br>Course Project “Stuff guarder” is a simple device that can remind you when your private stuff is moved by others.<br>It also can remind you to get back your bank card after drawing money from a ATM machine.</p>
-<p><img src="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1f1pmuexnvsj20go0ciq54.jpg?raw=true"></p>
-<p>It is implemented by a self made TI MSP430 experimental board with light sensor and accelemeter sensor. It is easy and simple.<br>The main purpose of this project is to learn how to use the sensors data in a smart way even very limited number and type of sensors.</p>
-<p><embed src="https://player.youku.com/player.php/sid/XMTU2OTc4MzIw/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></p>
+<p><img src="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg?raw=true"><br>Today I tried to use VisualGDB with Visual Studio 2017 to compile and run my wifi robot C++ code on my beaglebone.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/forwardkth/BBRobot">https://github.com/forwardkth/BBRobot</a></p>
+<p>The experience is good. You can follow the link below to install and configure the VisualGDB for your beaglebone:</p>
+<p><a target="_blank" rel="noopener" href="https://visualgdb.com/tutorials/beaglebone/">https://visualgdb.com/tutorials/beaglebone/</a></p>
+<h2 id="But-I-got-some-problems-when-I-compiled-my-code"><a href="#But-I-got-some-problems-when-I-compiled-my-code" class="headerlink" title="But I got some problems when I compiled my code."></a>But I got some problems when I compiled my code.</h2><h3 id="The-first-one-is"><a href="#The-first-one-is" class="headerlink" title="The first one is :"></a>The first one is :</h3><p>error directive: This file requires compiler and library support for the upcoming ISO C++ standard, C++0x.<br>This support is currently experimental, and must be enabled with the -std&#x3D;c++0x or -std&#x3D;gnu++0x compiler options.	</p>
+<p>The solution: open your VisualGDB project properties from your right click menu.<br>Then uncheck box of Same as CFLAGS and add  “-std&#x3D;c++0x” to CXXFLAGS configuration.<br>So I will looks like -ggdb -ffunction-sections -O0 -std&#x3D;c++0x</p>
+<h3 id="The-second-one-is-about-Pthread"><a href="#The-second-one-is-about-Pthread" class="headerlink" title="The second one is about Pthread:"></a>The second one is about Pthread:</h3><p>The error info indicate that pthread library is missing. </p>
+<p>So I download the pthread for windows and configure the include derectories and library directories, then add -lpthread to the CXXFLAGS. But It still does not work.</p>
+<p>The real solution is:</p>
+<span id="more"></span>
+<p>You do not need to down load any pthread lib for windows. Just write “pthread” to the Library name in the Makefile settings. Then it works.<br>Or you can write “-lpthread” to Common flags. Both solutions work fine. </p>
+<p>I think that is because this configuration is related to your target environment, not your host machine.<br>You can see the screenshot of the configurations below:</p>
+<p><img src="https://github.com/forwardkth/image/blob/master/weibo/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg?raw=true"></p>
+<p><a target="_blank" rel="noopener" href="https://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg">https://ww3.sinaimg.cn/large/74505a4cgw1f1mhjohmbej21b70rcdwl.jpg</a></p>
+<p>You can find the new DEMO video of my wifi robot on Youtube：</p>
+<iframe width="560" height="315" src="httpss://www.youtube.com/embed/q4rHsRQ4LsQ" frameborder="0" allowfullscreen></iframe>
 
+      </div>
+      
+      
       
     </div>
 
     
     
-    
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
 
 </div>
   </main>
