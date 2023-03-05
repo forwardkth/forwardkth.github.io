@@ -217,7 +217,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-03-05 09:46:37" itemprop="dateModified" datetime="2023-03-05T09:46:37+01:00">2023-03-05</time>
+      <time title="Modified: 2023-03-05 15:18:28" itemprop="dateModified" datetime="2023-03-05T15:18:28+01:00">2023-03-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
     <div class="post-body" itemprop="articleBody">
           <meta name="referrer" content="no-referrer" />
 
-<h2 id="Jetson-TX2-Robot"><a href="#Jetson-TX2-Robot" class="headerlink" title="Jetson TX2 Robot:"></a>Jetson TX2 Robot:</h2><p><img src="https://user-images.githubusercontent.com/13931016/144505119-86f90363-76ea-4dcf-8cce-254bcbf1b88e.jpg" alt="IMG_0972"><br>The third generation Robot platform with visual based perception, Visual inertial odometry and SLAM algorithms</p>
+<p><img src="https://user-images.githubusercontent.com/13931016/144505119-86f90363-76ea-4dcf-8cce-254bcbf1b88e.jpg" alt="IMG_0972"><br>The third generation Robot platform with visual based perception, Visual inertial odometry and SLAM algorithms</p>
 <h4 id="repo-https-github-com-forwardkth-chao-robot"><a href="#repo-https-github-com-forwardkth-chao-robot" class="headerlink" title="repo: https://github.com/forwardkth/chao_robot"></a>repo: <a target="_blank" rel="noopener" href="https://github.com/forwardkth/chao_robot">https://github.com/forwardkth/chao_robot</a></h4><h2 id="Hardware-platforms"><a href="#Hardware-platforms" class="headerlink" title="Hardware platforms:"></a>Hardware platforms:</h2><p>JetsonTX2 (for advanced algorithms)<br><img src="https://github.com/forwardkth/image/blob/master/newimages/IMG_7856.JPG?raw=true"><br>Beaglebone White or Black (for vehicle control and sensor interfaces)<br><img src="https://beagleboard.org/static/images/product_beaglebone.jpg"></p>
 <h2 id="Sensors"><a href="#Sensors" class="headerlink" title="Sensors"></a>Sensors</h2><p>IntelRealsense D435i, Incremental encoder, Ultrasonic<br><img src="https://github.com/forwardkth/image/blob/master/newimages/IMG_7831.JPG?raw=true"><br><img src="https://github.com/forwardkth/image/blob/master/newimages/IMG_7862.JPG?raw=true"></p>
 <h2 id="Software-platform"><a href="#Software-platform" class="headerlink" title="Software platform"></a>Software platform</h2><p>ROS kinetic (currently the JetsonTX2 does not support the latest ROS2 version)<br><img src="http://wiki.ros.org/kinetic?action=AttachFile&do=get&target=kinetic.png"></p>
@@ -1702,7 +1702,7 @@ DEMO video in Youku: (For Visitors from China...)
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-12-16 22:27:27" itemprop="dateModified" datetime="2022-12-16T22:27:27+01:00">2022-12-16</time>
+      <time title="Modified: 2023-03-05 15:20:36" itemprop="dateModified" datetime="2023-03-05T15:20:36+01:00">2023-03-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1730,15 +1730,7 @@ DEMO video in Youku: (For Visitors from China...)
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h2><p>Imaging the situation in a museum, some antiques are put inside a hermetically sealed container. We want to monitor the temperature and moisture inside. But we donot hope to open it. This small device can give us a solution. The device can be put inside the sealed container and capture the temperature and moisture information. We can read the sensor data from outside of the container with a RFID reader without open it. But We know that the passive RFID tags can only send fixed information (ID) when it gets energy from the RFID reader. Then the reader can recognize and identify the specific tag. How can we read the dynamic data from a passive RFID?</p>
 <p>In this project a passive RFID tag’s coil loop is cut off and connected with the MSP430 experimental board. We use the processor’s GPIO to control the connection or disconnection of the loop in order to modulate the  active information.</p>
 <p>Then a communication protocol is created for the data transmition between the reader and the sensing device. First of all, the same communication bit rate is defined both in the device and the reader which is 50 bits per second. Then the protocol defines that the reader receives binary 1 when it can detect the tag ID, otherwise means binary 0. The protocol also defines that the data package sent to the reader includes start sign 9bits, data 32 bits and end sign 9 bits. So the sending rate of the device and the receiving rate of the reader are synchronized. The sensing device detects the temperature and moisture info and encodes the sensor data into a 50 bits binary package according to the protocol. Then it will modulate this data package with the RFID tag’s connection and disconnection. The RFID reader (antena) is connected to SUSE linux computer through serial port. A program running on the PC is responsible to control the reader and translate the 50 bits data package received into temperature info and humidity info.</p>
-<h2 id="DEMO-VIDEO"><a href="#DEMO-VIDEO" class="headerlink" title="DEMO VIDEO:"></a>DEMO VIDEO:</h2><p><a target="_blank" rel="noopener" href="https://v.youku.com/v_show/id_XMjE1MDQzNzc2.html">https://v.youku.com/v_show&#x2F;id_XMjE1MDQzNzc2.html</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/08/26/passive-RFID/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+
       
     </div>
 
